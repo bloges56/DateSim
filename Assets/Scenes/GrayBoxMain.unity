@@ -4485,7 +4485,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129989333}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1129989335
 Camera:
   m_ObjectHideFlags: 0
@@ -4585,6 +4585,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2921965199878279416, guid: 67c7e41b2e3ab2a4fa675d54e1d31d91, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921965199878279416, guid: 67c7e41b2e3ab2a4fa675d54e1d31d91, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -256986703
+      objectReference: {fileID: 0}
     - target: {fileID: 2921965199878279418, guid: 67c7e41b2e3ab2a4fa675d54e1d31d91, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4705,7 +4713,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.114872, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

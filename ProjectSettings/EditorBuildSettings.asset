@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HomeScreen.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/GrayBoxMain.unity
+    guid: 3de6ca07384a8f7439fe0177069d9b4e
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: adac5755f97080c4b83086b7783354c2
+  - enabled: 1
+    path: Assets/Scenes/SceneManager.unity
+    guid: 9ff167258faff6245ab0049b92a84296
   m_configObjects: {}
