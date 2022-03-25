@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
             Interactable hitObject = collision.gameObject.GetComponent<Interactable>();
             if (hitObject != null)
             {
-                Debug.Log("In Range of Interactable Object");
+                Debug.Log("Press E to Interact");
                 inRange = true;
             }
         }
