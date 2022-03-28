@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private bool inRange = false;
+    
+    private Interactable interact;
     private void Update()
     {
-        if(inRange && Input.GetKeyDown(KeyCode.E))
+        if(interact != null && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Interacted!");
+            interact.interact();
         }
     }
 
@@ -20,8 +21,8 @@ public class Player : MonoBehaviour
             Interactable hitObject = collision.gameObject.GetComponent<Interactable>();
             if (hitObject != null)
             {
-                Debug.Log("Press E to Interact");
-                inRange = true;
+                interact = hitObject;
+                hitObject.inRange();
             }
         }
     }
@@ -33,8 +34,8 @@ public class Player : MonoBehaviour
             Interactable hitObject = collision.gameObject.GetComponent<Interactable>();
             if (hitObject != null)
             {
-                Debug.Log("Out of Range of Interactable Object");
-                inRange = false;
+                interact = null;
+                hitObject.outOfRange();
             }
         }
     }
