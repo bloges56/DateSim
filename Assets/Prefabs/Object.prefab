@@ -142,3 +142,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoText: Sample Info Text
+  textCanvas: {fileID: 4407196125656397051, guid: 6e9838871286af945a321509fc75297c, type: 3}

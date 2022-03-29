@@ -5,11 +5,20 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //interactable object that player is in range of
-    private Interactable interact;
+    private SimpleInteract interact;
 
     //tracks if player is currently interacting with something
     private bool interacting = false;
 
+    private GameObject interactText;
+
+
+    private void Start()
+    {
+        interactText = GameObject.FindGameObjectWithTag("InteractUI");
+        Debug.Log(interactText.name);
+        
+    }
     private void Update()
     {
         //if there is an object in range and when the player hits E
@@ -36,10 +45,11 @@ public class Player : MonoBehaviour
         //check if collision is an interactable 
         if (collision.gameObject.CompareTag("Interactable"))
         {
-            Interactable hitObject = collision.gameObject.GetComponent<Interactable>();
+            SimpleInteract hitObject = collision.gameObject.GetComponent<SimpleInteract>();
             if (hitObject != null)
             {
                 interact = hitObject;
+                interactText.transform.GetChild(1).GetComponent<TMPro.TMP_Text>().text = interact.infoText;
                 hitObject.inRange();
             }
         }
