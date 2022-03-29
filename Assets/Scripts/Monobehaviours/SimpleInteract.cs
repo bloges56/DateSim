@@ -26,12 +26,15 @@ public class SimpleInteract : Interactable
         textCanvas.transform.GetChild(1).gameObject.SetActive(true);
         textCanvas.transform.GetChild(0).gameObject.SetActive(false);
         textCanvas.transform.GetChild(2).gameObject.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public override void exitInteract()
     {
-        transform.GetChild(1).gameObject.SetActive(true);
-        textCanvas.transform.GetChild(2).gameObject.SetActive(true);
+        Time.timeScale = 1f;
+        textCanvas.transform.GetChild(1).gameObject.SetActive(false);
+        textCanvas.transform.GetChild(0).gameObject.SetActive(true);
+        textCanvas.transform.GetChild(2).gameObject.SetActive(false);
     }
 
     private void createUI()

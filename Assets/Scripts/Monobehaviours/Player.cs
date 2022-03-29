@@ -6,11 +6,22 @@ public class Player : MonoBehaviour
 {
     
     private Interactable interact;
+    private bool interacting = false;
     private void Update()
     {
         if(interact != null && Input.GetKeyDown(KeyCode.E))
         {
-            interact.interact();
+            if(!interacting)
+            {
+                interact.interact();
+                interacting = true;
+            }
+            else
+            {
+                interact.exitInteract();
+                interacting = false;
+            }
+        
         }
     }
 
