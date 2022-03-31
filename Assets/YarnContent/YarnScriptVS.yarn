@@ -1,6 +1,13 @@
 ﻿title: Start
 tags:
 ---
-NPC: test
-NPC: testing
+<<set $relationshipStatus to ReturnRelationshipProgress()>>
+
+<<if $relationshipStatus == 0>>
+    Name: This is the first time we've met, opening dialogue
+    Name: okay so now try changing it to 1 and running again
+<<elseif $relationshipStatus == 1>>
+    Name: Now we're meeting again
+    Name: there will be other variables soon
+<< endif>>
 ===
