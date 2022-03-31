@@ -4,24 +4,53 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private bool inRange = false;
+    //interactable object that player is in range of
+    private SimpleInteract interact;
+
+    //tracks if player is currently interacting with something
+    private bool interacting = false;
+
+    private GameObject interactText;
+
+
+    private void Start()
+    {
+        interactText = GameObject.FindGameObjectWithTag("InteractUI");
+        Debug.Log(interactText.name);
+        
+    }
     private void Update()
     {
-        if(inRange && Input.GetKeyDown(KeyCode.E))
+        //if there is an object in range and when the player hits E
+        if(interact != null && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Interacted!");
+            //if not currently interacting, interact
+            if(!interacting)
+            {
+                interact.interact();
+                interacting = true;
+            }
+            //if interacting, exit interaction
+            else
+            {
+                interact.exitInteract();
+                interacting = false;
+            }
+        
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //check if collision is an interactable 
         if (collision.gameObject.CompareTag("Interactable"))
         {
-            Interactable hitObject = collision.gameObject.GetComponent<Interactable>();
+            SimpleInteract hitObject = collision.gameObject.GetComponent<SimpleInteract>();
             if (hitObject != null)
             {
-                Debug.Log("Press E to Interact");
-                inRange = true;
+                interact = hitObject;
+                interactText.transform.GetChild(1).GetComponent<TMPro.TMP_Text>().text = interact.infoText;
+                hitObject.inRange();
             }
         }
     }
@@ -33,8 +62,8 @@ public class Player : MonoBehaviour
             Interactable hitObject = collision.gameObject.GetComponent<Interactable>();
             if (hitObject != null)
             {
-                Debug.Log("Out of Range of Interactable Object");
-                inRange = false;
+                interact = null;
+                hitObject.outOfRange();
             }
         }
     }
