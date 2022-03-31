@@ -8,13 +8,22 @@ public class DialogueHelper : MonoBehaviour
     public GameObject character;
     Animator animator;
 
-    public int relationshipProgressEdit;
+    public int relationshipProgressEdit = 0;
     private static int relationshipProgress;
+
+    public int dayEdit = 1;
+    private static int day;
+
+    public string playerNameEdit = "Name";
+    private static string playerName;
 
     void Awake()
     {
         animator = character.GetComponent<Animator>();
+
         relationshipProgress = relationshipProgressEdit;
+        day = dayEdit;
+        playerName = playerNameEdit;
 
     }
 
@@ -34,6 +43,16 @@ public class DialogueHelper : MonoBehaviour
     [YarnFunction("ReturnRelationshipProgress")]
     public static int ReturnRelationshipProgress() {
        return relationshipProgress;
+    }
+
+    [YarnFunction("ReturnDay")]
+    public static int ReturnDay() {
+       return day;
+    }
+
+    [YarnFunction("ReturnPlayerName")]
+    public static string ReturnPlayerName() {
+       return playerName.ToString();
     }
 
 }

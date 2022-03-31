@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4766355329553193229, guid: 91c4ea6cb65bf0b44aa691103f2e0eb5, type: 3}
       propertyPath: m_Name
-      value: Dialogue System
+      value: DialogueSystem
       objectReference: {fileID: 0}
     - target: {fileID: 5205995644730993523, guid: 91c4ea6cb65bf0b44aa691103f2e0eb5, type: 3}
       propertyPath: m_RootOrder
@@ -294,6 +294,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6178868715639050608, guid: 91c4ea6cb65bf0b44aa691103f2e0eb5, type: 3}
+      propertyPath: yarnProject
+      value: 
+      objectReference: {fileID: 7545569452688597077, guid: 0a07f96b743c61943b03f9754d3145b4, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91c4ea6cb65bf0b44aa691103f2e0eb5, type: 3}
 --- !u!1 &623374295 stripped
@@ -314,7 +318,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 815942088}
-  relationshipProgressEdit: 1
+  relationshipProgressEdit: 0
+  dayEdit: 1
+  playerNameEdit: Lillian
 --- !u!1 &815942088
 GameObject:
   m_ObjectHideFlags: 0
