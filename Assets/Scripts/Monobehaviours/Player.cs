@@ -5,7 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //interactable object that player is in range of
-    private SimpleInteract interact;
+    private SimpleInteract simpleInteract;
+    private SceneInteract sceneInteract;
 
     //tracks if player is currently interacting with something
     private bool interacting = false;
@@ -22,21 +23,26 @@ public class Player : MonoBehaviour
     private void Update()
     {
         //if there is an object in range and when the player hits E
-        if(interact != null && Input.GetKeyDown(KeyCode.E))
+        if(simpleInteract != null && Input.GetKeyDown(KeyCode.E))
         {
             //if not currently interacting, interact
             if(!interacting)
             {
-                interact.interact();
+                simpleInteract.interact();
                 interacting = true;
             }
             //if interacting, exit interaction
             else
             {
-                interact.exitInteract();
+                simpleInteract.exitInteract();
                 interacting = false;
             }
         
+        }
+        if (sceneInteract != null && Input.GetKeyDown(KeyCode.E))
+        {
+            sceneInteract.interact();
+
         }
     }
 
@@ -45,12 +51,23 @@ public class Player : MonoBehaviour
         //check if collision is an interactable 
         if (collision.gameObject.CompareTag("Interactable"))
         {
-            SimpleInteract hitObject = collision.gameObject.GetComponent<SimpleInteract>();
+            GameObject hitObject = collision.gameObject;
             if (hitObject != null)
             {
-                interact = hitObject;
-                interactText.transform.GetChild(1).GetComponent<TMPro.TMP_Text>().text = interact.infoText;
-                hitObject.inRange();
+                simpleInteract = hitObject.GetComponent<SimpleInteract>();
+                if(simpleInteract != null)
+                {
+                    simpleInteract.inRange();
+                }
+                else
+                {
+                    sceneInteract = hitObject.GetComponent<SceneInteract>();
+                    if (sceneInteract != null)
+                    {
+                        Debug.Log("hit door");
+                        sceneInteract.inRange();
+                    }
+                }
             }
         }
     }
@@ -62,7 +79,7 @@ public class Player : MonoBehaviour
             Interactable hitObject = collision.gameObject.GetComponent<Interactable>();
             if (hitObject != null)
             {
-                interact = null;
+                simpleInteract = null;
                 hitObject.outOfRange();
             }
         }

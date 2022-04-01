@@ -29,7 +29,7 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
         StartCoroutine(LoadSceneCoRou(sceneToLoadName));
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoadName));
+        
 
     }
 
