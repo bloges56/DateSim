@@ -320,7 +320,7 @@ MonoBehaviour:
   character: {fileID: 815942088}
   relationshipProgressEdit: 0
   dayEdit: 1
-  playerNameEdit: Lillian
+  playerNameEdit: Test name
 --- !u!1 &815942088
 GameObject:
   m_ObjectHideFlags: 0

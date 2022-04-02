@@ -10,7 +10,7 @@ tags:
         Name: okay so now try changing it to 1 and running again
     <<elseif $relationshipStatus == 1>>
         Name: Now we're meeting again
-        Name: there will be other variables soon
+        Name: try setting day to 2, relationship 0 and 1 should work
     << endif>>
 <<elseif $day == 2>>
     <<if $relationshipStatus == 0>>
