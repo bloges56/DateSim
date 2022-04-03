@@ -27,6 +27,7 @@ public class SceneInteract : Interactable
     }
     public override void interact()
     {
+        SceneManager.SetActiveScene(gameObject.scene);
         sceneManager.SingleLoad(sceneName);
     }
 
