@@ -11,6 +11,7 @@ public class SimpleInteract : Interactable
     public override void inRange()
     {
         textCanvas.transform.GetChild(1).GetComponent<TMPro.TMP_Text>().text = infoText;
+        textCanvas.transform.GetChild(0).GetComponent<TMPro.TMP_Text>().text = "Interact (E)";
         textCanvas.transform.GetChild(0).gameObject.SetActive(true);
     }
     public override void outOfRange()

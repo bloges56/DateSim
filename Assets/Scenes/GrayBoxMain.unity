@@ -4953,7 +4953,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.257436, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12173,6 +12173,10 @@ PrefabInstance:
     - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976625993165362870, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: sceneName
+      value: TestSwitch
       objectReference: {fileID: 0}
     - target: {fileID: 8976625993165362870, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
       propertyPath: textCanvas
