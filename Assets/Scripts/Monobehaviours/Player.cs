@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //interactable object that player is in range of
-    private SimpleInteract interact;
+    private Interactable interact;
 
     //tracks if player is currently interacting with something
     private bool interacting = false;
@@ -45,12 +45,11 @@ public class Player : MonoBehaviour
         //check if collision is an interactable 
         if (collision.gameObject.CompareTag("Interactable"))
         {
-            SimpleInteract hitObject = collision.gameObject.GetComponent<SimpleInteract>();
+            GameObject hitObject = collision.gameObject;
             if (hitObject != null)
             {
-                interact = hitObject;
-                interactText.transform.GetChild(1).GetComponent<TMPro.TMP_Text>().text = interact.infoText;
-                hitObject.inRange();
+                interact = hitObject.GetComponent<Interactable>();
+                interact.inRange();
             }
         }
     }
