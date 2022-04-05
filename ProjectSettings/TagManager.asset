@@ -7,6 +7,7 @@ TagManager:
   - Interactable
   - InteractUI
   - InteractInfo
+  - PuzzleBox
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Blocking
-  - 
+  - Ground
   - 
   - 
   - 
