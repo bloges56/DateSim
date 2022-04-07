@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!223 &11772748 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4407196125656397051, guid: 6e9838871286af945a321509fc75297c, type: 3}
+  m_PrefabInstance: {fileID: 214276978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &32724725
 GameObject:
   m_ObjectHideFlags: 0
@@ -4864,6 +4869,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2921965199878279419, guid: 67c7e41b2e3ab2a4fa675d54e1d31d91, type: 3}
   m_PrefabInstance: {fileID: 1471289944}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1471289946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2921965199878279418, guid: 67c7e41b2e3ab2a4fa675d54e1d31d91, type: 3}
+  m_PrefabInstance: {fileID: 1471289944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1471289947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471289946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f78bc8e1e874a34f9bd1b7f4827bd4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  textCanvas: {fileID: 0}
 --- !u!1 &1543839470
 GameObject:
   m_ObjectHideFlags: 0
@@ -5075,6 +5099,10 @@ PrefabInstance:
       propertyPath: infoText
       value: This Is An Object
       objectReference: {fileID: 0}
+    - target: {fileID: 5065794840283521324, guid: 874a5f0cde3f2844b8150e2f659f2214, type: 3}
+      propertyPath: textCanvas
+      value: 
+      objectReference: {fileID: 11772748}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 874a5f0cde3f2844b8150e2f659f2214, type: 3}
 --- !u!1 &2026034646
@@ -12091,3 +12119,68 @@ PolygonCollider2D:
       - {x: -21.1499, y: 10.029026}
       - {x: -21.281155, y: -9.99786}
       - {x: 19.028471, y: -9.88103}
+--- !u!1001 &8976625992686231874
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8976625993165362864, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: m_Name
+      value: SceneSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976625993165362870, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: sceneName
+      value: TestSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 8976625993165362870, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: textCanvas
+      value: 
+      objectReference: {fileID: 11772748}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}

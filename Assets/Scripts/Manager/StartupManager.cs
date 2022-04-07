@@ -10,13 +10,6 @@ public class StartupManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        manager.SingleLoad(SceneToLoad);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneToLoad));
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadSceneAsync(SceneToLoad,LoadSceneMode.Additive);
     }
 }
