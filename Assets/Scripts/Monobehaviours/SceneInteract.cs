@@ -7,13 +7,13 @@ public class SceneInteract : Interactable
 {
     public string sceneName;
     private SceneManagement sceneManager;
-    private GameObject[] sceneManageSceneObj;
+    private GameManager gameManager;
     public Canvas textCanvas;
 
     private void Start()
     {
-        sceneManageSceneObj = SceneManager.GetSceneByName("SceneManager").GetRootGameObjects();
-        sceneManager = sceneManageSceneObj[4].GetComponent<SceneManagement>();
+        sceneManager = Managers.sceneManager;
+        gameManager = Managers.gameManager;
     }
     public override void inRange()
     {
@@ -27,8 +27,8 @@ public class SceneInteract : Interactable
     }
     public override void interact()
     {
-        SceneManager.SetActiveScene(gameObject.scene);
         sceneManager.SingleLoad(sceneName);
+        gameManager.LoadGame();
     }
 
     public override void exitInteract()
