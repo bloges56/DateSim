@@ -7,6 +7,8 @@ public class PuzzleGameManager : MonoBehaviour
     public int buttons = 0;
     public PuzzlePlayer2Move player2;
 
+    public GameObject win;
+
     //public Collider box2;
     //public Collider wall;
 
@@ -36,8 +38,10 @@ public class PuzzleGameManager : MonoBehaviour
         }
 
         if(buttons == 2) {
+            buttons++;
             Time.timeScale = 0;
             Debug.Log("You win!");
+            win.SetActive(true);
         }
     }
 }
