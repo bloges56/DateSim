@@ -5,12 +5,13 @@ using UnityEngine;
 public class PuzzleGameManager : MonoBehaviour
 {   
     public int buttons = 0;
+    private int totalButtons = 2;
     public PuzzlePlayer2Move player2;
 
     public GameObject win;
 
-    //public Collider box2;
-    //public Collider wall;
+    SceneManagement sceneManager;
+    GameManager gameManager;
 
 
     public void buttonUpdate(int update) {
@@ -24,24 +25,27 @@ public class PuzzleGameManager : MonoBehaviour
     {
         player2 = GameObject.Find("Player2").GetComponent<PuzzlePlayer2Move>();
 
-        //box2 = GameObject.Find("box2").GetComponent<Collider>();
-        //wall = GameObject.Find("InvisibleWall").GetComponent<Collider>();
+        sceneManager = Managers.sceneManager;
+        gameManager = Managers.gameManager;
 
-        //Physics.IgnoreCollision(box2, wall, true);
     }
 
     // Update is called once per frame
     void Update()
     {
-       if(buttons == 1) {
+       if(buttons == totalButtons-1) {
             player2.player2AI();
         }
 
-        if(buttons == 2) {
+        if(buttons == totalButtons) {
             buttons++;
             Time.timeScale = 0;
             Debug.Log("You win!");
             win.SetActive(true);
         }
+
+        // if (buttons == 3 && Input.GetKeyDown(KeyCode.E)) {
+        //   sceneManager.StartSceneLoad("GrayBoxMain");//Loading the scene called GrayBoxMain  
+        // }
     }
 }
