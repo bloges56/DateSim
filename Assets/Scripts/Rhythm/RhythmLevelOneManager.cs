@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
- using UnityEngine.UI;
-
+using UnityEngine.UI;
 using TMPro;
 
-public class PuzzleLevelOneManager : MonoBehaviour
+public class RhythmLevelOneManager : MonoBehaviour
 {
-    public int HIGHSCORE = 35;
+    public int ORHighScore = 5;
+    public int HIGHSCORE = 5;
+    public float timeLeft = 20;
     string[] VALIDLETTERS = new string[] {"W","A","S","D"};
-    // static Random rnd;
     public int currScore = 0;
     public bool completed = false;
     private int errLeft = 3;
@@ -19,10 +19,12 @@ public class PuzzleLevelOneManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI curr_score_text;
     [SerializeField] TextMeshProUGUI high_score_text;
     [SerializeField] TextMeshProUGUI err_text;
+    [SerializeField] TextMeshProUGUI time_left_text;
 
     private string highScoreText = "High Score: ";
     private string currScoreText = "Current Score: ";
     private string errLeftText = "Hearts: ";
+    private string timeLeftText = "Time Left: ";
     Image img;
 
     SceneManagement sceneManager;
@@ -30,28 +32,37 @@ public class PuzzleLevelOneManager : MonoBehaviour
 
     public Canvas puzzCanvas;
     public Canvas endCanvas;
+    public Canvas winCanvas;
 
     // Start is called before the first frame update
     void Start()
     {
+        //objects 
         puzzCanvas = GameObject.Find("RhyCanvas").GetComponent<Canvas>();
         endCanvas = GameObject.Find("EndCanvas").GetComponent<Canvas>();
+        winCanvas = GameObject.Find("WinCanvas").GetComponent<Canvas>();
         endCanvas.gameObject.SetActive(false);
+        winCanvas.gameObject.SetActive(false);
 
+        //managers
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager; 
 
+        //text properties
         rhy_text.text = VALIDLETTERS[Random.Range(0,VALIDLETTERS.Length )];
         img =  GameObject.Find("Panel").GetComponent<Image>();
         img.color = UnityEngine.Color.white;
         curr_score_text.text = currScoreText + currScore.ToString();
         high_score_text.text = highScoreText + HIGHSCORE.ToString();
         err_text.text = errLeftText + errLeft.ToString(); 
+        time_left_text.text = timeLeftText + timeLeft.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
+        timeLeft -= Time.deltaTime;
+
         if(Input.GetKeyDown(KeyCode.N)){
             rhy_text.text = NewLetter();
             img.color = UnityEngine.Color.white;
@@ -66,8 +77,10 @@ public class PuzzleLevelOneManager : MonoBehaviour
         }
         high_score_text.text = highScoreText + HIGHSCORE.ToString();
         err_text.text = errLeftText + errLeft.ToString(); 
+        time_left_text.text = timeLeftText + timeLeft.ToString();
 
     }
+
     void PlayGame()
     {
         if(completed){
@@ -77,7 +90,7 @@ public class PuzzleLevelOneManager : MonoBehaviour
 
         }
 
-        if(Input.anyKeyDown && errLeft > 0)
+        if(Input.anyKeyDown && errLeft > 0 && timeLeft>0)
         {
             if(Input.GetKeyDown(KeyCode.W)){
             StartCoroutine(MatchLetter("W"));
@@ -96,14 +109,13 @@ public class PuzzleLevelOneManager : MonoBehaviour
 
             }
         }
-        else if(errLeft < 1)
+        else if(errLeft < 1 || timeLeft <1)
         {
             StartCoroutine(EndGame());
 
         }
         
     }
-
 
     IEnumerator MatchLetter(string letter)
     {
@@ -127,10 +139,18 @@ public class PuzzleLevelOneManager : MonoBehaviour
         return VALIDLETTERS[Random.Range(0,VALIDLETTERS.Length )];
     }
 
+
     IEnumerator EndGame()
     {
         puzzCanvas.gameObject.SetActive(false);
-        endCanvas.gameObject.SetActive(true);
+        if(ORHighScore > currScore)
+        {
+            endCanvas.gameObject.SetActive(true);
+        }
+        else
+        {
+            winCanvas.gameObject.SetActive(true);
+        }
         yield return new WaitForSeconds(2.5f);
         sceneManager.SingleLoad("HomeScreen");
     }
