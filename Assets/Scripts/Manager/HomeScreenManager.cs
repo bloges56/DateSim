@@ -8,6 +8,9 @@ public class HomeScreenManager : MonoBehaviour
     public Button startButton;
     public Button quitButton;
 
+    public bool OverrideStart = false;
+    public string OverrideSceneName;
+
     SceneManagement sceneManager;
     GameManager gameManager;
     // Start is called before the first frame update
@@ -26,8 +29,16 @@ public class HomeScreenManager : MonoBehaviour
     
     void StartGame()
      {
-        sceneManager.StartSceneLoad("GrayBoxMain");
+         if(OverrideStart)
+         {
+             sceneManager.StartSceneLoad(OverrideSceneName);
+         }
+         else
+         {
+            sceneManager.StartSceneLoad("GrayBoxMain");
+         }
         gameManager.LoadGame();
+
      }
      
      void EndGame()
