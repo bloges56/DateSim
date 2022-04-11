@@ -6,11 +6,12 @@ tags:
 <<set $name to ReturnPlayerName() + "">>
 <<if $day == 1>>
     <<if $relationshipStatus == 0>>
-        Name: This is the first time we've met, opening dialogue
-        Name: okay so now try changing it to 1 and running again
+        Tutorial: Hello! Welcome to Date Fight!
+        Tutorial: This is first version of the game so it's kinda rough. 
+        Tutorial: Walk up to objects and press "e" to interact with them.
     <<elseif $relationshipStatus == 1>>
-        Name: Now we're meeting again
-        Name: try setting day to 2, relationship 0 and 1 should work
+        Tutorial: Hello again!
+        Tutorial: I don't have much more to say...
     << endif>>
 <<elseif $day == 2>>
     <<if $relationshipStatus == 0>>
@@ -20,8 +21,9 @@ tags:
         Name: we have talked on day 1 and have a higher relationship
     <<endif>>
 <<endif>>
- Name: player name here {$name}
- <<PlaySadAnim DialogueSystem>>
- Name: playing different animation
- <<StopSadAnim DialogueSystem>>
+
+//     Name: player name {$name}
+//     <<PlaySadAnim DialogueSystem>>
+//     Name: playing different animation
+//     <<StopSadAnim DialogueSystem>>
 ===
