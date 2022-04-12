@@ -7,31 +7,49 @@ public class SimpleInteract : Interactable
 {
     public string infoText;
     public Canvas textCanvas;
+    private GameObject inRangeText;
+    private GameObject interactText;
+    private GameObject exitText;
+
+    private TMPro.TMP_Text info;
+    private TMPro.TMP_Text interactRef;
+
+    private void Start()
+    {
+        inRangeText = textCanvas.transform.GetChild(0).gameObject;
+        interactText = textCanvas.transform.GetChild(1).gameObject;
+        exitText = textCanvas.transform.GetChild(2).gameObject;
+
+        info = interactText.GetComponent<TMPro.TMP_Text>();
+        interactRef = inRangeText.GetComponent<TMPro.TMP_Text>();
+    }
 
     public override void inRange()
     {
-        textCanvas.transform.GetChild(1).GetComponent<TMPro.TMP_Text>().text = infoText;
-        textCanvas.transform.GetChild(0).GetComponent<TMPro.TMP_Text>().text = "Interact (E)";
-        textCanvas.transform.GetChild(0).gameObject.SetActive(true);
+        
+        info.text = infoText;
+        interactRef.text = "Interact (E)";
+        inRangeText.SetActive(true);
     }
     public override void outOfRange()
     {
-        textCanvas.transform.GetChild(0).gameObject.SetActive(false);
-        textCanvas.transform.GetChild(1).gameObject.SetActive(false);
+        inRangeText.SetActive(false);
+        interactText.SetActive(false);
     }
     public override void interact()
     {
-        textCanvas.transform.GetChild(1).gameObject.SetActive(true);
-        textCanvas.transform.GetChild(0).gameObject.SetActive(false);
-        textCanvas.transform.GetChild(2).gameObject.SetActive(true);
+        interactText.SetActive(true);
+        inRangeText.SetActive(false);
+        exitText.SetActive(true);
+
         Time.timeScale = 0f;
     }
 
     public override void exitInteract()
     {
         Time.timeScale = 1f;
-        textCanvas.transform.GetChild(1).gameObject.SetActive(false);
-        textCanvas.transform.GetChild(0).gameObject.SetActive(true);
-        textCanvas.transform.GetChild(2).gameObject.SetActive(false);
+        interactText.SetActive(false);
+        inRangeText.SetActive(true);
+        exitText.SetActive(false);
     }
 }

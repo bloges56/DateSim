@@ -26,7 +26,7 @@ public class HomeScreenManager : MonoBehaviour
     
     void StartGame()
      {
-        sceneManager.StartSceneLoad("GrayBoxMain");
+        sceneManager.StartSceneLoad("Arcade");
         gameManager.LoadGame();
      }
      

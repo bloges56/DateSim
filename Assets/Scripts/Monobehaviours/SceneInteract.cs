@@ -7,28 +7,36 @@ public class SceneInteract : Interactable
 {
     public string sceneName;
     private SceneManagement sceneManager;
-    private GameObject[] sceneManageSceneObj;
+    private GameManager gameManager;
     public Canvas textCanvas;
+    private GameObject inRangeText;
+    private GameObject interactText;
+    private GameObject exitText;
+    private TMPro.TMP_Text tmpInteractText;
 
     private void Start()
     {
-        sceneManageSceneObj = SceneManager.GetSceneByName("SceneManager").GetRootGameObjects();
-        sceneManager = sceneManageSceneObj[4].GetComponent<SceneManagement>();
+        sceneManager = Managers.sceneManager;
+        gameManager = Managers.gameManager;
+        inRangeText = textCanvas.transform.GetChild(0).gameObject;
+        interactText = textCanvas.transform.GetChild(1).gameObject;
+        exitText = textCanvas.transform.GetChild(2).gameObject;
+        tmpInteractText = inRangeText.GetComponent<TMPro.TMP_Text>();
     }
     public override void inRange()
     {
-        textCanvas.transform.GetChild(0).GetComponent<TMPro.TMP_Text>().text = "Go to " + sceneName;
-        textCanvas.transform.GetChild(0).gameObject.SetActive(true);
+        tmpInteractText.text = "Go to " + sceneName;
+        inRangeText.SetActive(true);
     }
     public override void outOfRange()
     {
-        textCanvas.transform.GetChild(0).gameObject.SetActive(false);
-        textCanvas.transform.GetChild(1).gameObject.SetActive(false);
+        inRangeText.SetActive(false);
+        interactText.SetActive(false);
     }
     public override void interact()
     {
-        SceneManager.SetActiveScene(gameObject.scene);
         sceneManager.SingleLoad(sceneName);
+        gameManager.LoadGame();
     }
 
     public override void exitInteract()
