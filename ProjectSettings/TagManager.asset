@@ -8,6 +8,7 @@ TagManager:
   - InteractUI
   - InteractInfo
   - PuzzleBox
+  - Target
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Blocking
-  - Ground
+  - 
+  - 
   - 
   - 
   - 
@@ -44,13 +45,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Ground
-    uniqueID: 1089231351
-    locked: 0
-  - name: Objects
-    uniqueID: 1734782163
-    locked: 0
-  - name: Player
-    uniqueID: 2372711987
     locked: 0
