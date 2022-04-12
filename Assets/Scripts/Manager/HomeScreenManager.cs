@@ -17,16 +17,16 @@ public class HomeScreenManager : MonoBehaviour
     void Start()
     {
         startButton = GameObject.Find("Start-Button").GetComponent<Button>();
-        quitButton = GameObject.Find("Exit-Button").GetComponent<Button>();  
+        quitButton = GameObject.Find("Exit-Button").GetComponent<Button>();
 
         startButton.onClick.AddListener(StartGame);
         quitButton.onClick.AddListener(EndGame);
-        
+
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager;
     }
 
-    
+
     void StartGame()
      {
          if(OverrideStart)
@@ -40,7 +40,7 @@ public class HomeScreenManager : MonoBehaviour
         gameManager.LoadGame();
 
      }
-     
+
      void EndGame()
      {
          Debug.Log("Ending Game...");

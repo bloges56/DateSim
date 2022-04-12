@@ -18,6 +18,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TestSwitch.unity
     guid: 53acb245ef796d64fac4c233209faa96
   - enabled: 1
-    path: Assets/Scenes/RhythmLevelOne.unity
-    guid: cc4e501c8b286914ba54e06f5a1fc543
+    path: Assets/Scenes/Arcade.unity
+    guid: a3f3793f0781e704691d0f4838d79a03
   m_configObjects: {}
