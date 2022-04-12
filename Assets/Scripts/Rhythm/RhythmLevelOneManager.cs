@@ -34,6 +34,8 @@ public class RhythmLevelOneManager : MonoBehaviour
     public Canvas endCanvas;
     public Canvas winCanvas;
 
+    private bool loaded = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +58,8 @@ public class RhythmLevelOneManager : MonoBehaviour
         high_score_text.text = highScoreText + HIGHSCORE.ToString();
         err_text.text = errLeftText + errLeft.ToString(); 
         time_left_text.text = timeLeftText + timeLeft.ToString();
+
+    
     }
 
     // Update is called once per frame
@@ -152,6 +156,10 @@ public class RhythmLevelOneManager : MonoBehaviour
             winCanvas.gameObject.SetActive(true);
         }
         yield return new WaitForSeconds(2.5f);
-        sceneManager.SingleLoad("HomeScreen");
+        if(!loaded)
+        {
+            sceneManager.SingleLoad("HomeScreen");
+            loaded = true;
+        }
     }
 }
