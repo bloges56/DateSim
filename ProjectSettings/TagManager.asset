@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Interactable
+  - InteractUI
+  - InteractInfo
+  - PuzzleBox
+  - Target
   layers:
   - Default
   - TransparentFX
