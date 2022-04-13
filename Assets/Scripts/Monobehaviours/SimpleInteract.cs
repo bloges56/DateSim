@@ -6,36 +6,24 @@ using TMPro;
 public class SimpleInteract : Interactable
 {
     public string infoText;
-    public Canvas textCanvas;
-    private GameObject inRangeText;
-    private GameObject interactText;
-    private GameObject exitText;
-
+    
     private TMPro.TMP_Text info;
-    private TMPro.TMP_Text interactRef;
+   
 
-    private void Start()
+    private void Start()  
     {
-        inRangeText = textCanvas.transform.GetChild(0).gameObject;
-        interactText = textCanvas.transform.GetChild(1).gameObject;
-        exitText = textCanvas.transform.GetChild(2).gameObject;
-
+        setup();
         info = interactText.GetComponent<TMPro.TMP_Text>();
-        interactRef = inRangeText.GetComponent<TMPro.TMP_Text>();
     }
 
     public override void inRange()
     {
         
         info.text = infoText;
-        interactRef.text = "Interact (E)";
-        inRangeText.SetActive(true);
+        tmpInteractText.text = "Interact (E)";
+        base.inRange();
     }
-    public override void outOfRange()
-    {
-        inRangeText.SetActive(false);
-        interactText.SetActive(false);
-    }
+ 
     public override void interact()
     {
         interactText.SetActive(true);
@@ -45,11 +33,5 @@ public class SimpleInteract : Interactable
         Time.timeScale = 0f;
     }
 
-    public override void exitInteract()
-    {
-        Time.timeScale = 1f;
-        interactText.SetActive(false);
-        inRangeText.SetActive(true);
-        exitText.SetActive(false);
-    }
+    
 }
