@@ -557,7 +557,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1089231351
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -4869,25 +4869,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2921965199878279419, guid: 67c7e41b2e3ab2a4fa675d54e1d31d91, type: 3}
   m_PrefabInstance: {fileID: 1471289944}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1471289946 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2921965199878279418, guid: 67c7e41b2e3ab2a4fa675d54e1d31d91, type: 3}
-  m_PrefabInstance: {fileID: 1471289944}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1471289947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471289946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f78bc8e1e874a34f9bd1b7f4827bd4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: 
-  textCanvas: {fileID: 0}
 --- !u!1 &1543839470
 GameObject:
   m_ObjectHideFlags: 0
@@ -4953,7 +4934,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.257436, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5178,7 +5159,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1089231351
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}

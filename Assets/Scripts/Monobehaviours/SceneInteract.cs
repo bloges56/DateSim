@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class SceneInteract : Interactable
 {
+    public string interactableName;
     public string sceneName;
     private SceneManagement sceneManager;
     private GameManager gameManager;
@@ -13,6 +15,7 @@ public class SceneInteract : Interactable
     private GameObject interactText;
     private GameObject exitText;
     private TMPro.TMP_Text tmpInteractText;
+
 
     private void Start()
     {
