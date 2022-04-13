@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8976625993165362868}
   - component: {fileID: 8976625993165362871}
-  - component: {fileID: 8976625993165362870}
   - component: {fileID: 8976625993165362865}
+  - component: {fileID: -6958962219925663915}
   m_Layer: 0
   m_Name: SceneSwitch
   m_TagString: Interactable
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1734782163
+  m_SortingLayerID: 1934830643
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
@@ -86,19 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8976625993165362870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8976625993165362864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f78bc8e1e874a34f9bd1b7f4827bd4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: HomeScreen
 --- !u!61 &8976625993165362865
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125,3 +112,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &-6958962219925663915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8976625993165362864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f78bc8e1e874a34f9bd1b7f4827bd4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableName: Template
+  sceneName: 
+  textCanvas: {fileID: 0}
