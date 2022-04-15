@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ShooterManager : MonoBehaviour
 {
@@ -14,6 +16,9 @@ public class ShooterManager : MonoBehaviour
     public TMPro.TMP_Text timeText;
     public GameObject loseCanvas;
     public GameObject winCanvas;
+    public GameObject buttonOptions;
+    private GameObject winButton;
+    private GameObject loseButton;
     private int score = 0;
     [SerializeField] float gameTime = 60f;
     [SerializeField] int winScore = 5;
@@ -25,6 +30,18 @@ public class ShooterManager : MonoBehaviour
         startRange = spawn.transform.position.x - (spawn.transform.localScale.x / 2);
         endRange = spawn.transform.position.x + (spawn.transform.localScale.x / 2);
         timeText.text = gameTime.ToString();
+        buttonOptions.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(Reload);
+        buttonOptions.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(Quit);
+    }
+
+    void Reload()
+    {
+        Managers.sceneManager.SingleLoad("Shooter");
+    }
+
+    void Quit()
+    {
+        Managers.sceneManager.SingleLoad("Arcade");
     }
 
     // Update is called once per frame
@@ -34,6 +51,7 @@ public class ShooterManager : MonoBehaviour
         if(!gameOver && gameTime <= 0)
         {
             loseCanvas.SetActive(true);
+            buttonOptions.SetActive(true);
             gameOver = true;
 
         }
@@ -64,6 +82,7 @@ public class ShooterManager : MonoBehaviour
                     if(score == winScore)
                     {
                         winCanvas.SetActive(true);
+                        buttonOptions.SetActive(true);
                         gameOver = true;
                     }
                 }
