@@ -4,23 +4,39 @@ tags:
 <<set $relationshipStatus to ReturnRelationshipProgress()>>
 <<set $day to ReturnDay()>>
 <<set $name to ReturnPlayerName() + "">>
-<<if $day == 1>>
-    <<if $relationshipStatus == 0>>
-        Tutorial: Hello! Welcome to Date Fight!
-        Tutorial: This is first version of the game so it's kinda rough. 
-        Tutorial: Walk up to objects and press "e" to interact with them.
-    <<elseif $relationshipStatus == 1>>
-        Tutorial: Hello again!
-        Tutorial: I don't have much more to say...
-    << endif>>
-<<elseif $day == 2>>
-    <<if $relationshipStatus == 0>>
-        Name: hey I've seen you around but not talked to you
-        Name: day 2, relationship 0
-    <<elseif $relationshipStatus == 1>>
-        Name: we have talked on day 1 and have a higher relationship
+<<set $character to ReturnActiveCharacter() + "">>
+
+
+<<if $character == "Deon">> //DEON
+    <<if $day == 1>> 
+        <<if $relationshipProgress == 0>>
+            Deon: test
+            Deon: testing
+        <<endif>>
     <<endif>>
 <<endif>>
+
+// <<if $character == 1>> //REMMINGTON
+
+// <<endif>>
+
+// <<if $day == 1>>
+//     <<if $relationshipStatus == 0>>
+//         Tutorial: Hello! Welcome to Date Fight!
+//         Tutorial: This is first version of the game so it's kinda rough. 
+//         Tutorial: Walk up to objects and press "e" to interact with them.
+//     <<elseif $relationshipStatus == 1>>
+//         Tutorial: Hello again!
+//         Tutorial: I don't have much more to say...
+//     << endif>>
+// <<elseif $day == 2>>
+//     <<if $relationshipStatus == 0>>
+//         Name: hey I've seen you around but not talked to you
+//         Name: day 2, relationship 0
+//     <<elseif $relationshipStatus == 1>>
+//         Name: we have talked on day 1 and have a higher relationship
+//     <<endif>>
+// <<endif>>
 
 //     Name: player name {$name}
 //     <<PlaySadAnim DialogueSystem>>
