@@ -40,15 +40,16 @@ public class DialogueHelper : MonoBehaviour
         activeCharacter = dialogueManager.activeCharacter;
 
         diaSceneObj = SceneManager.GetSceneByName("Dialogue").GetRootGameObjects();
-        character = diaSceneObj[0];
 
         if(activeCharacter == "Deon") {
+            character = diaSceneObj[0];
             Debug.Log("Deon active");
             dialogueManager.activeDialogue = dialogueManager.Deon;
             character.SetActive(true);
-        } else if (activeCharacter == "Remmington") {
-            Debug.Log("Remmington active");
-            dialogueManager.activeDialogue = dialogueManager.Remmington;
+        } else if (activeCharacter == "Remington") {
+            character = diaSceneObj[1];
+            Debug.Log("Remington active");
+            dialogueManager.activeDialogue = dialogueManager.Remington;
             character.SetActive(true);
         }
     }

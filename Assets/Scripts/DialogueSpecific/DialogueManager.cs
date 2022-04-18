@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
 
     public string activeCharacter;
     public DialogueCharacter Deon;
-    public DialogueCharacter Remmington;
+    public DialogueCharacter Remington;
     public DialogueCharacter activeDialogue;
 
     public void changeRelationship(DialogueCharacter character, int change) {
@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         Deon = new DialogueCharacter("Deon", 0);
-        Remmington = new DialogueCharacter("Remmington", 0);
+        Remington = new DialogueCharacter("Remington", 0);
     }
 
     // Update is called once per frame

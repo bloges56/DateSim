@@ -15,6 +15,14 @@ tags:
         <<endif>>
     <<endif>>
 <<endif>>
+<<if $character == "Remington">> //DEON
+    <<if $day == 1>> 
+        <<if $relationshipProgress == 0>>
+            Remington: remington test
+            Remington: remington testing
+        <<endif>>
+    <<endif>>
+<<endif>>
  : Press "E" to exit
 
 // <<if $character == 1>> //REMMINGTON
