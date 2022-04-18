@@ -62,4 +62,10 @@ public class SceneManagement : MonoBehaviour
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("HomeScreen"));
         SceneManager.LoadSceneAsync(sceneToLoadName,LoadSceneMode.Additive);
     }
+
+    public void DiaSceneLoad(string sceneToLoadName)
+    {
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("Dialogue"));
+        SceneManager.LoadSceneAsync(sceneToLoadName,LoadSceneMode.Additive);
+    }
 }

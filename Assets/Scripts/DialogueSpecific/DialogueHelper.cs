@@ -30,6 +30,7 @@ public class DialogueHelper : MonoBehaviour
         activeCharacter = charName;
     }
 
+
     void Awake()
     {
         day = dayEdit;
@@ -44,6 +45,10 @@ public class DialogueHelper : MonoBehaviour
         if(activeCharacter == "Deon") {
             Debug.Log("Deon active");
             dialogueManager.activeDialogue = dialogueManager.Deon;
+            character.SetActive(true);
+        } else if (activeCharacter == "Remmington") {
+            Debug.Log("Remmington active");
+            dialogueManager.activeDialogue = dialogueManager.Remmington;
             character.SetActive(true);
         }
     }
