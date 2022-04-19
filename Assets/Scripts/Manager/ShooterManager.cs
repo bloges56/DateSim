@@ -16,6 +16,8 @@ public class ShooterManager : MonoBehaviour
     public GameObject winCanvas;
     public GameObject buttonOptions;
     public GameObject instuctions;
+    public AudioSource audioSource;
+    public AudioClip destoryTarget;
 
     private float trackerTime;
     private float startRange;
@@ -103,6 +105,7 @@ public class ShooterManager : MonoBehaviour
             {
                 if (hit.transform.tag == "Target")
                 {
+                    audioSource.PlayOneShot(destoryTarget);
                     Destroy(hit.transform.gameObject);
                     score += 1;
                     scoreText.text = score.ToString();
