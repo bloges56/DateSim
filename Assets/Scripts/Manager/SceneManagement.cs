@@ -68,4 +68,12 @@ public class SceneManagement : MonoBehaviour
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("Dialogue"));
         SceneManager.LoadSceneAsync(sceneToLoadName,LoadSceneMode.Additive);
     }
+
+    public void PuzzleSceneLoad(string sceneToLoadName)
+    {
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("PuzzleLevel1"));
+        SceneManager.LoadSceneAsync(sceneToLoadName,LoadSceneMode.Additive);
+    }
+
+    
 }

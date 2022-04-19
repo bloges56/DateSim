@@ -69,6 +69,7 @@ public class DialogueHelper : MonoBehaviour
     //yarn functions
     [YarnFunction("ReturnRelationshipProgress")]
     public static int ReturnRelationshipProgress() {
+        Debug.Log(dialogueManager.activeDialogue.relationshipProgress);
        return dialogueManager.activeDialogue.relationshipProgress;
     }
 
