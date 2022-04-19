@@ -9,20 +9,26 @@ public class ShooterManager : MonoBehaviour
     public GameObject spawn;
     public GameObject target;
     [SerializeField] float spawnTime;
-    private float trackerTime;
-    private float startRange;
-    private float endRange;
+    
     public TMPro.TMP_Text scoreText;
     public TMPro.TMP_Text timeText;
     public GameObject loseCanvas;
     public GameObject winCanvas;
     public GameObject buttonOptions;
+    public GameObject instuctions;
+
+    private float trackerTime;
+    private float startRange;
+    private float endRange;
     private GameObject winButton;
     private GameObject loseButton;
     private int score = 0;
     [SerializeField] float gameTime = 60f;
     [SerializeField] int winScore = 5;
     private bool gameOver = false;
+    private float elapsedTime = 0f;
+
+    private bool paused = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +53,20 @@ public class ShooterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameTime -= Time.deltaTime;
+        if(!paused)
+        {
+            gameTime -= Time.deltaTime;
+        }
+        else
+        {
+            elapsedTime += Time.deltaTime;
+        }
+        
+        if(elapsedTime >= 3f)
+        {
+            paused = false;
+            instuctions.SetActive(false);
+        }
         if(!gameOver && gameTime <= 0)
         {
             loseCanvas.SetActive(true);
@@ -62,7 +81,7 @@ public class ShooterManager : MonoBehaviour
         }
 
         trackerTime -= Time.deltaTime;
-        if(trackerTime <= 0f)
+        if(!paused && trackerTime <= 0f)
         {
             Vector3 spawnPoint = new Vector3(Random.Range(startRange, endRange), spawn.transform.position.y, 0f);
             Instantiate(target, spawnPoint, Quaternion.identity);
