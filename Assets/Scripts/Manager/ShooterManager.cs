@@ -29,6 +29,7 @@ public class ShooterManager : MonoBehaviour
     private float elapsedTime = 0f;
 
     private bool paused = true;
+    private bool win = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,7 +70,14 @@ public class ShooterManager : MonoBehaviour
         }
         if(!gameOver && gameTime <= 0)
         {
-            loseCanvas.SetActive(true);
+            if (win)
+            {
+                winCanvas.SetActive(true);
+            }
+            else
+            {
+                loseCanvas.SetActive(true);
+            }
             buttonOptions.SetActive(true);
             gameOver = true;
 
@@ -100,9 +108,8 @@ public class ShooterManager : MonoBehaviour
                     scoreText.text = score.ToString();
                     if(score == winScore)
                     {
-                        winCanvas.SetActive(true);
-                        buttonOptions.SetActive(true);
-                        gameOver = true;
+                        win = true;
+                        scoreText.color = Color.green;
                     }
                 }
             }
