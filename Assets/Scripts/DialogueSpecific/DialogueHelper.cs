@@ -46,10 +46,15 @@ public class DialogueHelper : MonoBehaviour
             Debug.Log("Deon active");
             dialogueManager.activeDialogue = dialogueManager.Deon;
             character.SetActive(true);
-        } else if (activeCharacter == "Remington") {
+        } if (activeCharacter == "Remington") {
             character = diaSceneObj[1];
             Debug.Log("Remington active");
             dialogueManager.activeDialogue = dialogueManager.Remington;
+            character.SetActive(true);
+        } else if (activeCharacter == "Claire") {
+            character = diaSceneObj[2];
+            Debug.Log("Claire active");
+            dialogueManager.activeDialogue = dialogueManager.Claire;
             character.SetActive(true);
         }
     }

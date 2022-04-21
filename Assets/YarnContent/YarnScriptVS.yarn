@@ -28,7 +28,7 @@ tags:
         <<endif>>
     <<endif>>
 <<endif>>
-<<if $character == "Remington">> //DEON
+<<if $character == "Remington">> //REMINGTON
     <<if $day == 1>> 
         <<if $relationshipStatus == 0>>
             Remington: You're the new person everyone's been talking about, huh?
@@ -48,6 +48,10 @@ tags:
             Remington: You won!
         <<endif>>
     <<endif>>
+<<endif>>
+<<if $character == "Claire">> //CLAIRE
+    Claire: test
+    Claire: testing 
 <<endif>>
  : Press "E" to exit
 
