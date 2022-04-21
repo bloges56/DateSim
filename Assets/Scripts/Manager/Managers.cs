@@ -11,6 +11,7 @@ public class Managers : MonoBehaviour
 
     static public SceneManagement sceneManager;
     static public GameManager gameManager;
+    static public DialogueManager dialogueManager;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class Managers : MonoBehaviour
         sceneMangeSceneObj = SceneManager.GetSceneByName("SceneManagerScene").GetRootGameObjects();
         sceneManager = sceneMangeSceneObj[0].GetComponent<SceneManagement>();
         gameManager = sceneMangeSceneObj[1].GetComponent<GameManager>();
+        dialogueManager = sceneMangeSceneObj[2].GetComponent<DialogueManager>();
     }
 
     // Update is called once per frame

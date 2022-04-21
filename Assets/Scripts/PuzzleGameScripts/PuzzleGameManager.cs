@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PuzzleGameManager : MonoBehaviour
 {   
     public int buttons = 0;
     private int totalButtons = 2;
     public PuzzlePlayer2Move player2;
+    static DialogueManager dialogueManager;
+
+    
 
     public GameObject win;
 
@@ -14,9 +18,6 @@ public class PuzzleGameManager : MonoBehaviour
     GameManager gameManager;
 
 
-    public void buttonUpdate(int update) {
-        buttons += update;
-    }
 
 
 
@@ -24,11 +25,13 @@ public class PuzzleGameManager : MonoBehaviour
     void Start()
     {
         player2 = GameObject.Find("Player2").GetComponent<PuzzlePlayer2Move>();
-
+        dialogueManager = Managers.dialogueManager;
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager;
 
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -39,13 +42,12 @@ public class PuzzleGameManager : MonoBehaviour
 
         if(buttons == totalButtons) {
             buttons++;
-            Time.timeScale = 0;
             Debug.Log("You win!");
+            dialogueManager.Deon.relationshipProgress += 1;
+            Debug.Log(dialogueManager.Deon.relationshipProgress);
             win.SetActive(true);
         }
 
-        // if (buttons == 3 && Input.GetKeyDown(KeyCode.E)) {
-        //   sceneManager.StartSceneLoad("GrayBoxMain");//Loading the scene called GrayBoxMain  
-        // }
+        
     }
 }

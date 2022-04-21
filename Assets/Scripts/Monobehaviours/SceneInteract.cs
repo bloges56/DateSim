@@ -11,12 +11,14 @@ public class SceneInteract : Interactable
 
     private SceneManagement sceneManager;
     private GameManager gameManager;
+    private DialogueManager dialogueManager;
 
     private void Start()
     {
         setup();
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager;
+        dialogueManager = Managers.dialogueManager;
     }
     public override void inRange()
     {
@@ -27,7 +29,8 @@ public class SceneInteract : Interactable
     }
     
     public override void interact()
-    {
+    {   
+        dialogueManager.activeCharacter = gameObject.name;
         sceneManager.SingleLoad(sceneName);
         gameManager.LoadGame();
     }
