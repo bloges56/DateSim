@@ -51,7 +51,7 @@ public class PuzzleGameManager : MonoBehaviour
         if(buttons == totalButtons) {
             buttons++;
             Debug.Log("You win!");
-            dialogueManager.Deon.relationshipProgress += 1;
+            dialogueManager.Deon.relationshipProgress = 1;
             Debug.Log(dialogueManager.Deon.relationshipProgress);
             win.SetActive(true);
         }

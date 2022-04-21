@@ -29,6 +29,7 @@ public class RhythmLevelOneManager : MonoBehaviour
 
     SceneManagement sceneManager;
     GameManager gameManager;
+    static DialogueManager dialogueManager;
 
     public Canvas puzzCanvas;
     public Canvas endCanvas;
@@ -49,6 +50,7 @@ public class RhythmLevelOneManager : MonoBehaviour
         //managers
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager; 
+        dialogueManager = Managers.dialogueManager;
 
         //text properties
         rhy_text.text = VALIDLETTERS[Random.Range(0,VALIDLETTERS.Length )];
@@ -148,11 +150,13 @@ public class RhythmLevelOneManager : MonoBehaviour
     {
         puzzCanvas.gameObject.SetActive(false);
         if(ORHighScore > currScore)
-        {
+        {   
+            dialogueManager.Remington.relationshipProgress = -1;
             endCanvas.gameObject.SetActive(true);
         }
         else
         {
+            dialogueManager.Remington.relationshipProgress = 1;
             winCanvas.gameObject.SetActive(true);
         }
         yield return new WaitForSeconds(2.5f);
