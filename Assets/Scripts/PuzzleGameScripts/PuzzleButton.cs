@@ -9,16 +9,14 @@ public class PuzzleButton : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D box) {
         if(box.gameObject.tag == "PuzzleBox") {
-            manager.buttonUpdate(1);
+            manager.buttons+=1;
             
             Debug.Log("Button pressed: " + manager.buttons);
         }
         if(manager.buttons == 1) {
             player2.player2AI();
         }
-        if(manager.buttons == 2) {
-            Time.timeScale = 0;
-        }
+    
     }
 
     // void OnTriggerExit2D(Collider2D box) {
