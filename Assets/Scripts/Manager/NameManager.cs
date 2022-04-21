@@ -18,16 +18,18 @@ public class NameManager : MonoBehaviour
     SceneManagement sceneManager;
     GameManager gameManager;
 
-    public bool askForName = false;
+    public bool askForName = true;
     public bool setName = false;
     // Start is called before the first frame update
+
     void Start()
     {  
         doneButton = GameObject.Find("DoneButton").GetComponent<Button>();
         inputCanvas = GameObject.Find("NameEnter").GetComponent<Canvas>();
-        diaText = GameObject.Find("DialogueSystem");
-        inputCanvas.gameObject.SetActive(false); 
-        diaText.gameObject.SetActive(!askForName);
+        // diaText = GameObject.Find("DialogueSystem");
+
+        inputCanvas.gameObject.SetActive(askForName); 
+        // diaText.gameObject.SetActive(!askForName);
 
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager; 
@@ -39,8 +41,7 @@ public class NameManager : MonoBehaviour
     void Update()
     {
         inputCanvas.gameObject.SetActive(askForName);
-        diaText.gameObject.SetActive(!askForName);
-
+        // diaText.gameObject.SetActive(!askForName);
 
         if(Input.GetKeyDown(KeyCode.Period)){
             askForName = !askForName;
@@ -54,6 +55,7 @@ public class NameManager : MonoBehaviour
             gameManager.SetName(charName.text);
             askForName = false;
             setName = true;
+            DoneName();
         }
     }
 
