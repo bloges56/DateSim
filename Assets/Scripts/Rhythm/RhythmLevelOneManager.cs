@@ -13,9 +13,13 @@ public class RhythmLevelOneManager : MonoBehaviour
     public int currScore = 0;
     public bool completed = false;
     private int errLeft = 3;
+    public float waitTime = 0.01f;
+    
+    public TextMeshPro[] ObjInst = new TextMeshPro[4];
 
+    private TextMeshPro toInst;
 
-    [SerializeField] TextMeshProUGUI rhy_text;
+    [SerializeField] TextMeshPro rhy_text;
     [SerializeField] TextMeshProUGUI curr_score_text;
     [SerializeField] TextMeshProUGUI high_score_text;
     [SerializeField] TextMeshProUGUI err_text;
@@ -51,9 +55,12 @@ public class RhythmLevelOneManager : MonoBehaviour
         gameManager = Managers.gameManager; 
 
         //text properties
-        rhy_text.text = VALIDLETTERS[Random.Range(0,VALIDLETTERS.Length )];
-        img =  GameObject.Find("Panel").GetComponent<Image>();
-        img.color = UnityEngine.Color.white;
+
+        toInst = ObjInst[Random.Range(0,VALIDLETTERS.Length)];
+        rhy_text = Instantiate(toInst);
+        rhy_text.color = UnityEngine.Color.white;
+        // img =  GameObject.Find("Panel").GetComponent<Image>();
+        // img.color = UnityEngine.Color.white;
         curr_score_text.text = currScoreText + currScore.ToString();
         high_score_text.text = highScoreText + HIGHSCORE.ToString();
         err_text.text = errLeftText + errLeft.ToString(); 
@@ -68,8 +75,9 @@ public class RhythmLevelOneManager : MonoBehaviour
         timeLeft -= Time.deltaTime;
 
         if(Input.GetKeyDown(KeyCode.N)){
-            rhy_text.text = NewLetter();
-            img.color = UnityEngine.Color.white;
+            toInst = NewLetter();
+            rhy_text=Instantiate(toInst);
+            rhy_text.color = UnityEngine.Color.white;
         }
         
         // StartCoroutine(PlayGame());
@@ -88,8 +96,10 @@ public class RhythmLevelOneManager : MonoBehaviour
     void PlayGame()
     {
         if(completed){
-            rhy_text.text = NewLetter();
-            img.color = UnityEngine.Color.white;
+            Destroy(rhy_text.gameObject);
+            toInst = NewLetter();
+            rhy_text = Instantiate(toInst);
+            rhy_text.color = UnityEngine.Color.white;
             completed = false;
 
         }
@@ -124,23 +134,23 @@ public class RhythmLevelOneManager : MonoBehaviour
     IEnumerator MatchLetter(string letter)
     {
         if(rhy_text.text == letter){
-            img.color = UnityEngine.Color.green;
+            rhy_text.color = UnityEngine.Color.green;
             currScore ++;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(waitTime);
             completed = true;
         }
         else{
-            img.color = UnityEngine.Color.red;
-            yield return new WaitForSeconds(0.5f);
+            rhy_text.color = UnityEngine.Color.red;
+            yield return new WaitForSeconds(waitTime);
             errLeft --;
             completed = true;
         }
 
     }
 
-    private string NewLetter()
+    private TextMeshPro NewLetter()
     {
-        return VALIDLETTERS[Random.Range(0,VALIDLETTERS.Length )];
+        return ObjInst[Random.Range(0,VALIDLETTERS.Length)];
     }
 
 

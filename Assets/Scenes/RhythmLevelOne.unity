@@ -445,7 +445,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 94.3
+  m_fontSize: 67.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -541,7 +541,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674460595}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9b3c3b9a147f34acca726eb40e4ecef0, type: 2}
   m_CullingMode: 0
@@ -735,7 +735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1279938361
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1599,7 +1599,12 @@ MonoBehaviour:
   timeLeft: 20
   currScore: 0
   completed: 0
-  rhy_text: {fileID: 1715987458}
+  ObjInst:
+  - {fileID: 4675144035860768484, guid: fba8a1087f2ee4dc08ca6acd2944a095, type: 3}
+  - {fileID: -6275339361152610581, guid: 54f9873a7ee684d2cb709658ecc2533b, type: 3}
+  - {fileID: -5831957805358855290, guid: 512bbaa3b0e6a4b2e834812565e38330, type: 3}
+  - {fileID: -8718890850690385740, guid: 61d9337dccb5e4045b345f108470259d, type: 3}
+  rhy_text: {fileID: 0}
   curr_score_text: {fileID: 1552853640}
   high_score_text: {fileID: 137612486}
   err_text: {fileID: 2027103149}
@@ -1813,7 +1818,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 195.9
+  m_fontSize: 140.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

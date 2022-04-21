@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -94,6 +94,18 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1122,7 +1134,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      OutdoorsGround_25: 1360311909
+      OutdoorsGround_9: 244282989
       OutdoorsGround_14: -1212403244
       OutdoorsGround_8: -192344477
       OutdoorsGround_12: -1491452268
@@ -1161,15 +1173,15 @@ TextureImporter:
       OutdoorsGround_27: -804094892
       OutdoorsGround_13: -385943018
       OutdoorsGround_26: -2089972373
-      OutdoorsGround_11: -1431410876
       OutdoorsGround_24: 1800647182
+      OutdoorsGround_11: -1431410876
       OutdoorsGround_17: 963211584
       OutdoorsGround_46: 1582629907
       OutdoorsGround_34: 153117581
       OutdoorsGround_10: -310631479
       OutdoorsGround_21: 341198726
       OutdoorsGround_6: -565743463
-      OutdoorsGround_9: 244282989
+      OutdoorsGround_25: 1360311909
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
