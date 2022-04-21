@@ -19,6 +19,9 @@ public class ShooterManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip destoryTarget;
     public GameObject explosion;
+    public Texture2D cursorTexture;
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
 
     private float trackerTime;
     private float startRange;
@@ -42,6 +45,14 @@ public class ShooterManager : MonoBehaviour
         timeText.text = gameTime.ToString();
         buttonOptions.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(Reload);
         buttonOptions.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(Quit);
+    }
+
+    private void OnMouseEnter()
+    {
+        if(!gameOver)
+        {
+            Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+        }
     }
 
     void Reload()
@@ -83,6 +94,7 @@ public class ShooterManager : MonoBehaviour
             }
             buttonOptions.SetActive(true);
             gameOver = true;
+            Cursor.SetCursor(null, Vector2.zero, cursorMode);
 
         }
 
