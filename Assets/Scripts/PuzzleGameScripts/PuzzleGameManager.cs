@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class PuzzleGameManager : MonoBehaviour
 {   
     public int buttons = 0;
-    private int totalButtons = 2;
+    private int totalButtons = 3;
     public PuzzlePlayer2Move player2;
     static DialogueManager dialogueManager;
+    public GameObject instructions;
 
     
 
@@ -16,6 +17,11 @@ public class PuzzleGameManager : MonoBehaviour
 
     SceneManagement sceneManager;
     GameManager gameManager;
+
+    IEnumerator hideInstructions (GameObject guiParentCanvas, float secondsToWait,bool show = false) {
+        yield return new WaitForSeconds(secondsToWait);
+        guiParentCanvas.SetActive(show);
+    }
 
 
 
@@ -25,6 +31,8 @@ public class PuzzleGameManager : MonoBehaviour
     void Start()
     {
         player2 = GameObject.Find("Player2").GetComponent<PuzzlePlayer2Move>();
+        instructions = GameObject.Find("Instructions");
+        StartCoroutine (hideInstructions(instructions, 3.5f));
         dialogueManager = Managers.dialogueManager;
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager;
