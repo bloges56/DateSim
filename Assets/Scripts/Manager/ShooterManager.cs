@@ -119,7 +119,7 @@ public class ShooterManager : MonoBehaviour
                 if (hit.transform.tag == "Target")
                 {
                     audioSource.PlayOneShot(destoryTarget);
-                    Instantiate(explosion, hit.transform.position, Quaternion.identity);
+                    Instantiate(explosion, new Vector3(hit.transform.position.x, hit.transform.position.y, -10), Quaternion.identity);
                     Destroy(hit.transform.gameObject);
                     score += 1;
                     scoreText.text = score.ToString();
