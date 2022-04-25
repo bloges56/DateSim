@@ -10,18 +10,18 @@ public class RhythmLevelOneManager : MonoBehaviour
 {
     public int ORHighScore = 5;
     public int HIGHSCORE = 5;
-    public float timeLeft = 20;
+    private float timeLeft = 60;
     string[] VALIDLETTERS = new string[] {"W","A","S","D"};
     public int currScore = 0;
     public bool completed = false;
-    private int errLeft = 3;
+    private int errLeft = 10;
     public float waitTime = 0.01f;
     
     public TextMeshPro[] ObjInst = new TextMeshPro[4];
 
     private TextMeshPro toInst;
 
-    [SerializeField] TextMeshPro rhy_text;
+    private TextMeshPro rhy_text;
     [SerializeField] TextMeshProUGUI curr_score_text;
     [SerializeField] TextMeshProUGUI high_score_text;
     [SerializeField] TextMeshProUGUI err_text;
@@ -44,10 +44,15 @@ public class RhythmLevelOneManager : MonoBehaviour
     CollectionSystem collectionSyst;
     GameObject colObj;
 
+    [SerializeField] GameObject TutorialObj;
+    GameObject tutObjectInst;
+    Button startButton;
 
 
     private bool loaded = false;
     public static bool destroyObj = false;
+    private bool startGame = false;
+    private bool loadedGame = false;
     // private bool play = false;
 
     // Start is called before the first frame update
@@ -64,54 +69,62 @@ public class RhythmLevelOneManager : MonoBehaviour
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager; 
 
+        if(!startGame)
+        {
+            tutObjectInst = Instantiate(TutorialObj);
+            startButton = GameObject.Find("Tut-Start-Button").GetComponent<Button>();
+            startButton.onClick.AddListener(StartGame);
+            if(Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return)){
+                StartGame();
+            }
+        }
+
+
+
+    }
+
+    void StartGame()
+    {
         colObj = Instantiate(collectionObj);
         collectionSyst = colObj.GetComponent<CollectionSystem>();
 
-        //text properties
 
+        //text properties
         toInst = ObjInst[Random.Range(0,VALIDLETTERS.Length)];
         rhy_text = Instantiate(toInst);
         rhy_text.color = UnityEngine.Color.black;
-        // img =  GameObject.Find("Panel").GetComponent<Image>();
-        // img.color = UnityEngine.Color.white;
         curr_score_text.text = currScoreText + currScore.ToString();
         high_score_text.text = highScoreText + HIGHSCORE.ToString();
         err_text.text = errLeftText + errLeft.ToString(); 
         time_left_text.text = timeLeftText + timeLeft.ToString();
 
+        Destroy(tutObjectInst);
+
+        loadedGame = true;
+        startGame = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeLeft -= Time.deltaTime;
+        if(startGame && loadedGame){
+            timeLeft -= Time.deltaTime;
 
-        // if(Input.GetKeyDown(KeyCode.N)){
-        //     collectionSyst.setRandomPositon();
-        //     toInst = NewLetter();
-        //     rhy_text=Instantiate(toInst);
-        //     rhy_text.color = UnityEngine.Color.black;
-            
-        // }
-        
-        //The following code is for higher levels. 
-        // if(Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     play = true;
-        //     AnimDown.releaseObj();
-        // }
-        // if(play){
-            // PlayGame();
-        // }
-
-        PlayGame();
-        curr_score_text.text = currScoreText + currScore.ToString();
-        if(currScore>HIGHSCORE){
-            HIGHSCORE=currScore;
+            PlayGame();
+            curr_score_text.text = currScoreText + currScore.ToString();
+            if(currScore>HIGHSCORE){
+                HIGHSCORE=currScore;
+            }
+            high_score_text.text = highScoreText + HIGHSCORE.ToString();
+            err_text.text = errLeftText + errLeft.ToString(); 
+            time_left_text.text = timeLeftText + timeLeft.ToString();
         }
-        high_score_text.text = highScoreText + HIGHSCORE.ToString();
-        err_text.text = errLeftText + errLeft.ToString(); 
-        time_left_text.text = timeLeftText + timeLeft.ToString();
+        else
+        {
+            if(Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return)){
+                StartGame();
+            }
+        }
 
     }
 
