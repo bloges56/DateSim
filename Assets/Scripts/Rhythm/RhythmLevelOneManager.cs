@@ -40,7 +40,11 @@ public class RhythmLevelOneManager : MonoBehaviour
     public Canvas endCanvas;
     public Canvas winCanvas;
 
-    public GameObject colObj;
+    [SerializeField] GameObject collectionObj;
+    CollectionSystem collectionSyst;
+    GameObject colObj;
+
+
 
     private bool loaded = false;
     public static bool destroyObj = false;
@@ -60,11 +64,14 @@ public class RhythmLevelOneManager : MonoBehaviour
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager; 
 
+        colObj = Instantiate(collectionObj);
+        collectionSyst = colObj.GetComponent<CollectionSystem>();
+
         //text properties
 
         toInst = ObjInst[Random.Range(0,VALIDLETTERS.Length)];
         rhy_text = Instantiate(toInst);
-        rhy_text.color = UnityEngine.Color.white;
+        rhy_text.color = UnityEngine.Color.black;
         // img =  GameObject.Find("Panel").GetComponent<Image>();
         // img.color = UnityEngine.Color.white;
         curr_score_text.text = currScoreText + currScore.ToString();
@@ -79,11 +86,13 @@ public class RhythmLevelOneManager : MonoBehaviour
     {
         timeLeft -= Time.deltaTime;
 
-        if(Input.GetKeyDown(KeyCode.N)){
-            toInst = NewLetter();
-            rhy_text=Instantiate(toInst);
-            rhy_text.color = UnityEngine.Color.white;
-        }
+        // if(Input.GetKeyDown(KeyCode.N)){
+        //     collectionSyst.setRandomPositon();
+        //     toInst = NewLetter();
+        //     rhy_text=Instantiate(toInst);
+        //     rhy_text.color = UnityEngine.Color.black;
+            
+        // }
         
         //The following code is for higher levels. 
         // if(Input.GetKeyDown(KeyCode.Space))
@@ -106,21 +115,24 @@ public class RhythmLevelOneManager : MonoBehaviour
 
     }
 
-    public static void setDestroy()
+    public void setDestroy()
     {
         destroyObj = true;
+        
     }
 
     void PlayGame()
     {
         if(completed){
             destroyObj = false;
-            // Destroy(rhy_text.gameObject);
+            colObj = Instantiate(collectionObj);
+            collectionSyst = colObj.GetComponent<CollectionSystem>();
+
             toInst = NewLetter();
             rhy_text = Instantiate(toInst);
             AnimDown.stopObj();
             AnimSide.releaseObj();
-            rhy_text.color = UnityEngine.Color.white;
+            rhy_text.color = UnityEngine.Color.black;
             completed = false;
 
         }
@@ -156,20 +168,13 @@ public class RhythmLevelOneManager : MonoBehaviour
     {
         if(rhy_text.text == letter){
             rhy_text.color = UnityEngine.Color.green;
-            currScore ++;
+            // currScore ++;
             AnimDown.releaseObj();
             AnimSide.stopObj();
             yield return new WaitForSeconds(waitTime);
+            // completed = true;
+            // Destroy(colObj);
 
-            if(destroyObj){
-                destroyObj = false;
-
-            }       
-            
-            // if(destroyObj){
-                // Destroy(rhy_text.gameObject);
-                // destroyObj = false;
-            // }
         }
         else{
             rhy_text.color = UnityEngine.Color.red;
@@ -178,7 +183,8 @@ public class RhythmLevelOneManager : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
             errLeft --;
             completed = true;
-            Destroy(rhy_text.gameObject);AnimDown 
+            Destroy(rhy_text.gameObject); 
+            Destroy(colObj);
 
         }
 
@@ -207,5 +213,28 @@ public class RhythmLevelOneManager : MonoBehaviour
             sceneManager.SingleLoad("HomeScreen");
             loaded = true;
         }
+    }
+
+    public void checkScore(GameObject objTest)
+    {
+        collectionSyst.checkCollisionResult(objTest);
+    }
+
+    public void succScore(GameObject objTest)
+    {   
+        Destroy(colObj);
+        Destroy(objTest);
+        currScore ++;
+        completed =true;
+
+    }
+
+    public void failedScore(GameObject objTest)
+    {
+        Destroy(colObj);
+        Destroy(objTest);
+        errLeft --;   
+        completed =true;
+
     }
 }

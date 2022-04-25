@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class AnimDown : MonoBehaviour
 {
-    float endPos = -1.5f;
+    float endPos = -4.0f;
     float speed;
     static bool released = false;
-    GameObject colliderObj;
+    RhythmLevelOneManager rhyMan;
+
+    CollectionSystem collectionSyst;
+    GameObject colObj;
+    
     // Start is called before the first frame update
     void Start()
     {
-        // objToMove = this.Game
-        // speed = Random.Range(10.05f,25.0f);
-        speed = 35.0f;
-        colliderObj = GameObject.Find("colliderObj");
+        speed = 55.0f;
+
+        rhyMan = GameObject.Find("RhythmLevelOneManager").GetComponent<RhythmLevelOneManager>();
+
+
+        // colObj = GameObject.Find("Collection");
+        // collectionSyst = colObj.GetComponent<CollectionSystem>();
 
     }
 
@@ -24,8 +31,11 @@ public class AnimDown : MonoBehaviour
         if(released){
             if(this.transform.position.y > endPos){
                 this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y -  (0.01f*speed), this.transform.position.z);
-
-                // this.transform.position.y -=0.1f;
+            }
+            else
+            {
+                rhyMan.checkScore(this.gameObject);
+                // collectionSyst.checkCollisionResult(this.gameObject);
             }
         }
     }

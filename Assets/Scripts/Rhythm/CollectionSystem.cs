@@ -5,12 +5,22 @@ using UnityEngine.Events;
 
 public class CollectionSystem : MonoBehaviour
 {
+    public static float rightBound = 8.3f;
+    public static float leftBound = -7.9f;
+
     public static UnityEvent onObjCollide;
+    public static GameObject currObj;
+    RhythmLevelOneManager rhyMan;
+
+    public bool hasCollided = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        currObj = this.gameObject;
+        currObj.transform.position = new Vector3(Random.Range(leftBound, rightBound), currObj.transform.position.y, currObj.transform.position.z);
+        rhyMan = GameObject.Find("RhythmLevelOneManager").GetComponent<RhythmLevelOneManager>();
+
     }
 
     // Update is called once per frame
@@ -18,34 +28,27 @@ public class CollectionSystem : MonoBehaviour
     {
         
     }
-    // ontrigger
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Start the animation here. should it be a coroutine? 
-        Debug.Log("Collided!");
-        Destroy(other.transform.parent.gameObject);
-        RhythmLevelOneManager.setDestroy();
-
-
-
+        // Debug.Log("Collided!");
+        hasCollided = true;
+        // Destroy(other.transform.parent.gameObject);
+        // RhythmLevelOneManager.setDestroy();
+        checkCollisionResult(other.transform.parent.gameObject);
+        // rhyMan.checkScore(other.transform.parent.gameObject);
+        rhyMan.setDestroy();
     }
-    private void OnCollisionEnter2D(Collision2D other)
+    public void checkCollisionResult(GameObject objTest)
     {
-        Debug.Log("Started Enter");
-        Destroy(other.gameObject);
+        if(hasCollided)
+        {
+            rhyMan.succScore(objTest);
+        }
+        else
+        {
+            rhyMan.failedScore(objTest);
+        }
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("3D collision enter");
-        Destroy(other.gameObject);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("triggered!");
-        Destroy(other.gameObject);
-    }
-
-    // private void oncoll
 }
