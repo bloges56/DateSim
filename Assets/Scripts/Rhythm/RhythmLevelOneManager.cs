@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
+
 
 public class RhythmLevelOneManager : MonoBehaviour
 {
@@ -38,7 +40,11 @@ public class RhythmLevelOneManager : MonoBehaviour
     public Canvas endCanvas;
     public Canvas winCanvas;
 
+    public GameObject colObj;
+
     private bool loaded = false;
+    public static bool destroyObj = false;
+    // private bool play = false;
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +72,6 @@ public class RhythmLevelOneManager : MonoBehaviour
         err_text.text = errLeftText + errLeft.ToString(); 
         time_left_text.text = timeLeftText + timeLeft.ToString();
 
-    
     }
 
     // Update is called once per frame
@@ -80,9 +85,17 @@ public class RhythmLevelOneManager : MonoBehaviour
             rhy_text.color = UnityEngine.Color.white;
         }
         
-        // StartCoroutine(PlayGame());
-        PlayGame();
+        //The following code is for higher levels. 
+        // if(Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     play = true;
+        //     AnimDown.releaseObj();
+        // }
+        // if(play){
+            // PlayGame();
+        // }
 
+        PlayGame();
         curr_score_text.text = currScoreText + currScore.ToString();
         if(currScore>HIGHSCORE){
             HIGHSCORE=currScore;
@@ -93,12 +106,20 @@ public class RhythmLevelOneManager : MonoBehaviour
 
     }
 
+    public static void setDestroy()
+    {
+        destroyObj = true;
+    }
+
     void PlayGame()
     {
         if(completed){
-            Destroy(rhy_text.gameObject);
+            destroyObj = false;
+            // Destroy(rhy_text.gameObject);
             toInst = NewLetter();
             rhy_text = Instantiate(toInst);
+            AnimDown.stopObj();
+            AnimSide.releaseObj();
             rhy_text.color = UnityEngine.Color.white;
             completed = false;
 
@@ -136,14 +157,29 @@ public class RhythmLevelOneManager : MonoBehaviour
         if(rhy_text.text == letter){
             rhy_text.color = UnityEngine.Color.green;
             currScore ++;
+            AnimDown.releaseObj();
+            AnimSide.stopObj();
             yield return new WaitForSeconds(waitTime);
-            completed = true;
+
+            if(destroyObj){
+                destroyObj = false;
+
+            }       
+            
+            // if(destroyObj){
+                // Destroy(rhy_text.gameObject);
+                // destroyObj = false;
+            // }
         }
         else{
             rhy_text.color = UnityEngine.Color.red;
+            AnimDown.stopObj();
+            AnimSide.stopObj(); 
             yield return new WaitForSeconds(waitTime);
             errLeft --;
             completed = true;
+            Destroy(rhy_text.gameObject);AnimDown 
+
         }
 
     }
