@@ -5,30 +5,28 @@ using UnityEngine;
 public class SnowflakeAnim : MonoBehaviour
 {
     bool select; 
-    // Start is called before the first frame update
+    string[] rotations = new string[] {"Y","Z"};
+    string move;
+
     void Start()
     {
-        // if(Random.Range(0,1) > 0.5){
-        //     select = true;
-        // }
-        // else
-        // {
-        //     select = false;
-        // }
-
-        select = true;
+        move = rotations[Random.Range(0,rotations.Length)];
+        
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        if(select)
+        switch(move) 
         {
-            this.gameObject.transform.Rotate(0, 0, 2, Space.Self);
-        }
-        else
-        {
+        case "Y":
             this.gameObject.transform.Rotate(0, 5, 0, Space.Self);
+            break;
+        case "Z":
+            this.gameObject.transform.Rotate(0, 0, 2, Space.Self);
+            break;
+        default:
+            this.gameObject.transform.Rotate(0, 5, 2, Space.Self);
+            break;
         }
     }
 }

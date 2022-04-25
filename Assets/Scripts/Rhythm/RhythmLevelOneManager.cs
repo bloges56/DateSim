@@ -90,7 +90,7 @@ public class RhythmLevelOneManager : MonoBehaviour
 
 
         //text properties
-        toInst = ObjInst[Random.Range(0,VALIDLETTERS.Length)];
+        toInst = ObjInst[Random.Range(0,ObjInst.Length)];
         rhy_text = Instantiate(toInst);
         rhy_text.color = UnityEngine.Color.black;
         curr_score_text.text = currScoreText + currScore.ToString();

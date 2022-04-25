@@ -16,7 +16,7 @@ public class AnimSide : MonoBehaviour
     public bool movEnabled = true;
 
     public static GameObject currObj;
-    // Start is called before the first frame update
+
     void Start()
     {
         initPos = this.transform.position;
@@ -24,7 +24,6 @@ public class AnimSide : MonoBehaviour
         currObj = this.gameObject;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if(movEnabled){

@@ -8,24 +8,13 @@ public class AnimDown : MonoBehaviour
     float speed;
     static bool released = false;
     RhythmLevelOneManager rhyMan;
-
-    CollectionSystem collectionSyst;
-    GameObject colObj;
     
-    // Start is called before the first frame update
     void Start()
     {
-        speed = 55.0f;
-
+        speed = 45.0f;
         rhyMan = GameObject.Find("RhythmLevelOneManager").GetComponent<RhythmLevelOneManager>();
-
-
-        // colObj = GameObject.Find("Collection");
-        // collectionSyst = colObj.GetComponent<CollectionSystem>();
-
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {   
         if(released){
@@ -35,7 +24,6 @@ public class AnimDown : MonoBehaviour
             else
             {
                 rhyMan.checkScore(this.gameObject);
-                // collectionSyst.checkCollisionResult(this.gameObject);
             }
         }
     }

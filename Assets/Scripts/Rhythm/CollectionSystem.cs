@@ -30,13 +30,9 @@ public class CollectionSystem : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Start the animation here. should it be a coroutine? 
-        // Debug.Log("Collided!");
+        //Start animation here
         hasCollided = true;
-        // Destroy(other.transform.parent.gameObject);
-        // RhythmLevelOneManager.setDestroy();
         checkCollisionResult(other.transform.parent.gameObject);
-        // rhyMan.checkScore(other.transform.parent.gameObject);
         rhyMan.setDestroy();
     }
     public void checkCollisionResult(GameObject objTest)
