@@ -7,25 +7,77 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8035352852712791616, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_Size.x
+      value: 1.47
+      objectReference: {fileID: 0}
+    - target: {fileID: -8035352852712791616, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_Size.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8035352852712791616, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8035352852712791616, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.84375
+      objectReference: {fileID: 0}
+    - target: {fileID: -8035352852712791616, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.53125
+      objectReference: {fileID: 0}
     - target: {fileID: 573545592328153469, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
       propertyPath: sceneName
       value: PuzzleLevel1
       objectReference: {fileID: 0}
+    - target: {fileID: 573545592328153469, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: interactableText
+      value: Play Puzzle Game
+      objectReference: {fileID: 0}
     - target: {fileID: 7208584949277569176, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
       propertyPath: m_Name
       value: Puzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569177, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_Size.x
+      value: 2.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569177, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_Size.y
+      value: 4.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569177, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.84375
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569177, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.53125
       objectReference: {fileID: 0}
     - target: {fileID: 7208584949277569180, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7208584949277569180, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.40000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569180, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.40000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569180, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.53333336
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569180, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.008519888
       objectReference: {fileID: 0}
     - target: {fileID: 7208584949277569180, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.0296183
       objectReference: {fileID: 0}
     - target: {fileID: 7208584949277569180, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -59,6 +111,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569180, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569183, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1063054799, guid: 35dca63881af39c4c9228eba1306242c, type: 3}
     - target: {fileID: 7208584949277569183, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
       propertyPath: m_Color.b
       value: 0

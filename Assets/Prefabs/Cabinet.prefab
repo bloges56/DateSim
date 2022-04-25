@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6958962219925663915, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: interactableName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: -6958962219925663915, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+      propertyPath: interactableText
+      value: Play
+      objectReference: {fileID: 0}
     - target: {fileID: 8976625993165362864, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
       propertyPath: m_Name
       value: Cabinet

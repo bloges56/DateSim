@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f9db4ba30965d1047942adb42bc90160
+guid: 28b0551430edf1443a181ca0b28cd9f8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,196 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rem_idle_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 512
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c788d48dc7ccd884b88c558941a9520c
-      internalID: 259438891
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rem_idle_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 480
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d8098974081a9d45a8004baf9f46192
-      internalID: 1146106747
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rem_idle_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 448
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bda4671797d2b4947a6c70bd8a65c7c5
-      internalID: -1618351779
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rem_idle_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 416
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d6d1c9287946c84ca3ddc39c72aad12
-      internalID: -653145536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rem_idle_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 384
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b7718eff93667345a9c6d1aaab81ff1
-      internalID: 812475773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rem_idle_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 352
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a6d8e3ff0d5bee746b1e8df3c016e253
-      internalID: -26546816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rem_idle_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 320
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce61e49919472764d98f89c05e6898b8
-      internalID: -203358367
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rem_idle_7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 288
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d42aa07f5d65c848993144d88ff89e7
-      internalID: -930027111
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rem_idle_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 256
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10a75d0a36e171b4493f2e346cc98b8a
-      internalID: -1896422820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rem_idle_9
+      name: claire_idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -307,14 +118,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9641c40500f773343a72dfa870b4d3e2
-      internalID: -465275827
+      spriteID: 0af4b9beccf456643aea0007ca263652
+      internalID: 1829414143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rem_idle_10
+      name: claire_idle_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c854ab2fb90409b4f84a8b202c3e1dc0
+      internalID: 1522384902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bfaf8507a6578948a3fa65c9fd67471
+      internalID: -848803738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_3
       rect:
         serializedVersion: 2
         x: 0
@@ -328,14 +181,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4ad0e75f2bf29048b58c75f2f807cfd
-      internalID: 59756139
+      spriteID: 453e9632c6325ea40a13d7e17be216a7
+      internalID: -129626305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rem_idle_11
+      name: claire_idle_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1216f2f04b576408d9555f2e0ce6c6
+      internalID: -1117204338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8087b986676d8b45bf9351bb6a3e6b5
+      internalID: 1376724784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_6
       rect:
         serializedVersion: 2
         x: 0
@@ -349,14 +244,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a02ce46c4ba1714d96a81acea60b7fb
-      internalID: -1972405738
+      spriteID: 0f82cf706e6633742a29a5ee976c2cdd
+      internalID: 922076469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rem_idle_12
+      name: claire_idle_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a7a08ba9c772d4381b78d0da6cee0f
+      internalID: 549404452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89225d2dab2d45f48b5f06d3be97ba5a
+      internalID: -1099775023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_9
       rect:
         serializedVersion: 2
         x: 0
@@ -370,14 +307,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19821c23b21da1242b8158c38450ec92
-      internalID: -1898583276
+      spriteID: 9630a83fa90242d4fb14547f378e9f18
+      internalID: -41878657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rem_idle_13
+      name: claire_idle_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f5524e8588d1cc488e66b7723dc4786
+      internalID: 73959357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c2b92a7f9e1b54fb798ff502c55e6d
+      internalID: -366218923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_12
       rect:
         serializedVersion: 2
         x: 0
@@ -391,14 +370,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25cc14f562d3ddd43b259ba0609016d4
-      internalID: 2027863013
+      spriteID: 666c54db3788482448878b1b9c35137a
+      internalID: 2135802576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rem_idle_14
+      name: claire_idle_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a4a6aa4fa8f1746b9d9ec1a8e2253a
+      internalID: -646364456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6d8c1d729dad7d478ab242c6912e438
+      internalID: 442069540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_15
       rect:
         serializedVersion: 2
         x: 0
@@ -412,14 +433,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1a18728f3123ad45be6bef16a2d2b27
-      internalID: -743818407
+      spriteID: c30540ca27bb3164ca68a3a576fbd130
+      internalID: 80677669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rem_idle_15
+      name: claire_idle_16
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50eadcd49145884bab9079683f7916f
+      internalID: -380611512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32ce0ff510bd4c4fb33e17a1f3e34a3
+      internalID: 384864581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_18
       rect:
         serializedVersion: 2
         x: 0
@@ -433,14 +496,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c056ed9157a7b7c429a155ee2a3e37e9
-      internalID: 2110098233
+      spriteID: 12eb3972b6fec044aa3f4f10e5d5b478
+      internalID: -2011504246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rem_idle_16
+      name: claire_idle_19
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07094a2a0c5e8e0448097e81e3ccd65f
+      internalID: 1670450586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11a98fae554e47b42913fba27aad5e7f
+      internalID: -853254635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_21
       rect:
         serializedVersion: 2
         x: 0
@@ -454,8 +559,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51782db13bc00544888f23f595d00cd1
-      internalID: 989816275
+      spriteID: 3ae197d04369bcd4a988f6a1a77948eb
+      internalID: 1570917395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claire_idle_22
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 933121ff0b77e3e4680abed64273a805
+      internalID: 549867599
       vertices: []
       indices: 
       edges: []
@@ -471,23 +597,29 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      rem_idle_3: -653145536
-      rem_idle_4: 812475773
-      rem_idle_5: -26546816
-      rem_idle_0: 259438891
-      rem_idle_11: -1972405738
-      rem_idle_12: -1898583276
-      rem_idle_15: 2110098233
-      rem_idle_16: 989816275
-      rem_idle_14: -743818407
-      rem_idle_9: -465275827
-      rem_idle_7: -930027111
-      rem_idle_2: -1618351779
-      rem_idle_6: -203358367
-      rem_idle_8: -1896422820
-      rem_idle_13: 2027863013
-      rem_idle_1: 1146106747
-      rem_idle_10: 59756139
+      claire_idle_19: 1670450586
+      claire_idle_15: 80677669
+      claire_idle_2: -848803738
+      claire_idle_0: 1829414143
+      claire_idle_6: 922076469
+      claire_idle_8: -1099775023
+      claire_idle_22: 549867599
+      claire_idle_18: -2011504246
+      claire_idle_10: 73959357
+      claire_idle_16: -380611512
+      claire_idle_17: 384864581
+      claire_idle_3: -129626305
+      claire_idle_12: 2135802576
+      claire_idle_1: 1522384902
+      claire_idle_20: -853254635
+      claire_idle_14: 442069540
+      claire_idle_4: -1117204338
+      claire_idle_7: 549404452
+      claire_idle_9: -41878657
+      claire_idle_11: -366218923
+      claire_idle_13: -646364456
+      claire_idle_5: 1376724784
+      claire_idle_21: 1570917395
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
