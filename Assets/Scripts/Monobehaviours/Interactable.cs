@@ -4,8 +4,7 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    public string interactableName;
-
+    public string interactableText;
     protected GameObject textCanvas { get; set; }
     protected GameObject inRangeText { get; set; }
     protected GameObject interactText { get; set; }
