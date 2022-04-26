@@ -225,7 +225,7 @@ public class RhythmLevelOneManager : MonoBehaviour
     {
         if(!loaded)
         {
-            sceneManager.SingleLoad("HomeScreen");
+            sceneManager.SingleLoad("Arcade");
         }
         loaded = true;
     }
