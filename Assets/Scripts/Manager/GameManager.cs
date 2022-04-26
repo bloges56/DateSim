@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     static public bool started = false;
+    public string playerName = " ";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +17,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.B)){
+        Debug.Log("Name is: "+playerName);
+    }
+
     }
 
     void StartGame()
@@ -29,5 +33,15 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame(){
         started = true;
+    }
+
+    public void SetName(string inputName)
+    {
+        playerName = inputName;
+    }
+
+    public string GetName()
+    {
+        return playerName;
     }
 }
