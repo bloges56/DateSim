@@ -18,7 +18,7 @@ public class RhythmLevelOneManager : MonoBehaviour
     public int currScore = 0;
 
     //Time management
-    private float timer = 30;
+    public float timer = 30;
     private int timeLeft;
 
     //End criteria 
