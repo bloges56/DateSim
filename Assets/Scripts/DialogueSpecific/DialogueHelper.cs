@@ -12,17 +12,12 @@ public class DialogueHelper : MonoBehaviour
     GameObject character;
     private GameObject[] diaSceneObj;
 
+    static SceneManagement sceneManager;
+    static GameManager gameManager;
+
     //temp
     public int dayEdit = 1;
     private static int day;
-    public string playerNameEdit = "Name";
-    private static string playerName;
-
-    //access methods 
-    // public void imgSetActive(string charName, bool val) {
-    //     character = GameObject.Find(charName);
-    //     character.SetActive(val);
-    // }
 
     public void activeChar(string charName) {
         character = GameObject.Find(charName);
@@ -34,10 +29,11 @@ public class DialogueHelper : MonoBehaviour
     void Awake()
     {
         day = dayEdit;
-        playerName = playerNameEdit;
 
         dialogueManager = Managers.dialogueManager;
         activeCharacter = dialogueManager.activeCharacter;
+        sceneManager = Managers.sceneManager;
+        gameManager = Managers.gameManager; 
 
         diaSceneObj = SceneManager.GetSceneByName("Dialogue").GetRootGameObjects();
 
@@ -85,7 +81,7 @@ public class DialogueHelper : MonoBehaviour
 
     [YarnFunction("ReturnPlayerName")]
     public static string ReturnPlayerName() {
-       return playerName.ToString();
+       return gameManager.GetName();
     }
 
     [YarnFunction("ReturnActiveCharacter")]
