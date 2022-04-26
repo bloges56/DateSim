@@ -16,6 +16,7 @@ public class SnowflakeAnim : MonoBehaviour
 
     void FixedUpdate()
     {
+        //Sets rotation for snowflake
         switch(move) 
         {
         case "Y":

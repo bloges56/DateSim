@@ -8,63 +8,66 @@ using UnityEngine.Events;
 
 public class RhythmLevelOneManager : MonoBehaviour
 {
+    //Managers
+    SceneManagement sceneManager;
+    GameManager gameManager;
+
+    //Scores 
     public int ORHighScore = 5;
     public int HIGHSCORE = 5;
-    private float timeLeft = 60;
-    string[] VALIDLETTERS = new string[] {"W","A","S","D"};
     public int currScore = 0;
+
+    //Time management
+    private float timer = 30;
+    private int timeLeft;
+
+    //End criteria 
     public bool completed = false;
     private int errLeft = 10;
     public float waitTime = 0.01f;
     
+    //Text Prefabs
     public TextMeshPro[] ObjInst = new TextMeshPro[4];
-
     private TextMeshPro toInst;
-
     private TextMeshPro rhy_text;
+
+    //Displayed Text
     [SerializeField] TextMeshProUGUI curr_score_text;
     [SerializeField] TextMeshProUGUI high_score_text;
     [SerializeField] TextMeshProUGUI err_text;
     [SerializeField] TextMeshProUGUI time_left_text;
-
     private string highScoreText = "High Score: ";
     private string currScoreText = "Current Score: ";
     private string errLeftText = "Hearts: ";
     private string timeLeftText = "Time Left: ";
-    Image img;
 
-    SceneManagement sceneManager;
-    GameManager gameManager;
+    //Canvases
+    [SerializeField] Canvas puzzCanvas;
+    [SerializeField] Canvas endCanvas;
+    [SerializeField] Canvas winCanvas;
 
-    public Canvas puzzCanvas;
-    public Canvas endCanvas;
-    public Canvas winCanvas;
-
+    //Collection system
     [SerializeField] GameObject collectionObj;
     CollectionSystem collectionSyst;
     GameObject colObj;
 
+    //Tutorial system
     [SerializeField] GameObject TutorialObj;
     GameObject tutObjectInst;
     Button startButton;
 
-
+    //Game Variables
     private bool loaded = false;
-    public static bool destroyObj = false;
     private bool startGame = false;
     private bool loadedGame = false;
-    // private bool play = false;
 
-    // Start is called before the first frame update
+    //End Screen buttons
+    [SerializeField] Button restartButton;
+    [SerializeField] Button exitButton;
+    bool restartGame = false;
+
     void Start()
     {
-        //objects 
-        puzzCanvas = GameObject.Find("RhyCanvas").GetComponent<Canvas>();
-        endCanvas = GameObject.Find("EndCanvas").GetComponent<Canvas>();
-        winCanvas = GameObject.Find("WinCanvas").GetComponent<Canvas>();
-        endCanvas.gameObject.SetActive(false);
-        winCanvas.gameObject.SetActive(false);
-
         //managers
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager; 
@@ -79,12 +82,11 @@ public class RhythmLevelOneManager : MonoBehaviour
             }
         }
 
-
-
     }
 
     void StartGame()
     {
+        puzzCanvas.gameObject.SetActive(true);
         colObj = Instantiate(collectionObj);
         collectionSyst = colObj.GetComponent<CollectionSystem>();
 
@@ -98,17 +100,20 @@ public class RhythmLevelOneManager : MonoBehaviour
         err_text.text = errLeftText + errLeft.ToString(); 
         time_left_text.text = timeLeftText + timeLeft.ToString();
 
-        Destroy(tutObjectInst);
-
+        if(tutObjectInst!= null)
+        {
+            Destroy(tutObjectInst);
+        }
         loadedGame = true;
         startGame = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(startGame && loadedGame){
-            timeLeft -= Time.deltaTime;
+            restartGame = false;
+            timer -= Time.deltaTime; 
+            timeLeft = (int)(timer%60);
 
             PlayGame();
             curr_score_text.text = currScoreText + currScore.ToString();
@@ -128,16 +133,9 @@ public class RhythmLevelOneManager : MonoBehaviour
 
     }
 
-    public void setDestroy()
-    {
-        destroyObj = true;
-        
-    }
-
     void PlayGame()
     {
         if(completed){
-            destroyObj = false;
             colObj = Instantiate(collectionObj);
             collectionSyst = colObj.GetComponent<CollectionSystem>();
 
@@ -172,7 +170,6 @@ public class RhythmLevelOneManager : MonoBehaviour
         else if(errLeft < 1 || timeLeft <1)
         {
             StartCoroutine(EndGame());
-
         }
         
     }
@@ -181,13 +178,9 @@ public class RhythmLevelOneManager : MonoBehaviour
     {
         if(rhy_text.text == letter){
             rhy_text.color = UnityEngine.Color.green;
-            // currScore ++;
             AnimDown.releaseObj();
             AnimSide.stopObj();
             yield return new WaitForSeconds(waitTime);
-            // completed = true;
-            // Destroy(colObj);
-
         }
         else{
             rhy_text.color = UnityEngine.Color.red;
@@ -198,34 +191,50 @@ public class RhythmLevelOneManager : MonoBehaviour
             completed = true;
             Destroy(rhy_text.gameObject); 
             Destroy(colObj);
-
         }
 
     }
 
     private TextMeshPro NewLetter()
     {
-        return ObjInst[Random.Range(0,VALIDLETTERS.Length)];
+        return ObjInst[Random.Range(0,ObjInst.Length)];
     }
 
 
     IEnumerator EndGame()
     {
         puzzCanvas.gameObject.SetActive(false);
-        if(ORHighScore > currScore)
+
+        if(ORHighScore < currScore)
         {
-            endCanvas.gameObject.SetActive(true);
+            winCanvas.gameObject.SetActive(true);
+            yield return new WaitForSeconds(2.5f);
+
+            ExitGame();
         }
         else
         {
-            winCanvas.gameObject.SetActive(true);
+            endCanvas.gameObject.SetActive(true);
+            restartButton.onClick.AddListener(RestartGame);
+            exitButton.onClick.AddListener(ExitGame);   
+            yield return new WaitForSeconds(2.5f);
         }
-        yield return new WaitForSeconds(2.5f);
+    }
+
+    private void ExitGame()
+    {
         if(!loaded)
         {
             sceneManager.SingleLoad("HomeScreen");
-            loaded = true;
         }
+        loaded = true;
+    }
+    private void RestartGame()
+    {
+        if(!loaded){
+            sceneManager.SingleLoad("RhythmLevelOne");
+        }
+        loaded = true;
     }
 
     public void checkScore(GameObject objTest)
@@ -239,7 +248,6 @@ public class RhythmLevelOneManager : MonoBehaviour
         Destroy(objTest);
         currScore ++;
         completed =true;
-
     }
 
     public void failedScore(GameObject objTest)
@@ -248,6 +256,5 @@ public class RhythmLevelOneManager : MonoBehaviour
         Destroy(objTest);
         errLeft --;   
         completed =true;
-
     }
 }

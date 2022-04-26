@@ -11,7 +11,7 @@ public class AnimDown : MonoBehaviour
     
     void Start()
     {
-        speed = 45.0f;
+        speed = Random.Range(10f,50f);
         rhyMan = GameObject.Find("RhythmLevelOneManager").GetComponent<RhythmLevelOneManager>();
     }
 

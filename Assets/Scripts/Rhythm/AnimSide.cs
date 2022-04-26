@@ -9,19 +9,14 @@ public class AnimSide : MonoBehaviour
     public float speed; 
     Vector3 initPos; 
 
-    bool hands; 
-    bool snowflake;
     public static bool isMoving = true;
     public bool movingPos = true;
     public bool movEnabled = true;
-
-    public static GameObject currObj;
 
     void Start()
     {
         initPos = this.transform.position;
         speed = Random.Range(10.0f,20.0f);
-        currObj = this.gameObject;
     }
 
     void FixedUpdate()
