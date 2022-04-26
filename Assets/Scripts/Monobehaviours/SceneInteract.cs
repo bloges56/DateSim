@@ -23,7 +23,7 @@ public class SceneInteract : Interactable
     public override void inRange()
     {
         
-        tmpInteractText.text = "Go to " + sceneName;
+        tmpInteractText.text = interactableText;
         base.inRange();
 
     }
