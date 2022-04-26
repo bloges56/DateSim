@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     public DialogueCharacter Remington;
     public DialogueCharacter Claire;
     public DialogueCharacter activeDialogue;
+    public string currentSwitch;
 
     public void changeRelationship(DialogueCharacter character, int change) {
         character.relationshipProgress += change;

@@ -41,17 +41,20 @@ public class DialogueHelper : MonoBehaviour
             character = diaSceneObj[0];
             Debug.Log("Deon active");
             dialogueManager.activeDialogue = dialogueManager.Deon;
+            dialogueManager.currentSwitch = "PuzzleLevel1";
             character.SetActive(true);
         } if (activeCharacter == "Remington") {
             character = diaSceneObj[1];
             Debug.Log("Remington active");
             dialogueManager.activeDialogue = dialogueManager.Remington;
+            dialogueManager.currentSwitch = "RhythmLevelOne";
             character.SetActive(true);
         } else if (activeCharacter == "Claire") {
             character = diaSceneObj[2];
             Debug.Log("Claire active");
             dialogueManager.activeDialogue = dialogueManager.Claire;
             character.SetActive(true);
+            dialogueManager.currentSwitch = "Shooter";
         }
     }
 
