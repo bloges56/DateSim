@@ -39,14 +39,17 @@ public class PuzzleGameManager : MonoBehaviour
 
     }
 
+    void FixedUpdate(){
+        if(buttons == totalButtons-1) {
+            player2.player2AI();
+        }
+    }
 
 
     // Update is called once per frame
     void Update()
     {
-       if(buttons == totalButtons-1) {
-            player2.player2AI();
-        }
+       
 
         if(buttons == totalButtons) {
             buttons++;
