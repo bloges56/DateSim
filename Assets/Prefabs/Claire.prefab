@@ -1,12 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3713147098428880229
+--- !u!1001 &259406048441359046
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6107063198277557872, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: m_Controller
+      value:
+      objectReference: {fileID: 9100000, guid: 66fddd813c703d64bb85ae9466ad49e6, type: 2}
+    - target: {fileID: 301313374523093136, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 301313374523093136, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: m_Sprite
+      value:
+      objectReference: {fileID: 1829414143, guid: 28b0551430edf1443a181ca0b28cd9f8, type: 3}
+    - target: {fileID: 301313374523093136, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 301313374523093139, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -51,9 +67,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 301313374523093142, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 301313374523093142, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 301313374523093143, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
       propertyPath: m_Name
-      value: NPC
+      value: Claire
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199044567189791143, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199044567189791143, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199044567189791143, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199044567189791143, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199044567189791143, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199044567189791143, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199044567189791143, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7480997495575325042, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: interactableText
+      value: Talk To Claire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}

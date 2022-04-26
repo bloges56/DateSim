@@ -7,17 +7,65 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8035352852712791616, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8035352852712791616, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_Size.y
+      value: 3.56
+      objectReference: {fileID: 0}
+    - target: {fileID: -8035352852712791616, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.875
+      objectReference: {fileID: 0}
+    - target: {fileID: -8035352852712791616, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.5625
+      objectReference: {fileID: 0}
     - target: {fileID: 573545592328153469, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
       propertyPath: sceneName
       value: RhythmLevelOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 573545592328153469, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: interactableText
+      value: Play Rhythm Game
       objectReference: {fileID: 0}
     - target: {fileID: 7208584949277569176, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
       propertyPath: m_Name
       value: Rhythm
       objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569177, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_Size.x
+      value: 2.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569177, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_Size.y
+      value: 4.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569177, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569177, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.5625
+      objectReference: {fileID: 0}
     - target: {fileID: 7208584949277569180, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569180, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.40000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569180, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.40000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569180, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.53333336
       objectReference: {fileID: 0}
     - target: {fileID: 7208584949277569180, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -59,6 +107,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569180, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208584949277569183, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 225647025, guid: 35dca63881af39c4c9228eba1306242c, type: 3}
     - target: {fileID: 7208584949277569183, guid: 0fdd10b507ed2c0479f01860b636e6fa, type: 3}
       propertyPath: m_Color.b
       value: 1

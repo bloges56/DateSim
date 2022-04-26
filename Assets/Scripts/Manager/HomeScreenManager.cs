@@ -13,7 +13,7 @@ public class HomeScreenManager : MonoBehaviour
 
     SceneManagement sceneManager;
     GameManager gameManager;
-    // Start is called before the first frame update
+
     void Start()
     {
         startButton = GameObject.Find("Start-Button").GetComponent<Button>();
@@ -29,20 +29,22 @@ public class HomeScreenManager : MonoBehaviour
 
     void StartGame()
      {
-         if(OverrideStart)
-         {
-             sceneManager.StartSceneLoad(OverrideSceneName);
-         }
-         else
-         {
-            sceneManager.StartSceneLoad("GrayBoxMain");
-         }
+        if(OverrideStart)
+        {
+            sceneManager.StartSceneLoad(OverrideSceneName);
+        }
+        else
+        {
+        sceneManager.StartSceneLoad("GrayBoxMain");
+        }
         gameManager.LoadGame();
 
      }
 
      void EndGame()
      {
-         Debug.Log("Ending Game...");
+        Debug.Log("Ending Game...");
+        Application.Quit();
+
      }
 }
