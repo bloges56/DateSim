@@ -11,6 +11,7 @@ public class RhythmLevelOneManager : MonoBehaviour
     //Managers
     SceneManagement sceneManager;
     GameManager gameManager;
+    DialogueManager dialogueManager;
 
     //Scores
     public int ORHighScore = 5;
@@ -210,12 +211,13 @@ public class RhythmLevelOneManager : MonoBehaviour
         {
             winCanvas.gameObject.SetActive(true);
             yield return new WaitForSeconds(2.5f);
-
+            dialogueManager.Remington.relationshipProgress = 1;
             ExitGame();
         }
         else
         {
             endCanvas.gameObject.SetActive(true);
+            dialogueManager.Remington.relationshipProgress = -1;
             restartButton.onClick.AddListener(RestartGame);
             exitButton.onClick.AddListener(ExitGame);
             yield return new WaitForSeconds(2.5f);
