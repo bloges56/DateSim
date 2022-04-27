@@ -47,7 +47,7 @@ tags:
             Remington: Come talk to me when you've got some rhythm
         <<elseif $relationshipStatus == 1>>
             Remington: Wow you're better than I thought!
-            Remington: You're one of the only who's ever been able to beat me!
+            Remington: You're one of the only people who's ever been able to beat me!
         <<endif>>
     <<endif>>
 <<endif>>
