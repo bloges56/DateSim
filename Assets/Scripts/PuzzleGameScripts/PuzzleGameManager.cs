@@ -7,14 +7,12 @@ public class PuzzleGameManager : MonoBehaviour
 {   
     public int buttons = 0;
     private int totalButtons = 3;
+
     public PuzzlePlayer2Move player2;
-    static DialogueManager dialogueManager;
     public GameObject instructions;
-
-    
-
     public GameObject win;
 
+    static DialogueManager dialogueManager;
     SceneManagement sceneManager;
     GameManager gameManager;
 
@@ -24,15 +22,14 @@ public class PuzzleGameManager : MonoBehaviour
     }
 
 
-
-
-
     // Start is called before the first frame update
     void Start()
     {
         player2 = GameObject.Find("Player2").GetComponent<PuzzlePlayer2Move>();
         instructions = GameObject.Find("Instructions");
+
         StartCoroutine (hideInstructions(instructions, 3.5f));
+
         dialogueManager = Managers.dialogueManager;
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager;
@@ -45,12 +42,8 @@ public class PuzzleGameManager : MonoBehaviour
         }
     }
 
-
-    // Update is called once per frame
     void Update()
     {
-       
-
         if(buttons == totalButtons) {
             buttons++;
             Debug.Log("You win!");
@@ -58,7 +51,5 @@ public class PuzzleGameManager : MonoBehaviour
             Debug.Log(dialogueManager.Deon.relationshipProgress);
             win.SetActive(true);
         }
-
-        
     }
 }
