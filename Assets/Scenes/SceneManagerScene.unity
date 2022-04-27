@@ -1741,8 +1741,8 @@ MonoBehaviour:
   deonNameText: {fileID: 58031400}
   claireNameText: {fileID: 1886929960}
   remingtonNameText: {fileID: 845281802}
-  redHeart: {fileID: 0}
-  blackHeart: {fileID: 0}
+  redHeart: {fileID: 2718395616343556901, guid: 94f109ac36d164841825ec06baca4909, type: 3}
+  blackHeart: {fileID: 8077658420451450918, guid: 0e528cbaef8764faa8d70482440a5b7d, type: 3}
 --- !u!1 &1457863723
 GameObject:
   m_ObjectHideFlags: 0
