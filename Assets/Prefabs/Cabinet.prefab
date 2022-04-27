@@ -33,11 +33,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8976625993165362868, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -79,7 +79,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8976625993165362865, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
+    - {fileID: -6958962219925663915, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e9a180fc1ee70ac4492f75c4de2a9d56, type: 3}
 --- !u!1 &7208584949277569176 stripped
 GameObject:
@@ -110,5 +112,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
