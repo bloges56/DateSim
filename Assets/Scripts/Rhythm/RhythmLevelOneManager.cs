@@ -210,21 +210,27 @@ public class RhythmLevelOneManager : MonoBehaviour
             winCanvas.gameObject.SetActive(true);
             yield return new WaitForSeconds(2.5f);
 
-            ExitGame();
+            ExitGame(true);
         }
         else
         {
             endCanvas.gameObject.SetActive(true);
             restartButton.onClick.AddListener(RestartGame);
-            exitButton.onClick.AddListener(ExitGame);   
+            exitButton.onClick.AddListener(delegate{ExitGame(false);});   
             yield return new WaitForSeconds(2.5f);
         }
     }
 
-    private void ExitGame()
+    private void ExitGame(bool outcome)
     {
         if(!loaded)
         {
+            if(outcome){
+                gameManager.addRelVal("Remington");
+            }
+            else{
+                gameManager.removeRelVal("Remington");
+            }
             sceneManager.SingleLoad("Arcade");
         }
         loaded = true;
