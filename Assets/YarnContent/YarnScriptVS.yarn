@@ -41,11 +41,13 @@ tags:
             Remington: You don't believe me?
             Remington: Why don't we play a little game of "Rhythm Game" and I'll show you just how good I am!
         <<elseif $relationshipStatus == -1>>
-            Remington: negative relationship
-            Remington: you lost
+            Remington: You're not as good as you thought, huh?
+            Remington: What's your name anyway?
+            Remington: {$name}?
+            Remington: Come talk to me when you've got some rhythm
         <<elseif $relationshipStatus == 1>>
-            Remington: Wow you're pretty good!
-            Remington: You won!
+            Remington: Wow you're better than I thought!
+            Remington: You're one of the only who's ever been able to beat me!
         <<endif>>
     <<endif>>
 <<endif>>

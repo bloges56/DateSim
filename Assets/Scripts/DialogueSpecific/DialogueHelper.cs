@@ -37,7 +37,7 @@ public class DialogueHelper : MonoBehaviour
 
         diaSceneObj = SceneManager.GetSceneByName("Dialogue").GetRootGameObjects();
 
-        if(activeCharacter == "Deon" || activeCharacter == "PuzzleLevel1") {
+        if(activeCharacter == "Deon") {
             character = diaSceneObj[0];
             Debug.Log("Deon active");
             dialogueManager.activeDialogue = dialogueManager.Deon;
@@ -57,7 +57,7 @@ public class DialogueHelper : MonoBehaviour
             dialogueManager.currentSwitch = "Shooter";
         }
 
-        if(dialogueManager.activeDialogue.relationshipProgress > 0) {
+        if(dialogueManager.activeDialogue.relationshipProgress != 0) {
             dialogueManager.currentSwitch = "Arcade";
         }
     }
