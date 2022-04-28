@@ -12,12 +12,18 @@ public class CollectionSystem : MonoBehaviour
     RhythmLevelOneManager rhyMan;
 
     public bool hasCollided = false;
+    private AudioSource audioSource;
+
+    [SerializeField] AudioClip tokenGrabClip;
 
     void Start()
     {
         currObj = this.gameObject;
         currObj.transform.position = new Vector3(Random.Range(leftBound, rightBound), currObj.transform.position.y, currObj.transform.position.z);
         rhyMan = GameObject.Find("RhythmLevelOneManager").GetComponent<RhythmLevelOneManager>();
+        // audioData = sourceAudio.GetComponent<AudioSource>();
+        audioSource = this.gameObject.GetComponent<AudioSource> ();
+
     }
 
     void Update()
@@ -27,6 +33,10 @@ public class CollectionSystem : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //Start animation here
+        // audioData.Play(0);
+        // StartCoroutine(AnimCoRoutine());
+        // sourceAudio.Play();
+
         hasCollided = true;
         checkCollisionResult(other.transform.parent.gameObject);
     }
@@ -34,12 +44,22 @@ public class CollectionSystem : MonoBehaviour
     {
         if(hasCollided)
         {
+            // audioData.Play();
+            audioSource.PlayOneShot(tokenGrabClip);
+
+            // Debug.Log("Should've played audio");
             rhyMan.succScore(objTest);
         }
         else
         {
             rhyMan.failedScore(objTest);
         }
+    }
+    IEnumerator AnimCoRoutine()
+    {
+        // audioData.Play();
+        yield return new WaitForSeconds(1);
+
     }
 
 }
