@@ -220,14 +220,12 @@ public class RhythmLevelOneManager : MonoBehaviour
         {
             winCanvas.gameObject.SetActive(true);
             yield return new WaitForSeconds(2.5f);
-            dialogueManager.Remington.relationshipProgress = 1;
 
             ExitGame(true);
         }
         else
         {
             endCanvas.gameObject.SetActive(true);
-            dialogueManager.Remington.relationshipProgress = -1;
             restartButton.onClick.AddListener(RestartGame);
             exitButton.onClick.AddListener(delegate{ExitGame(false);});
             yield return new WaitForSeconds(2.5f);
@@ -240,9 +238,12 @@ public class RhythmLevelOneManager : MonoBehaviour
         {
             if(outcome){
                 gameManager.addRelVal("Remington");
+                dialogueManager.Remington.relationshipProgress = 1;//+=?
             }
             else{
                 gameManager.removeRelVal("Remington");
+                dialogueManager.Remington.relationshipProgress = -1;//-=?
+
             }
             sceneManager.SingleLoad("Arcade");
         }
