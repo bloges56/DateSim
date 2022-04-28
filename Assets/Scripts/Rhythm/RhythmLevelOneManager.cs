@@ -67,12 +67,17 @@ public class RhythmLevelOneManager : MonoBehaviour
     [SerializeField] Button exitButton;
     bool restartGame = false;
 
+    //Sound
+    private AudioSource audioSource;
+
     void Start()
     {
         //managers
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager;
         dialogueManager = Managers.dialogueManager;
+
+        audioSource = this.gameObject.GetComponent<AudioSource>();
 
         if(!startGame)
         {
@@ -251,6 +256,7 @@ public class RhythmLevelOneManager : MonoBehaviour
         Destroy(objTest);
         currScore ++;
         completed =true;
+        audioSource.Play();
     }
 
     public void failedScore(GameObject objTest)
