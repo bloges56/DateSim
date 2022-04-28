@@ -373,7 +373,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.778125, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8172,6 +8172,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Remington
       objectReference: {fileID: 0}
+    - target: {fileID: 1885554676726330255, guid: 9086b8226ff2bcf4eba79943473afb91, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6331029
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885554676726330255, guid: 9086b8226ff2bcf4eba79943473afb91, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.026206732
+      objectReference: {fileID: 0}
     - target: {fileID: 7879292487095188314, guid: 9086b8226ff2bcf4eba79943473afb91, type: 3}
       propertyPath: sceneName
       value: Dialogue
@@ -8412,6 +8420,14 @@ PrefabInstance:
     - target: {fileID: 5245767279931837, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485911607169720457, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4154215
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485911607169720457, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.009134054
       objectReference: {fileID: 0}
     - target: {fileID: 7200428437244487772, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
       propertyPath: textCanvas

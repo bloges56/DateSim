@@ -6,7 +6,7 @@ public class PuzzlePlayer2Move : MonoBehaviour
 {   
 
     public void player2AI() {
-        transform.position += new Vector3(.005f,0f,0f);
+        transform.position += new Vector3(.03f,0f,0f);
     }
 
     // Start is called before the first frame update
