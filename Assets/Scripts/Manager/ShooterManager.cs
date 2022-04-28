@@ -62,7 +62,7 @@ public class ShooterManager : MonoBehaviour
 
     void Quit()
     {
-        Managers.sceneManager.SingleLoad("Arcade");
+        Managers.sceneManager.ReturnToArcade();
     }
 
     // Update is called once per frame
