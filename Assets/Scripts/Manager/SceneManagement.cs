@@ -36,6 +36,30 @@ public class SceneManagement : MonoBehaviour
         
 
     }
+    
+    public void AdditionalLoadToArcade(string sceneToLoadName)
+    {
+        GameObject[] sceneMangeSceneObj = SceneManager.GetSceneByName("Arcade").GetRootGameObjects();
+        foreach(GameObject obj in sceneMangeSceneObj)
+        {
+            obj.SetActive(false);
+        }
+        StartCoroutine(LoadSceneCoRou(sceneToLoadName));
+
+    }
+
+    public void ReturnToArcade()
+    {
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+
+        GameObject[] sceneMangeSceneObj = SceneManager.GetSceneByName("Arcade").GetRootGameObjects();
+        foreach(GameObject obj in sceneMangeSceneObj)
+        {
+            obj.SetActive(true);
+        }
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Arcade"));
+
+    }
 
     IEnumerator LoadSceneCoRou(string SceneToLoad)
     {
@@ -56,6 +80,7 @@ public class SceneManagement : MonoBehaviour
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneToLoad));
         
     }
+
 
     public void StartSceneLoad(string sceneToLoadName)
     {
