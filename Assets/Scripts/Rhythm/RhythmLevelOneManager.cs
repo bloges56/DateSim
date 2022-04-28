@@ -11,8 +11,9 @@ public class RhythmLevelOneManager : MonoBehaviour
     //Managers
     SceneManagement sceneManager;
     GameManager gameManager;
+    DialogueManager dialogueManager;
 
-    //Scores 
+    //Scores
     public int ORHighScore = 5;
     public int HIGHSCORE = 5;
     public int currScore = 0;
@@ -21,11 +22,11 @@ public class RhythmLevelOneManager : MonoBehaviour
     public float timer = 30;
     private int timeLeft;
 
-    //End criteria 
+    //End criteria
     public bool completed = false;
     private int errLeft = 10;
     public float waitTime = 0.01f;
-    
+
     //Text Prefabs
     public TextMeshPro[] ObjInst = new TextMeshPro[4];
     private TextMeshPro toInst;
@@ -70,7 +71,8 @@ public class RhythmLevelOneManager : MonoBehaviour
     {
         //managers
         sceneManager = Managers.sceneManager;
-        gameManager = Managers.gameManager; 
+        gameManager = Managers.gameManager;
+        dialogueManager = Managers.dialogueManager;
 
         if(!startGame)
         {
@@ -97,7 +99,7 @@ public class RhythmLevelOneManager : MonoBehaviour
         rhy_text.color = UnityEngine.Color.black;
         curr_score_text.text = currScoreText + currScore.ToString();
         high_score_text.text = highScoreText + HIGHSCORE.ToString();
-        err_text.text = errLeftText + errLeft.ToString(); 
+        err_text.text = errLeftText + errLeft.ToString();
         time_left_text.text = timeLeftText + timeLeft.ToString();
 
         if(tutObjectInst!= null)
@@ -112,7 +114,7 @@ public class RhythmLevelOneManager : MonoBehaviour
     {
         if(startGame && loadedGame){
             restartGame = false;
-            timer -= Time.deltaTime; 
+            timer -= Time.deltaTime;
             timeLeft = (int)(timer%60);
 
             PlayGame();
@@ -121,7 +123,7 @@ public class RhythmLevelOneManager : MonoBehaviour
                 HIGHSCORE=currScore;
             }
             high_score_text.text = highScoreText + HIGHSCORE.ToString();
-            err_text.text = errLeftText + errLeft.ToString(); 
+            err_text.text = errLeftText + errLeft.ToString();
             time_left_text.text = timeLeftText + timeLeft.ToString();
         }
         else
@@ -171,7 +173,7 @@ public class RhythmLevelOneManager : MonoBehaviour
         {
             StartCoroutine(EndGame());
         }
-        
+
     }
 
     IEnumerator MatchLetter(string letter)
@@ -185,11 +187,11 @@ public class RhythmLevelOneManager : MonoBehaviour
         else{
             rhy_text.color = UnityEngine.Color.red;
             AnimDown.stopObj();
-            AnimSide.stopObj(); 
+            AnimSide.stopObj();
             yield return new WaitForSeconds(waitTime);
             errLeft --;
             completed = true;
-            Destroy(rhy_text.gameObject); 
+            Destroy(rhy_text.gameObject);
             Destroy(colObj);
         }
 
@@ -209,14 +211,15 @@ public class RhythmLevelOneManager : MonoBehaviour
         {
             winCanvas.gameObject.SetActive(true);
             yield return new WaitForSeconds(2.5f);
-
+            dialogueManager.Remington.relationshipProgress = 1;
             ExitGame();
         }
         else
         {
             endCanvas.gameObject.SetActive(true);
+            dialogueManager.Remington.relationshipProgress = -1;
             restartButton.onClick.AddListener(RestartGame);
-            exitButton.onClick.AddListener(ExitGame);   
+            exitButton.onClick.AddListener(ExitGame);
             yield return new WaitForSeconds(2.5f);
         }
     }
@@ -243,7 +246,7 @@ public class RhythmLevelOneManager : MonoBehaviour
     }
 
     public void succScore(GameObject objTest)
-    {   
+    {
         Destroy(colObj);
         Destroy(objTest);
         currScore ++;
@@ -254,7 +257,7 @@ public class RhythmLevelOneManager : MonoBehaviour
     {
         Destroy(colObj);
         Destroy(objTest);
-        errLeft --;   
+        errLeft --;
         completed =true;
     }
 }
