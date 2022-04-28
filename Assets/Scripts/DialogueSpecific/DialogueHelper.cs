@@ -34,7 +34,6 @@ public class DialogueHelper : MonoBehaviour
         activeCharacter = dialogueManager.activeCharacter;
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager; 
-
         diaSceneObj = SceneManager.GetSceneByName("Dialogue").GetRootGameObjects();
 
         if(activeCharacter == "Deon") {
@@ -58,7 +57,7 @@ public class DialogueHelper : MonoBehaviour
         }
 
         if(dialogueManager.activeDialogue.relationshipProgress != 0) {
-            dialogueManager.currentSwitch = "Arcade";
+            dialogueManager.currentSwitch = "";
         }
     }
 

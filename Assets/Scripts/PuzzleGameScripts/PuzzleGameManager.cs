@@ -52,7 +52,7 @@ public class PuzzleGameManager : MonoBehaviour
             win.SetActive(true);
         }
 
-        if(buttons == totalButtons +1) {
+        if(buttons == totalButtons + 1 && Input.GetKeyDown(KeyCode.E)) {
             sceneManager.ReturnToArcade();
         }
     }

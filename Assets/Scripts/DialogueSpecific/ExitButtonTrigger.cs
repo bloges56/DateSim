@@ -31,7 +31,12 @@ public class ExitButtonTrigger : MonoBehaviour
 
     void ChangeScene()
      {
-        sceneManager.SingleLoad(sceneToChangeTo);
+        if(sceneToChangeTo == "") {
+            sceneManager.ReturnToArcade();
+        } else {
+            sceneManager.SingleLoad(sceneToChangeTo);
+        }
+        
         gameManager.LoadGame();
 
      }
