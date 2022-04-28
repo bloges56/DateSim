@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   movingPos: 1
-  movEnabled: 1
+  movEnabled: 0
 --- !u!114 &8768878987820270688
 MonoBehaviour:
   m_ObjectHideFlags: 0
