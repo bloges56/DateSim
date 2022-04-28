@@ -445,7 +445,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75.25
+  m_fontSize: 53.05
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1254,7 +1254,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 81.8
+  m_fontSize: 50.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2123,8 +2123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423054c12ff558541b9f9c5e3bdc3518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ORHighScore: 7
-  HIGHSCORE: 7
+  ORHighScore: 3
+  HIGHSCORE: 3
   currScore: 0
   completed: 0
   waitTime: 1
@@ -2606,7 +2606,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 106.15
+  m_fontSize: 65.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
