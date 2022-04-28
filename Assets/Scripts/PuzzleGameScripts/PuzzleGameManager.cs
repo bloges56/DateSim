@@ -51,5 +51,9 @@ public class PuzzleGameManager : MonoBehaviour
             Debug.Log(dialogueManager.Deon.relationshipProgress);
             win.SetActive(true);
         }
+
+        if(buttons == totalButtons +1) {
+            sceneManager.ReturnToArcade();
+        }
     }
 }
