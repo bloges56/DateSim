@@ -12,17 +12,12 @@ public class DialogueHelper : MonoBehaviour
     GameObject character;
     private GameObject[] diaSceneObj;
 
+    static SceneManagement sceneManager;
+    static GameManager gameManager;
+
     //temp
     public int dayEdit = 1;
     private static int day;
-    public string playerNameEdit = "Name";
-    private static string playerName;
-
-    //access methods 
-    // public void imgSetActive(string charName, bool val) {
-    //     character = GameObject.Find(charName);
-    //     character.SetActive(val);
-    // }
 
     public void activeChar(string charName) {
         character = GameObject.Find(charName);
@@ -34,10 +29,11 @@ public class DialogueHelper : MonoBehaviour
     void Awake()
     {
         day = dayEdit;
-        playerName = playerNameEdit;
 
         dialogueManager = Managers.dialogueManager;
         activeCharacter = dialogueManager.activeCharacter;
+        sceneManager = Managers.sceneManager;
+        gameManager = Managers.gameManager; 
 
         diaSceneObj = SceneManager.GetSceneByName("Dialogue").GetRootGameObjects();
 
@@ -45,12 +41,24 @@ public class DialogueHelper : MonoBehaviour
             character = diaSceneObj[0];
             Debug.Log("Deon active");
             dialogueManager.activeDialogue = dialogueManager.Deon;
+            dialogueManager.currentSwitch = "PuzzleLevel1";
             character.SetActive(true);
-        } else if (activeCharacter == "Remington") {
+        } if (activeCharacter == "Remington") {
             character = diaSceneObj[1];
             Debug.Log("Remington active");
             dialogueManager.activeDialogue = dialogueManager.Remington;
+            dialogueManager.currentSwitch = "RhythmLevelOne";
             character.SetActive(true);
+        } else if (activeCharacter == "Claire") {
+            character = diaSceneObj[2];
+            Debug.Log("Claire active");
+            dialogueManager.activeDialogue = dialogueManager.Claire;
+            character.SetActive(true);
+            dialogueManager.currentSwitch = "Shooter";
+        }
+
+        if(dialogueManager.activeDialogue.relationshipProgress != 0) {
+            dialogueManager.currentSwitch = "Arcade";
         }
     }
 
@@ -80,7 +88,7 @@ public class DialogueHelper : MonoBehaviour
 
     [YarnFunction("ReturnPlayerName")]
     public static string ReturnPlayerName() {
-       return playerName.ToString();
+       return gameManager.GetName();
     }
 
     [YarnFunction("ReturnActiveCharacter")]
