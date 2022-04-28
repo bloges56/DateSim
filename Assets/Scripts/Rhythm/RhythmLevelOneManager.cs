@@ -138,6 +138,15 @@ public class RhythmLevelOneManager : MonoBehaviour
             }
         }
 
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            gameManager.addRelVal("Remington");
+        }
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            gameManager.removeRelVal("Remington");
+        }
+
     }
 
     void PlayGame()
@@ -216,23 +225,31 @@ public class RhythmLevelOneManager : MonoBehaviour
         {
             winCanvas.gameObject.SetActive(true);
             yield return new WaitForSeconds(2.5f);
-            dialogueManager.Remington.relationshipProgress = 1;
-            ExitGame();
+
+            ExitGame(true);
         }
         else
         {
             endCanvas.gameObject.SetActive(true);
-            dialogueManager.Remington.relationshipProgress = -1;
             restartButton.onClick.AddListener(RestartGame);
-            exitButton.onClick.AddListener(ExitGame);
+            exitButton.onClick.AddListener(delegate{ExitGame(false);});
             yield return new WaitForSeconds(2.5f);
         }
     }
 
-    private void ExitGame()
+    private void ExitGame(bool outcome)
     {
         if(!loaded)
         {
+            if(outcome){
+                gameManager.addRelVal("Remington");
+                dialogueManager.Remington.relationshipProgress = 1;//+=?
+            }
+            else{
+                gameManager.removeRelVal("Remington");
+                dialogueManager.Remington.relationshipProgress = -1;//-=?
+
+            }
             sceneManager.SingleLoad("Arcade");
         }
         loaded = true;
