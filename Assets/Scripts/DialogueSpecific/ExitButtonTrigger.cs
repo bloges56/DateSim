@@ -9,12 +9,17 @@ public class ExitButtonTrigger : MonoBehaviour
 
     public bool OverrideStart = false;
     public string OverrideSceneName;
+    private string sceneToChangeTo;
+    static DialogueManager dialogueManager;
 
     SceneManagement sceneManager;
     GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
+        dialogueManager = Managers.dialogueManager;
+
+        sceneToChangeTo = dialogueManager.currentSwitch;
         exitButton = GameObject.Find("Exit-Button").GetComponent<Button>();
 
         exitButton.onClick.AddListener(ChangeScene);
@@ -32,7 +37,7 @@ public class ExitButtonTrigger : MonoBehaviour
          }
          else
          {
-            sceneManager.DiaSceneLoad("Arcade");
+            sceneManager.DiaSceneLoad(sceneToChangeTo);
          }
         gameManager.LoadGame();
 

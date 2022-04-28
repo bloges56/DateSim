@@ -10,21 +10,50 @@ tags:
 <<if $character == "Deon">> //DEON
     <<if $day == 1>> 
         <<if $relationshipStatus == 0>>
-            Deon: first dialogue
-            Deon: let's go play my favorite game Puzzle Game
+            Deon: Hey there!
+            Deon: You're new around here aren't ya?
+            Deon: That's just fine, it's always good to have new customers! I'm Deon.
+            Deon: Now why don't I show you around?
+            Deon: There are tons of fun games in the arcade and you can play any one you want!
+            Deon: Well... as long as it's working that is...
+            Deon: I swear these maintenance guys don't exist, it seems like some of these machines have been broken since the 90's.
+            Deon: I know! How about you play a game with me and I'll show you how it works!
+            Deon: Great, come with me!
+            Deon: Let's play my favorite game "Puzzle Game"
         <<elseif $relationshipStatus == 1>>
-            Deon: relationship is 1
-            Deon: you've won the game
+            Deon: See, you're a natural! Nothing to be worried about with these kinds of games.
+            Deon: Oh! I never got your name?
+            Deon: {$name}? I'll be sure to remember that.
+            Deon: Well, come talk to me anytime if you need any help, I'll see you around!
         <<endif>>
     <<endif>>
 <<endif>>
-<<if $character == "Remington">> //DEON
+<<if $character == "Remington">> //REMINGTON
     <<if $day == 1>> 
         <<if $relationshipStatus == 0>>
-            Remington: remington test
-            Remington: remington testing
+            Remington: You're the new person everyone's been talking about, huh?
+            Remington: Well I'm Remington, you may have heard of me.
+            Remington: Oh?
+            Remington: You haven't?
+            Remington: Well... I'm pretty well known around here!
+            Remington: What am I known for?
+            Remington: As you can see, I'm a musician. One of the best around. 
+            Remington: You don't believe me?
+            Remington: Why don't we play a little game of "Rhythm Game" and I'll show you just how good I am!
+        <<elseif $relationshipStatus == -1>>
+            Remington: You're not as good as you thought, huh?
+            Remington: What's your name anyway?
+            Remington: {$name}?
+            Remington: Come talk to me when you've got some rhythm
+        <<elseif $relationshipStatus == 1>>
+            Remington: Wow you're better than I thought!
+            Remington: You're one of the only people who's ever been able to beat me!
         <<endif>>
     <<endif>>
+<<endif>>
+<<if $character == "Claire">> //CLAIRE
+    Claire: test
+    Claire: testing 
 <<endif>>
  : Press "E" to exit
 
