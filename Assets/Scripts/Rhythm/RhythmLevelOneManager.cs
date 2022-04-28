@@ -131,6 +131,15 @@ public class RhythmLevelOneManager : MonoBehaviour
             }
         }
 
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            gameManager.addRelVal("Remington");
+        }
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            gameManager.removeRelVal("Remington");
+        }
+
     }
 
     void PlayGame()
