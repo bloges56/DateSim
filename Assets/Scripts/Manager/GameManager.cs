@@ -25,10 +25,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if(!started)
-        {
-            StartGame();
-        }
+        // if(!started)
+        // {
+        //     StartGame();
+        // }
     }
 
     void Update()

@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class HomeScreenManager : MonoBehaviour
 {
-    public Button startButton;
-    public Button quitButton;
+    private Button startButton;
+    private Button quitButton;
+
+    [SerializeField] GameObject startBut;
+    [SerializeField] GameObject endBut;
 
     public bool OverrideStart = false;
     public string OverrideSceneName;
@@ -16,8 +19,8 @@ public class HomeScreenManager : MonoBehaviour
 
     void Start()
     {
-        startButton = GameObject.Find("Start-Button").GetComponent<Button>();
-        quitButton = GameObject.Find("Exit-Button").GetComponent<Button>();
+        startButton =startBut.GetComponent<Button>();
+        quitButton = endBut.GetComponent<Button>();
 
         startButton.onClick.AddListener(StartGame);
         quitButton.onClick.AddListener(EndGame);
@@ -27,16 +30,17 @@ public class HomeScreenManager : MonoBehaviour
     }
 
 
-    void StartGame()
+    public void StartGame()
      {
-        if(OverrideStart)
-        {
-            sceneManager.StartSceneLoad(OverrideSceneName);
-        }
-        else
-        {
-        sceneManager.StartSceneLoad("GrayBoxMain");
-        }
+         sceneManager.StartSceneLoad("SetName");
+        // if(OverrideStart)
+        // {
+        //     sceneManager.StartSceneLoad(OverrideSceneName);
+        // }
+        // else
+        // {
+        // sceneManager.StartSceneLoad("GrayBoxMain");
+        // }
         gameManager.LoadGame();
 
      }

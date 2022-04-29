@@ -11,7 +11,7 @@ public class HeartSystem : MonoBehaviour
 
     private float areaToCover;
     private float distanceBetween;
-    
+    private float oldArea;
     RhythmLevelOneManager rhythmManager;
     [SerializeField]GameObject heartObject;
     [SerializeField]GameObject heartParent;
@@ -22,16 +22,18 @@ public class HeartSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        areaToCover = Math.Abs(leftBound - rightBound);
+        oldArea = Math.Abs(leftBound - rightBound);
         rhythmManager = this.gameObject.GetComponent<RhythmLevelOneManager>();
         heartsToShow = rhythmManager.errLeft;
+        distanceBetween = oldArea/heartsToShow;
+        areaToCover = oldArea -  distanceBetween;
         distanceBetween = areaToCover/heartsToShow;
 
         Vector3 newPos;
         GameObject newHeart;
 
         //setup all hearts
-        for (int i = 0; i < heartsToShow; i++)
+        for (int i = 1; i < heartsToShow+1; i++)
         {
             newPos = new Vector3(-654.5f + (i*distanceBetween),635.91f,0f);
             newHeart = Instantiate(heartObject);
@@ -53,14 +55,15 @@ public class HeartSystem : MonoBehaviour
     public void updatePositions()
     {        
         float newdistanceBetween = areaToCover/heartsToShow;
-
+        areaToCover = oldArea -  newdistanceBetween;
+        newdistanceBetween = areaToCover/heartsToShow;
         foreach (GameObject oldHeart in hearts)
         {
             Destroy(oldHeart);
         }
         hearts.Clear();
         
-        for (int i = 0; i < heartsToShow; i++)
+        for (int i = 1; i < heartsToShow+1; i++)
         {
             Vector3 newPos = new Vector3(-654.5f + (i*newdistanceBetween),635.91f,0f);
             GameObject newHeart = Instantiate(heartObject);
