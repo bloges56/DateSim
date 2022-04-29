@@ -80,5 +80,8 @@ public class NameManager : MonoBehaviour
     [YarnCommand("SetNameTrue")]
     public static void SetNameTrue() {
        nameManager.setName = true;
+       Destroy(GameObject.Find("EventSystem"));
+       nameManager.doneButton.onClick.AddListener(nameManager.DoneName);
+       
     }
 }
