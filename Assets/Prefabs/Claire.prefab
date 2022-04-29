@@ -108,8 +108,12 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7480997495575325042, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
+      propertyPath: gameSceneName
+      value: Shooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7480997495575325042, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}
       propertyPath: interactableText
-      value: Talk To Claire
+      value: Talk To Claire (e)  Play Game (f)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a2b4138f3a90054587ca8f6a3d7b5a5, type: 3}

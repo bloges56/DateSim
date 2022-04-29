@@ -1762,6 +1762,14 @@ PrefabInstance:
       propertyPath: textCanvas
       value: 
       objectReference: {fileID: 1577170739}
+    - target: {fileID: 7879292487095188314, guid: 9086b8226ff2bcf4eba79943473afb91, type: 3}
+      propertyPath: gameSceneName
+      value: RhythmLevelOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 7879292487095188314, guid: 9086b8226ff2bcf4eba79943473afb91, type: 3}
+      propertyPath: interactableText
+      value: Talk To Remington (e)  Play Game (f)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9086b8226ff2bcf4eba79943473afb91, type: 3}
 --- !u!1 &1285764918
@@ -1919,6 +1927,18 @@ PrefabInstance:
       propertyPath: textCanvas
       value: 
       objectReference: {fileID: 1577170739}
+    - target: {fileID: 7200428437244487772, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
+      propertyPath: gameSceneName
+      value: PuzzleLevel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200428437244487772, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
+      propertyPath: interactableText
+      value: Talk To Deon (e)  Play Game (f)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200428437244487772, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
+      propertyPath: dialogueSceneName
+      value: Dialogue
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
 --- !u!1001 &1453991716
@@ -2226,6 +2246,10 @@ PrefabInstance:
       propertyPath: textCanvas
       value: 
       objectReference: {fileID: 1577170739}
+    - target: {fileID: 7226113542254359476, guid: 2b20fab396452a3418cd8f383d2c5bbd, type: 3}
+      propertyPath: interactableText
+      value: Talk To Claire (e)  Play Game(f)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b20fab396452a3418cd8f383d2c5bbd, type: 3}
 --- !u!1 &1953051155

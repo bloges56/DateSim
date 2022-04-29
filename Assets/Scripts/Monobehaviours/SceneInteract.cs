@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class SceneInteract : Interactable
 {
    
-    public string sceneName;
+    public string dialogueSceneName;
+    public string gameSceneName;
 
     private SceneManagement sceneManager;
     private GameManager gameManager;
@@ -27,15 +28,26 @@ public class SceneInteract : Interactable
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
-                interact();
+                dialogueInteract();
+            }
+
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                gameInteract();
             }
         }
     }
     
-    public override void interact()
+    public void dialogueInteract()
     {   
         dialogueManager.activeCharacter = gameObject.name;
-        sceneManager.AdditionalLoadToArcade(sceneName);
+        sceneManager.AdditionalLoadToArcade(dialogueSceneName);
+        gameManager.LoadGame();
+    }
+
+    public void gameInteract()
+    {
+        sceneManager.AdditionalLoadToArcade(gameSceneName);
         gameManager.LoadGame();
     }
 }

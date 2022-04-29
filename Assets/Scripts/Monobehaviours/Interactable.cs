@@ -29,7 +29,6 @@ public abstract class Interactable : MonoBehaviour
         tmpInteractText.text = interactableText;
         inRangeText.SetActive(true);
     }
-    public abstract void interact();
 
     public void outOfRange()
     {
