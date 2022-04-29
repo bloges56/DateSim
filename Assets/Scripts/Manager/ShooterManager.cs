@@ -62,7 +62,7 @@ public class ShooterManager : MonoBehaviour
 
     void Quit()
     {
-        Managers.sceneManager.SingleLoad("Arcade");
+        Managers.sceneManager.ReturnToArcade();
     }
 
     // Update is called once per frame
@@ -86,10 +86,12 @@ public class ShooterManager : MonoBehaviour
         {
             if (win)
             {
+                Managers.dialogueManager.Claire.relationshipProgress = 1;
                 winCanvas.SetActive(true);
             }
             else
             {
+                Managers.dialogueManager.Claire.relationshipProgress = -1;
                 loseCanvas.SetActive(true);
             }
             buttonOptions.SetActive(true);

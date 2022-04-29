@@ -44,40 +44,44 @@ tags:
             Remington: You're not as good as you thought, huh?
             Remington: What's your name anyway?
             Remington: {$name}?
-            Remington: Come talk to me when you've got some rhythm
+            Remington: Come talk to me when you've got some rhythm...
         <<elseif $relationshipStatus == 1>>
             Remington: Wow you're better than I thought!
             Remington: You're one of the only people who's ever been able to beat me!
+            Remington: What's your name?
+            Remington: {$name}... it's weird that I've never heard of you, you're really good!
+            Remington: What instruments do you play? 
+            Remington: Oh? Well I play quite a few myself. 
+            Remington: I think we'll get along a lot better than I thought, come talk to me anytime.
         <<endif>>
     <<endif>>
 <<endif>>
 <<if $character == "Claire">> //CLAIRE
-    Claire: test
-    Claire: testing 
+    <<if $day == 1>>
+        <<if $relationshipStatus == 0>>
+        Claire: I haven't seen you around these parts before...
+        Claire: What's your name?
+        Claire: {$name}? I think I have a distant relative with that name...
+        Claire: On my mom's side maybe?
+        Claire: Shoot, I'm always getting off topic...
+        Claire: Why're you hanging around here? Like playing these old games?
+        Claire: You're here to meet people?
+        Claire: An arcade is a little bit of a weird place to make friends, 
+        Claire: why don't you try out one of my favorite games!
+        Claire: It'll make you a little more relatable to the folks around here at least...
+        <<elseif $relationshipStatus == 1>>
+        Claire: Now we've got something to talk about!
+        Claire: What did you think?
+        Claire: It's one of my favorite games, I come here everyday to play it.
+        Claire: Well, play some of the other games and find your favorite 
+        Claire: and come tell me what it is when you find it!
+        <<elseif $relationshipStatus == -1>>
+        Claire: Maybe an arcade wasn't the best choice for you, huh?
+        Claire: You could always practice...
+        <<endif>>
+    <<endif>>
 <<endif>>
- : Press "E" to exit
-
-// <<if $character == 1>> //REMMINGTON
-
-// <<endif>>
-
-// <<if $day == 1>>
-//     <<if $relationshipStatus == 0>>
-//         Tutorial: Hello! Welcome to Date Fight!
-//         Tutorial: This is first version of the game so it's kinda rough. 
-//         Tutorial: Walk up to objects and press "e" to interact with them.
-//     <<elseif $relationshipStatus == 1>>
-//         Tutorial: Hello again!
-//         Tutorial: I don't have much more to say...
-//     << endif>>
-// <<elseif $day == 2>>
-//     <<if $relationshipStatus == 0>>
-//         Name: hey I've seen you around but not talked to you
-//         Name: day 2, relationship 0
-//     <<elseif $relationshipStatus == 1>>
-//         Name: we have talked on day 1 and have a higher relationship
-//     <<endif>>
-// <<endif>>
+ : Press "E" to continue
 
 //     Name: player name {$name}
 //     <<PlaySadAnim DialogueSystem>>

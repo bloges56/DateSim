@@ -31,7 +31,7 @@ public class SceneInteract : Interactable
     public override void interact()
     {   
         dialogueManager.activeCharacter = gameObject.name;
-        sceneManager.SingleLoad(sceneName);
+        sceneManager.AdditionalLoadToArcade(sceneName);
         gameManager.LoadGame();
     }
 }

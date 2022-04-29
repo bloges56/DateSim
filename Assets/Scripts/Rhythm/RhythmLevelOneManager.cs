@@ -245,7 +245,7 @@ public class RhythmLevelOneManager : MonoBehaviour
                 dialogueManager.Remington.relationshipProgress = -1;//-=?
 
             }
-            sceneManager.SingleLoad("Arcade");
+            sceneManager.ReturnToArcade();
         }
         loaded = true;
     }

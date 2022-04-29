@@ -394,6 +394,22 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1144099807586309061, guid: 91c4ea6cb65bf0b44aa691103f2e0eb5, type: 3}
+      propertyPath: m_Color.a
+      value: 0.6156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 1144099807586309061, guid: 91c4ea6cb65bf0b44aa691103f2e0eb5, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1144099807586309061, guid: 91c4ea6cb65bf0b44aa691103f2e0eb5, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1144099807586309061, guid: 91c4ea6cb65bf0b44aa691103f2e0eb5, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1144099807643160213, guid: 91c4ea6cb65bf0b44aa691103f2e0eb5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -526,6 +542,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5306238402076567847, guid: 91c4ea6cb65bf0b44aa691103f2e0eb5, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306238402076567847, guid: 91c4ea6cb65bf0b44aa691103f2e0eb5, type: 3}
+      propertyPath: m_Color.g
+      value: 0.43137258
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306238402076567847, guid: 91c4ea6cb65bf0b44aa691103f2e0eb5, type: 3}
+      propertyPath: m_Color.r
+      value: 0.75294125
+      objectReference: {fileID: 0}
     - target: {fileID: 5306238403657972927, guid: 91c4ea6cb65bf0b44aa691103f2e0eb5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -574,7 +602,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dayEdit: 1
-  playerNameEdit: Test name
 --- !u!224 &623374297 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1144099807701443873, guid: 91c4ea6cb65bf0b44aa691103f2e0eb5, type: 3}
