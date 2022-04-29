@@ -55,5 +55,9 @@ public class PuzzleGameManager : MonoBehaviour
         if(buttons == totalButtons + 1 && Input.GetKeyDown(KeyCode.E)) {
             sceneManager.ReturnToArcade();
         }
+
+        if(Input.GetKeyDown(KeyCode.R)) {
+            sceneManager.SingleLoad("PuzzleLevel1");
+        }
     }
 }
