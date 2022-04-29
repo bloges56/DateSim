@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class Interactable : MonoBehaviour
 {
     public string interactableText;
+
+    protected GameObject player;
     protected GameObject textCanvas { get; set; }
     protected GameObject inRangeText { get; set; }
     protected GameObject interactText { get; set; }
@@ -13,15 +15,18 @@ public abstract class Interactable : MonoBehaviour
 
     public void setup()
     {
-        textCanvas = GameObject.Find("InteractCanvas");
+        textCanvas = GameObject.FindGameObjectWithTag("InteractUI");
         inRangeText = textCanvas.transform.GetChild(0).gameObject;
         interactText = textCanvas.transform.GetChild(1).gameObject;
         exitText = textCanvas.transform.GetChild(2).gameObject;
         tmpInteractText = inRangeText.GetComponent<TMPro.TMP_Text>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public virtual void inRange()
+    public void inRange()
     {
+        Debug.Log(inRangeText);
+        tmpInteractText.text = interactableText;
         inRangeText.SetActive(true);
     }
     public abstract void interact();

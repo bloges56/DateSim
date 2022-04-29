@@ -15,14 +15,6 @@ public class SimpleInteract : Interactable
         setup();
         info = interactText.GetComponent<TMPro.TMP_Text>();
     }
-
-    public override void inRange()
-    {
-        
-        info.text = infoText;
-        tmpInteractText.text = "Interact (E)";
-        base.inRange();
-    }
  
     public override void interact()
     {

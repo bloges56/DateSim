@@ -1704,7 +1704,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1055939879024272059, guid: 9086b8226ff2bcf4eba79943473afb91, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1055939879024272059, guid: 9086b8226ff2bcf4eba79943473afb91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1751,13 +1751,17 @@ PrefabInstance:
       value: Remington
       objectReference: {fileID: 0}
     - target: {fileID: 7879292487095188314, guid: 9086b8226ff2bcf4eba79943473afb91, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1594280018}
+    - target: {fileID: 7879292487095188314, guid: 9086b8226ff2bcf4eba79943473afb91, type: 3}
       propertyPath: sceneName
       value: Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 7879292487095188314, guid: 9086b8226ff2bcf4eba79943473afb91, type: 3}
       propertyPath: textCanvas
       value: 
-      objectReference: {fileID: 1657858252}
+      objectReference: {fileID: 1577170739}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9086b8226ff2bcf4eba79943473afb91, type: 3}
 --- !u!1 &1285764918
@@ -1857,7 +1861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5245767279931837, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5245767279931837, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1908,9 +1912,13 @@ PrefabInstance:
       value: -0.009134054
       objectReference: {fileID: 0}
     - target: {fileID: 7200428437244487772, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1594280018}
+    - target: {fileID: 7200428437244487772, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
       propertyPath: textCanvas
       value: 
-      objectReference: {fileID: 1657858252}
+      objectReference: {fileID: 1577170739}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
 --- !u!1001 &1453991716
@@ -1970,6 +1978,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cf42a1e89cb4fa49a206c75b3697485, type: 3}
+--- !u!1 &1577170739 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4407196125656397046, guid: 6e9838871286af945a321509fc75297c, type: 3}
+  m_PrefabInstance: {fileID: 68941958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1594280017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2027,10 +2040,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c7e41b2e3ab2a4fa675d54e1d31d91, type: 3}
---- !u!223 &1657858252 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 4407196125656397051, guid: 6e9838871286af945a321509fc75297c, type: 3}
-  m_PrefabInstance: {fileID: 68941958}
+--- !u!1 &1594280018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2921965199878279418, guid: 67c7e41b2e3ab2a4fa675d54e1d31d91, type: 3}
+  m_PrefabInstance: {fileID: 1594280017}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1752676538
 GameObject:
@@ -2205,6 +2218,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7226113542254359476, guid: 2b20fab396452a3418cd8f383d2c5bbd, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1594280018}
+    - target: {fileID: 7226113542254359476, guid: 2b20fab396452a3418cd8f383d2c5bbd, type: 3}
+      propertyPath: textCanvas
+      value: 
+      objectReference: {fileID: 1577170739}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b20fab396452a3418cd8f383d2c5bbd, type: 3}
 --- !u!1 &1953051155

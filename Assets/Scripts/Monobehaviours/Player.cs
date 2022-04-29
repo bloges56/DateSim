@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     //interactable object that player is in range of
     private Interactable interact;
 
-    //tracks if player is currently interacting with something
+   /* //tracks if player is currently interacting with something
     private bool interacting = false;
 
     private GameObject interactText;
@@ -17,15 +17,15 @@ public class Player : MonoBehaviour
     {
         interactText = GameObject.FindGameObjectWithTag("InteractUI");
         Debug.Log(interactText.name);
-        
+
     }
     private void Update()
     {
         //if there is an object in range and when the player hits E
-        if(interact != null && Input.GetKeyDown(KeyCode.E))
+        if (interact != null && Input.GetKeyDown(KeyCode.E))
         {
             //if not currently interacting, interact
-            if(!interacting)
+            if (!interacting)
             {
                 interact.interact();
                 interacting = true;
@@ -36,9 +36,9 @@ public class Player : MonoBehaviour
                 interact.exitInteract();
                 interacting = false;
             }
-        
+
         }
-    }
+    }*/
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

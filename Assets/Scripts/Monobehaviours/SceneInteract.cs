@@ -20,12 +20,16 @@ public class SceneInteract : Interactable
         gameManager = Managers.gameManager;
         dialogueManager = Managers.dialogueManager;
     }
-    public override void inRange()
-    {
-        
-        tmpInteractText.text = interactableText;
-        base.inRange();
 
+    private void Update()
+    {
+        if(gameObject.transform.GetComponent<Collider2D>().bounds.Contains(player.transform.position))
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                interact();
+            }
+        }
     }
     
     public override void interact()
