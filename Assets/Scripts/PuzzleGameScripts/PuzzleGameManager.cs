@@ -48,6 +48,7 @@ public class PuzzleGameManager : MonoBehaviour
             buttons++;
             Debug.Log("You win!");
             dialogueManager.Deon.relationshipProgress = 1;
+            gameManager.addRelVal("Deon");
             Debug.Log(dialogueManager.Deon.relationshipProgress);
             win.SetActive(true);
         }
