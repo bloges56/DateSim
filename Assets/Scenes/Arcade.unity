@@ -130,37 +130,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4407196125438884948, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196125438884948, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196125438884948, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 708.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196125438884948, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196125438884955, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_fontSize
-      value: 51
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196125438884955, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: df3fd2bc81fa0d44f889ed74700a4ade, type: 2}
-    - target: {fileID: 4407196125438884955, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 51
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196125438884955, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
+    - target: {fileID: 3798628310310885787, guid: 6e9838871286af945a321509fc75297c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4407196125656397046, guid: 6e9838871286af945a321509fc75297c, type: 3}
       propertyPath: m_Name
@@ -250,65 +222,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4407196125967048280, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196125967048280, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196125967048280, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 708.9
-      objectReference: {fileID: 0}
     - target: {fileID: 4407196125967048281, guid: 6e9838871286af945a321509fc75297c, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196125967048287, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_fontSize
-      value: 51
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196125967048287, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: df3fd2bc81fa0d44f889ed74700a4ade, type: 2}
-    - target: {fileID: 4407196125967048287, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 51
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196125967048287, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -2576370127041711133, guid: df3fd2bc81fa0d44f889ed74700a4ade, type: 2}
-    - target: {fileID: 4407196126145207966, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_fontSize
-      value: 51
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196126145207966, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: df3fd2bc81fa0d44f889ed74700a4ade, type: 2}
-    - target: {fileID: 4407196126145207966, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 51
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196126145207966, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196126145207967, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196126145207967, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 4407196126145207967, guid: 6e9838871286af945a321509fc75297c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 708.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e9838871286af945a321509fc75297c, type: 3}
@@ -1768,7 +1684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7879292487095188314, guid: 9086b8226ff2bcf4eba79943473afb91, type: 3}
       propertyPath: interactableText
-      value: Talk To Remington (e)  Play Game (f)
+      value: Talk To Remington (e)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9086b8226ff2bcf4eba79943473afb91, type: 3}
@@ -1933,7 +1849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7200428437244487772, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
       propertyPath: interactableText
-      value: Talk To Deon (e)  Play Game (f)
+      value: Talk To Deon (e)
       objectReference: {fileID: 0}
     - target: {fileID: 7200428437244487772, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
       propertyPath: dialogueSceneName
@@ -2248,7 +2164,7 @@ PrefabInstance:
       objectReference: {fileID: 1577170739}
     - target: {fileID: 7226113542254359476, guid: 2b20fab396452a3418cd8f383d2c5bbd, type: 3}
       propertyPath: interactableText
-      value: Talk To Claire (e)  Play Game(f)
+      value: Talk To Claire (e)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b20fab396452a3418cd8f383d2c5bbd, type: 3}

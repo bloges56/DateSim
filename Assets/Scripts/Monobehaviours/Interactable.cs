@@ -9,6 +9,7 @@ public abstract class Interactable : MonoBehaviour
     protected GameObject player;
     protected GameObject textCanvas { get; set; }
     protected GameObject inRangeText { get; set; }
+    protected GameObject gameText { get; set; }
     protected GameObject interactText { get; set; }
     protected GameObject exitText { get; set; }
     protected TMPro.TMP_Text tmpInteractText { get; set; }
@@ -19,21 +20,23 @@ public abstract class Interactable : MonoBehaviour
         inRangeText = textCanvas.transform.GetChild(0).gameObject;
         interactText = textCanvas.transform.GetChild(1).gameObject;
         exitText = textCanvas.transform.GetChild(2).gameObject;
+        gameText = textCanvas.transform.GetChild(3).gameObject;
         tmpInteractText = inRangeText.GetComponent<TMPro.TMP_Text>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void inRange()
     {
-        Debug.Log(inRangeText);
         tmpInteractText.text = interactableText;
         inRangeText.SetActive(true);
+        gameText.SetActive(true);
     }
 
     public void outOfRange()
     {
         inRangeText.SetActive(false);
         interactText.SetActive(false);
+        gameText.SetActive(false);
     }
     public void exitInteract()
     {
