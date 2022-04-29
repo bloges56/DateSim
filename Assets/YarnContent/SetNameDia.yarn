@@ -1,0 +1,15 @@
+﻿title: Start
+tags:
+---
+: Welcome to Date Fight!
+: Our game takes place in an arcade, where you play games to win hearts
+: sounds simple enough, right?
+: First we need to go over a few things:
+: use WASD to move
+: E to interact
+: TAB to see your score
+: and have fun!
+: Before we being we need to know one more thing,
+: what's your name?
+<<SetNameTrue>>
+===

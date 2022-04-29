@@ -1251,6 +1251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeCharacter: 
+  currentSwitch: 
 --- !u!4 &1123067293
 Transform:
   m_ObjectHideFlags: 0
