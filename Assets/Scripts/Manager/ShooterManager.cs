@@ -90,6 +90,7 @@ public class ShooterManager : MonoBehaviour
         {
             if (win)
             {
+                Managers.dialogueManager.Claire.relationshipProgress = 1;
                 winCanvas.SetActive(true);
                 if(gameManager.getRelVal("Claire") < 1)
                 {
@@ -98,6 +99,7 @@ public class ShooterManager : MonoBehaviour
             }
             else
             {
+                Managers.dialogueManager.Claire.relationshipProgress = -1;
                 loseCanvas.SetActive(true);
                 if (gameManager.getRelVal("Claire") == 0)
                 {
