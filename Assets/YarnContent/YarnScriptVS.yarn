@@ -19,7 +19,7 @@ tags:
             Deon: I swear these maintenance guys don't exist, it seems like some of these machines have been broken since the 90's.
             Deon: I know! How about you play a game with me and I'll show you how it works!
             Deon: Great, come with me!
-            Deon: Let's play my favorite game "Puzzle Game"
+            Deon: Let's play my favorite 2-player game "Escape the Dungeon"
         <<elseif $relationshipStatus == 1>>
             Deon: See, you're a natural! Nothing to be worried about with these kinds of games.
             Deon: Oh! I never got your name?
@@ -39,7 +39,7 @@ tags:
             Remington: What am I known for?
             Remington: As you can see, I'm a musician. One of the best around. 
             Remington: You don't believe me?
-            Remington: Why don't we play a little game of "Rhythm Game" and I'll show you just how good I am!
+            Remington: Why don't we play a little game of "Frost Catcher" and I'll show you just how good I am!
         <<elseif $relationshipStatus == -1>>
             Remington: You're not as good as you thought, huh?
             Remington: What's your name anyway?
@@ -67,7 +67,7 @@ tags:
         Claire: Why're you hanging around here? Like playing these old games?
         Claire: You're here to meet people?
         Claire: An arcade is a little bit of a weird place to make friends, 
-        Claire: why don't you try out one of my favorite games!
+        Claire: why don't you try out one of my favorite games, "Hot Shot"!
         Claire: It'll make you a little more relatable to the folks around here at least...
         <<elseif $relationshipStatus == 1>>
         Claire: Now we've got something to talk about!
