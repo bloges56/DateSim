@@ -61,6 +61,23 @@ public class DialogueHelper : MonoBehaviour
         }
     }
 
+    // void Update() {
+    //     if(Input.GetKeyDown(KeyCode.S)) {
+    //         ChangeScene();
+    //     }
+    // }
+
+    public void ChangeScene()
+     {
+        if(dialogueManager.currentSwitch == "" || dialogueManager.currentSwitch == "Arcade") {
+            sceneManager.ReturnToArcade();
+        } else {
+            sceneManager.SingleLoad(dialogueManager.currentSwitch);
+        }
+        
+        //gameManager.LoadGame();
+     }
+
     //yarn animation commands
     [YarnCommand("PlaySadAnim")]
     public void PlaySadAnim()
@@ -93,6 +110,12 @@ public class DialogueHelper : MonoBehaviour
     [YarnFunction("ReturnActiveCharacter")]
     public static string ReturnActiveCharacter() {
         return activeCharacter;
+    }
+
+    [YarnCommand("Finish")]
+    public static void Finish() {
+       GameObject.Find("DialogueHelper").GetComponent<DialogueHelper>().ChangeScene();
+       
     }
 
 }

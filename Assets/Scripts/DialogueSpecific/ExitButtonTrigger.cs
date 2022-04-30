@@ -21,23 +21,13 @@ public class ExitButtonTrigger : MonoBehaviour
         dialogueManager = Managers.dialogueManager;
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager;
-        sceneToChangeTo = dialogueManager.currentSwitch;
+        //sceneToChangeTo = dialogueManager.currentSwitch;
 
         exitButton = GameObject.Find("Exit-Button").GetComponent<Button>();
-        exitButton.onClick.AddListener(ChangeScene);
+        //exitButton.onClick.AddListener(dialogueManager.ChangeScene);
         
     }
 
 
-    void ChangeScene()
-     {
-        if(sceneToChangeTo == "") {
-            sceneManager.ReturnToArcade();
-        } else {
-            sceneManager.SingleLoad(sceneToChangeTo);
-        }
-        
-        gameManager.LoadGame();
-
-     }
+    
 }
