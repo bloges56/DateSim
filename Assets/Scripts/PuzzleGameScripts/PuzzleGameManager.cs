@@ -48,12 +48,17 @@ public class PuzzleGameManager : MonoBehaviour
             buttons++;
             Debug.Log("You win!");
             dialogueManager.Deon.relationshipProgress = 1;
+            gameManager.addRelVal("Deon");
             Debug.Log(dialogueManager.Deon.relationshipProgress);
             win.SetActive(true);
         }
 
         if(buttons == totalButtons + 1 && Input.GetKeyDown(KeyCode.E)) {
             sceneManager.ReturnToArcade();
+        }
+
+        if(Input.GetKeyDown(KeyCode.R)) {
+            sceneManager.SingleLoad("PuzzleLevel1");
         }
     }
 }
