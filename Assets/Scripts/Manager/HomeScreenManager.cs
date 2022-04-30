@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class HomeScreenManager : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class HomeScreenManager : MonoBehaviour
     public bool OverrideStart = false;
     public string OverrideSceneName;
 
+    private bool loaded = false;
     SceneManagement sceneManager;
     GameManager gameManager;
 
@@ -21,11 +24,27 @@ public class HomeScreenManager : MonoBehaviour
 
         startButton.onClick.AddListener(StartGame);
         quitButton.onClick.AddListener(EndGame);
+        // if(loaded)
+        // SceneManager.LoadSceneAsync("SceneManagerScene",LoadSceneMode.Additive);
 
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager;
-    }
+        // SceneManager.SetActiveScene(gameObject.scene);
 
+
+    }
+    private void Update() {
+        if(sceneManager == null || gameManager == null )
+        {
+            sceneManager = Managers.sceneManager;
+            gameManager = Managers.gameManager;
+        }
+        int countLoaded = SceneManager.sceneCount;
+        Debug.Log(countLoaded);
+        // SceneManager.SetActiveScene(gameObject.scene);
+
+        // Debug.WriteLine(countLoaded);
+    }
 
     void StartGame()
      {

@@ -48,6 +48,11 @@ public class NameManager : MonoBehaviour
     {
         //inputCanvas.gameObject.SetActive(askForName);
         // diaText.gameObject.SetActive(!askForName);
+        if(sceneManager == null || gameManager == null )
+        {
+            sceneManager = Managers.sceneManager;
+            gameManager = Managers.gameManager;
+        }
 
         if(setName == true) {
             doneButton.gameObject.SetActive(true);

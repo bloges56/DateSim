@@ -17,6 +17,10 @@ public class Managers : MonoBehaviour
     void Start()
     {
         sceneMangeSceneObj = SceneManager.GetSceneByName("SceneManagerScene").GetRootGameObjects();
+        if(sceneMangeSceneObj.Length == 0)
+        {
+            Debug.LogError("Unable to locate scene.");
+        }
         sceneManager = sceneMangeSceneObj[0].GetComponent<SceneManagement>();
         gameManager = sceneMangeSceneObj[1].GetComponent<GameManager>();
         dialogueManager = sceneMangeSceneObj[2].GetComponent<DialogueManager>();
@@ -25,6 +29,16 @@ public class Managers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(sceneManager == null || gameManager == null || dialogueManager == null )
+        {
+            sceneMangeSceneObj = SceneManager.GetSceneByName("SceneManagerScene").GetRootGameObjects();
+            if(sceneMangeSceneObj.Length == 0)
+            {
+                Debug.LogError("Unable to locate scene.");
+            }
+            sceneManager = sceneMangeSceneObj[0].GetComponent<SceneManagement>();
+            gameManager = sceneMangeSceneObj[1].GetComponent<GameManager>();
+            dialogueManager = sceneMangeSceneObj[2].GetComponent<DialogueManager>();
+        }
     }
 }
