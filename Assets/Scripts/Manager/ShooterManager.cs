@@ -23,6 +23,8 @@ public class ShooterManager : MonoBehaviour
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
 
+    private GameManager gameManager;
+
     private float trackerTime;
     private float startRange;
     private float endRange;
@@ -45,6 +47,8 @@ public class ShooterManager : MonoBehaviour
         timeText.text = gameTime.ToString();
         buttonOptions.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(Reload);
         buttonOptions.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(Quit);
+
+        gameManager = Managers.gameManager;
     }
 
     private void OnMouseEnter()
@@ -88,11 +92,19 @@ public class ShooterManager : MonoBehaviour
             {
                 Managers.dialogueManager.Claire.relationshipProgress = 1;
                 winCanvas.SetActive(true);
+                if(gameManager.getRelVal("Claire") < 1)
+                {
+                    gameManager.addRelVal("Claire");
+                }
             }
             else
             {
                 Managers.dialogueManager.Claire.relationshipProgress = -1;
                 loseCanvas.SetActive(true);
+                if (gameManager.getRelVal("Claire") == 0)
+                {
+                    gameManager.removeRelVal("Claire");
+                }
             }
             buttonOptions.SetActive(true);
             gameOver = true;
