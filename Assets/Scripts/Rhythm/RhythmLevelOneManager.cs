@@ -19,13 +19,14 @@ public class RhythmLevelOneManager : MonoBehaviour
     public int currScore = 0;
 
     //Time management
-    private float timer = 30;
+    public float timer = 30;
     private int timeLeft;
 
     //End criteria
     public bool completed = false;
-    private int errLeft = 10;
+    public int errLeft = 10;
     public float waitTime = 0.01f;
+    HeartSystem heartSystem;
 
     //Text Prefabs
     public TextMeshPro[] ObjInst = new TextMeshPro[4];
@@ -67,12 +68,20 @@ public class RhythmLevelOneManager : MonoBehaviour
     [SerializeField] Button exitButton;
     bool restartGame = false;
 
+    //Sound
+    private AudioSource audioSource;
+
     void Start()
     {
         //managers
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager;
         dialogueManager = Managers.dialogueManager;
+
+        audioSource = this.gameObject.GetComponent<AudioSource>();
+        heartSystem = this.gameObject.GetComponent<HeartSystem>();
+        
+        err_text.gameObject.SetActive(false);
 
         if(!startGame)
         {
@@ -101,6 +110,8 @@ public class RhythmLevelOneManager : MonoBehaviour
         high_score_text.text = highScoreText + HIGHSCORE.ToString();
         err_text.text = errLeftText + errLeft.ToString();
         time_left_text.text = timeLeftText + timeLeft.ToString();
+
+        // err_text.gameObject.SetActive(false);
 
         if(tutObjectInst!= null)
         {
@@ -199,6 +210,7 @@ public class RhythmLevelOneManager : MonoBehaviour
             AnimSide.stopObj();
             yield return new WaitForSeconds(waitTime);
             errLeft --;
+            heartSystem.removeLife();
             completed = true;
             Destroy(rhy_text.gameObject);
             Destroy(colObj);
@@ -268,6 +280,7 @@ public class RhythmLevelOneManager : MonoBehaviour
         Destroy(objTest);
         currScore ++;
         completed =true;
+        audioSource.Play();
     }
 
     public void failedScore(GameObject objTest)
@@ -275,6 +288,7 @@ public class RhythmLevelOneManager : MonoBehaviour
         Destroy(colObj);
         Destroy(objTest);
         errLeft --;
+        heartSystem.removeLife();
         completed =true;
     }
 }

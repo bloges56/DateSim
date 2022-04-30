@@ -18,6 +18,7 @@ public class CollectionSystem : MonoBehaviour
         currObj = this.gameObject;
         currObj.transform.position = new Vector3(Random.Range(leftBound, rightBound), currObj.transform.position.y, currObj.transform.position.z);
         rhyMan = GameObject.Find("RhythmLevelOneManager").GetComponent<RhythmLevelOneManager>();
+
     }
 
     void Update()
