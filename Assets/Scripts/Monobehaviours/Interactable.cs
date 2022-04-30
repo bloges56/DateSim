@@ -6,7 +6,7 @@ public abstract class Interactable : MonoBehaviour
 {
     public string interactableText;
 
-    protected GameObject player;
+    protected BoxCollider2D player;
     protected GameObject textCanvas { get; set; }
     protected GameObject inRangeText { get; set; }
     protected GameObject gameText { get; set; }
@@ -22,7 +22,7 @@ public abstract class Interactable : MonoBehaviour
         exitText = textCanvas.transform.GetChild(2).gameObject;
         gameText = textCanvas.transform.GetChild(3).gameObject;
         tmpInteractText = inRangeText.GetComponent<TMPro.TMP_Text>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").transform.GetComponent<BoxCollider2D>();
     }
 
     public void inRange()
