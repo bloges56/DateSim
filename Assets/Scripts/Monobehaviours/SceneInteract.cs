@@ -24,7 +24,7 @@ public class SceneInteract : Interactable
 
     private void Update()
     {
-        if(gameObject.transform.GetComponent<Collider2D>().bounds.Contains(player.transform.position))
+        if(gameObject.transform.GetComponent<Collider2D>().bounds.Intersects(player.bounds))
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
