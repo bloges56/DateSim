@@ -21,6 +21,8 @@ public class DialogueManager : MonoBehaviour
     public DialogueCharacter Claire;
     public DialogueCharacter activeDialogue;
     public string currentSwitch;
+    SceneManagement sceneManager;
+    GameManager gameManager;
 
     public void changeRelationship(DialogueCharacter character, int change) {
         character.relationshipProgress += change;
@@ -36,6 +38,8 @@ public class DialogueManager : MonoBehaviour
         Deon = new DialogueCharacter("Deon", 0);
         Remington = new DialogueCharacter("Remington", 0);
         Claire = new DialogueCharacter("Claire",0);
+        sceneManager = Managers.sceneManager;
+        gameManager = Managers.gameManager;
     }
 
     // Update is called once per frame
@@ -43,4 +47,6 @@ public class DialogueManager : MonoBehaviour
     {
         
     }
+
+
 }

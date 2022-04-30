@@ -81,8 +81,7 @@ tags:
         <<endif>>
     <<endif>>
 <<endif>>
- : Press "E" to continue
-
+<<Finish>>
 //     Name: player name {$name}
 //     <<PlaySadAnim DialogueSystem>>
 //     Name: playing different animation
