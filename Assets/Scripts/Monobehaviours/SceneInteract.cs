@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class SceneInteract : Interactable
 {
    
-    public string sceneName;
+    public string dialogueSceneName;
+    public string gameSceneName;
 
     private SceneManagement sceneManager;
     private GameManager gameManager;
@@ -20,18 +21,33 @@ public class SceneInteract : Interactable
         gameManager = Managers.gameManager;
         dialogueManager = Managers.dialogueManager;
     }
-    public override void inRange()
-    {
-        
-        tmpInteractText.text = interactableText;
-        base.inRange();
 
+    private void Update()
+    {
+        if(gameObject.transform.GetComponent<Collider2D>().bounds.Contains(player.transform.position))
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                dialogueInteract();
+            }
+
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                gameInteract();
+            }
+        }
     }
     
-    public override void interact()
+    public void dialogueInteract()
     {   
         dialogueManager.activeCharacter = gameObject.name;
-        sceneManager.AdditionalLoadToArcade(sceneName);
+        sceneManager.AdditionalLoadToArcade(dialogueSceneName);
+        gameManager.LoadGame();
+    }
+
+    public void gameInteract()
+    {
+        sceneManager.AdditionalLoadToArcade(gameSceneName);
         gameManager.LoadGame();
     }
 }
