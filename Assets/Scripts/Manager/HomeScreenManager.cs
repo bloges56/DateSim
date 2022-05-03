@@ -16,6 +16,8 @@ public class HomeScreenManager : MonoBehaviour
     private bool loaded = false;
     SceneManagement sceneManager;
     GameManager gameManager;
+    private static GameObject[] sceneMangeSceneObj; 
+
 
     void Start()
     {
@@ -27,20 +29,46 @@ public class HomeScreenManager : MonoBehaviour
         // if(loaded)
         // SceneManager.LoadSceneAsync("SceneManagerScene",LoadSceneMode.Additive);
 
+
+
+        // sceneMangeSceneObj = SceneManager.GetSceneByName("SceneManagerScene").GetRootGameObjects();
+        // if(sceneMangeSceneObj.Length < 1 || sceneMangeSceneObj == null)
+        // {
+        //     Debug.LogError("Unable to locate scene.");
+        // }
+        // sceneManager = sceneMangeSceneObj[0].gameObject.GetComponent<SceneManagement>();
+        // gameManager = sceneMangeSceneObj[1].gameObject.GetComponent<GameManager>();
+
+
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager;
+        
+        if(sceneManager){
+            Debug.Log("Found scene manager");
+        }
+        else{
+            Debug.LogError("Faiedl to find scene manage");
+        }
+
+        if(gameManager){
+            Debug.Log("Found game manager");
+        }
+        else{
+            Debug.LogError("Faiedl to find game manage");
+        }
         // SceneManager.SetActiveScene(gameObject.scene);
 
 
     }
     private void Update() {
-        if(sceneManager == null || gameManager == null )
-        {
-            sceneManager = Managers.sceneManager;
-            gameManager = Managers.gameManager;
-        }
-        int countLoaded = SceneManager.sceneCount;
-        Debug.Log(countLoaded);
+        // if(sceneManager == null || gameManager == null )
+        // {
+        //     sceneManager = Managers.sceneManager;
+        //     gameManager = Managers.gameManager;
+        // }
+
+        // int countLoaded = SceneManager.sceneCount;
+        // Debug.Log(countLoaded);
         // SceneManager.SetActiveScene(gameObject.scene);
 
         // Debug.WriteLine(countLoaded);
@@ -54,9 +82,9 @@ public class HomeScreenManager : MonoBehaviour
         }
         else
         {
-        sceneManager.StartSceneLoad("GrayBoxMain");
+        Managers.sceneManager.StartSceneLoad("GrayBoxMain");
         }
-        gameManager.LoadGame();
+        Managers.gameManager.LoadGame();
 
      }
 
