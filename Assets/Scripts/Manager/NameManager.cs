@@ -18,14 +18,12 @@ public class NameManager : MonoBehaviour
 
     public string sceneToLoadNext = "Arcade";
 
-    SceneManagement sceneMan;
-    GameManager gameMan;
+    SceneManagement sceneManager;
+    GameManager gameManager;
 
     public bool askForName = true;
     public bool setName = false;
     private static GameObject[] sceneMangeSceneObj; 
-
-    // Start is called before the first frame update
 
     void Awake()
     {  
@@ -35,56 +33,14 @@ public class NameManager : MonoBehaviour
         lastDialogue = GameObject.Find("Text");
         doneButton.gameObject.SetActive(false);
         inputCanvas.gameObject.SetActive(false);
-        // diaText = GameObject.Find("DialogueSystem");
-
-        //inputCanvas.gameObject.SetActive(askForName); 
-        // diaText.gameObject.SetActive(!askForName);
-
-        // sceneMan = 
-
-        // sceneMangeSceneObj = SceneManager.GetSceneByName("SceneManagerScene").GetRootGameObjects();
-        // if(sceneMangeSceneObj.Length < 1 || sceneMangeSceneObj == null)
-        // {
-        //     Debug.LogError("Unable to locate scene.");
-        // }
-        // // sceneMan = sceneMangeSceneObj[0].GetComponent<SceneManagement>();
-        // // gameMan = sceneMangeSceneObj[1].GetComponent<GameManager>();
-
-
-        // sceneMan = sceneMangeSceneObj[0].gameObject.GetComponent<SceneManagement>();
-        // gameMan= sceneMangeSceneObj[1].gameObject.GetComponent<GameManager>();
-        // dialogueManager = sceneMangeSceneObj[2].GetComponent<DialogueManager>();
-
-        // sceneMan = Managers.GetSceneManager();
-        // gameMan = Managers.GetGameManager(); 
-
-        sceneMan = Managers.sceneManager;
-        gameMan = Managers.gameManager;
-
-        if(sceneMan){
-            Debug.Log("Found scene manager");
-        }
-        else{
-            Debug.LogError("Faiedl to find scene manage");
-        }
-
-        if(gameMan){
-            Debug.Log("Found game manager");
-        }
-        else{
-            Debug.LogError("Faiedl to find game manage");
-        }
-
+    
+        sceneManager = Managers.sceneManager;
+        gameManager = Managers.gameManager;
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //inputCanvas.gameObject.SetActive(askForName);
-        // diaText.gameObject.SetActive(!askForName);
-
-
         if(setName == true) {
             doneButton.gameObject.SetActive(true);
             inputCanvas.gameObject.SetActive(true);
@@ -94,20 +50,8 @@ public class NameManager : MonoBehaviour
             askForName = !askForName;
         }
 
-        if(setName == true && Input.GetKeyDown(KeyCode.B)){
-            Debug.Log("Name is: "+gameMan.GetName());
-        }
-
-        if(setName == true && Input.GetKeyDown(KeyCode.Return)){
-            try
-            {
-                gameMan.SetName(charName.text);
-            }
-            catch(MissingComponentException)
-            {
-
-            }
-
+        if(setName == true && Input.GetKeyDown(KeyCode.Return)){    
+            gameManager.SetName(charName.text);
             askForName = false;
             setName = true;
             DoneName();
@@ -116,8 +60,8 @@ public class NameManager : MonoBehaviour
 
     void DoneName()
     {
-        gameMan.SetName(charName.text);
-        sceneMan.SingleLoad(sceneToLoadNext);
+        gameManager.SetName(charName.text);
+        sceneManager.SingleLoad(sceneToLoadNext);
 
     }
 
