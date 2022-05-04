@@ -9,6 +9,9 @@ TagManager:
   - InteractInfo
   - PuzzleBox
   - Target
+  - SceneManager
+  - GameManager
+  - DialogueManager
   layers:
   - Default
   - TransparentFX

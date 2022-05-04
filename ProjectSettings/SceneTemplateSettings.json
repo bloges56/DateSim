@@ -154,6 +154,13 @@
             "ignore": false,
             "defaultInstantiationMode": 0,
             "supportsModification": true
+        },
+        {
+            "userAdded": true,
+            "type": "Managers",
+            "ignore": false,
+            "defaultInstantiationMode": 0,
+            "supportsModification": true
         }
     ],
     "defaultDependencyTypeInfo": {

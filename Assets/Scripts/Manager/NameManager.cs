@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Yarn.Unity;
+using UnityEngine.SceneManagement;
 
 
 public class NameManager : MonoBehaviour
@@ -22,9 +23,9 @@ public class NameManager : MonoBehaviour
 
     public bool askForName = true;
     public bool setName = false;
-    // Start is called before the first frame update
+    private static GameObject[] sceneMangeSceneObj; 
 
-    void Start()
+    void Awake()
     {  
         nameManager = GameObject.Find("NameInputManager").GetComponent<NameManager>();
         doneButton = GameObject.Find("DoneButton").GetComponent<Button>();
@@ -32,23 +33,14 @@ public class NameManager : MonoBehaviour
         lastDialogue = GameObject.Find("Text");
         doneButton.gameObject.SetActive(false);
         inputCanvas.gameObject.SetActive(false);
-        // diaText = GameObject.Find("DialogueSystem");
-
-        //inputCanvas.gameObject.SetActive(askForName); 
-        // diaText.gameObject.SetActive(!askForName);
-
+    
         sceneManager = Managers.sceneManager;
-        gameManager = Managers.gameManager; 
+        gameManager = Managers.gameManager;
 
-        //doneButton.onClick.AddListener(DoneName);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //inputCanvas.gameObject.SetActive(askForName);
-        // diaText.gameObject.SetActive(!askForName);
-
         if(setName == true) {
             doneButton.gameObject.SetActive(true);
             inputCanvas.gameObject.SetActive(true);
@@ -58,11 +50,7 @@ public class NameManager : MonoBehaviour
             askForName = !askForName;
         }
 
-        if(setName == true && Input.GetKeyDown(KeyCode.B)){
-            Debug.Log("Name is: "+gameManager.GetName());
-        }
-
-        if(setName == true && Input.GetKeyDown(KeyCode.Return)){
+        if(setName == true && Input.GetKeyDown(KeyCode.Return)){    
             gameManager.SetName(charName.text);
             askForName = false;
             setName = true;
