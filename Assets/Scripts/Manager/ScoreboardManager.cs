@@ -21,7 +21,7 @@ public class ScoreboardManager : MonoBehaviour
     public void updateHearts(string name, bool updateType, int heartVal)
     {
         GameObject objToSpawn;
-        addHeart(name,objToSpawn);
+        // addHeart(name,objToSpawn);
 
         if(heartVal == -1)
         {
