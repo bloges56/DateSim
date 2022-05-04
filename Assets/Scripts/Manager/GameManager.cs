@@ -13,9 +13,14 @@ public class GameManager : MonoBehaviour
     public string playerName = " ";
 
     //Scoreboard stuff
-    [SerializeField]Canvas scoreBoard;
+    [SerializeField] Canvas scoreBoard;
     [SerializeField] TextMeshProUGUI playerNameText;
     [SerializeField] ScoreboardManager scoreboard;
+
+    [SerializeField] Canvas escMenu;
+    [SerializeField] Button continueButton;
+    [SerializeField] Button restartButton;
+    [SerializeField] Button exitButton;
 
     //Relationships
     Dictionary<string, int> relationshipVals = new Dictionary<string, int>(){
@@ -25,6 +30,11 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        started = false;
+        continueButton.onClick.AddListener(ContinueGame);
+        restartButton.onClick.AddListener(RestartGame);
+        exitButton.onClick.AddListener(EndGame);
+
         if(!started)
         {
             started = true;
@@ -36,6 +46,10 @@ public class GameManager : MonoBehaviour
     {
         if(started){
             scoreBoard.gameObject.SetActive(Input.GetKey(KeyCode.Tab));
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                Pausedgame();
+            }
         }
     }
 
@@ -103,6 +117,41 @@ public class GameManager : MonoBehaviour
             break;
         }
     }
+
+    void Pausedgame()
+    {
+        escMenu.gameObject.SetActive(true);
+        Time.timeScale = 0.0f;
+
+    }
+    void ContinueGame()
+    {
+        escMenu.gameObject.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+   void RestartGame()
+   {
+        int countLoaded = SceneManager.sceneCount;
+        Scene[] loadedScenes = new Scene[countLoaded];
+ 
+        for (int i = 0; i < countLoaded; i++)
+        {
+            loadedScenes[i] = SceneManager.GetSceneAt(i);
+        }
+        foreach (Scene item in loadedScenes)
+        {
+            SceneManager.UnloadSceneAsync(item);
+
+        }
+
+        SceneManager.LoadSceneAsync("SceneManagerScene");   
+    }
+    void EndGame()
+    {
+        Application.Quit();
+
+    }
+
 
     
 }                       
