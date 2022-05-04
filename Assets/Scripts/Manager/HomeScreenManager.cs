@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class HomeScreenManager : MonoBehaviour
 {
     public Button startButton;
     public Button quitButton;
 
-    public bool OverrideStart = false;
-    public string OverrideSceneName;
-
+    private bool loaded = false;
+    
     SceneManagement sceneManager;
     GameManager gameManager;
+
 
     void Start()
     {
@@ -21,23 +23,16 @@ public class HomeScreenManager : MonoBehaviour
 
         startButton.onClick.AddListener(StartGame);
         quitButton.onClick.AddListener(EndGame);
-
+       
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager;
+        
     }
-
 
     void StartGame()
      {
-        if(OverrideStart)
-        {
-            sceneManager.StartSceneLoad(OverrideSceneName);
-        }
-        else
-        {
-        sceneManager.StartSceneLoad("GrayBoxMain");
-        }
-        gameManager.LoadGame();
+        sceneManager.StartSceneLoad("SetName");
+        Managers.gameManager.LoadGame();
 
      }
 

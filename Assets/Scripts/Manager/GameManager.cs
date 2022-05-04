@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     {
         if(!started)
         {
+            started = true;
             StartGame();
         }
     }
