@@ -412,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5245767279931837, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5245767279931837, guid: 58c273a80af49b747afc400ad1dc07f2, type: 3}
       propertyPath: m_LocalScale.x
@@ -656,7 +656,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1106084662
 PrefabInstance:
@@ -671,7 +671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3919065701010968727, guid: 7e126ff46ebcc14409b1da59d08b0294, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3919065701010968727, guid: 7e126ff46ebcc14409b1da59d08b0294, type: 3}
       propertyPath: m_LocalPosition.x
@@ -691,15 +691,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3919065701010968727, guid: 7e126ff46ebcc14409b1da59d08b0294, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3919065701010968727, guid: 7e126ff46ebcc14409b1da59d08b0294, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3919065701010968727, guid: 7e126ff46ebcc14409b1da59d08b0294, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3919065701010968727, guid: 7e126ff46ebcc14409b1da59d08b0294, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -988,7 +988,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 69.8
+  m_fontSize: 123.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.15
+  m_fontSize: 111.85
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1428,7 +1428,7 @@ MonoBehaviour:
   charName: {fileID: 1391019306}
   inputCanvas: {fileID: 1023364080}
   doneButton: {fileID: 0}
-  dialogue: {fileID: 0}
+  lastDialogue: {fileID: 0}
   sceneToLoadNext: Arcade
   askForName: 1
   setName: 0
@@ -1636,7 +1636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8160331386551634604, guid: 4cf42a1e89cb4fa49a206c75b3697485, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8160331386551634604, guid: 4cf42a1e89cb4fa49a206c75b3697485, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1656,15 +1656,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8160331386551634604, guid: 4cf42a1e89cb4fa49a206c75b3697485, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8160331386551634604, guid: 4cf42a1e89cb4fa49a206c75b3697485, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8160331386551634604, guid: 4cf42a1e89cb4fa49a206c75b3697485, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8160331386551634604, guid: 4cf42a1e89cb4fa49a206c75b3697485, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
