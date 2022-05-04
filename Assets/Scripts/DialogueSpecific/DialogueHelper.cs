@@ -9,8 +9,10 @@ public class DialogueHelper : MonoBehaviour
     static string activeCharacter;
     static DialogueManager dialogueManager;
     Animator animator;
-    GameObject character;
-    private GameObject[] diaSceneObj;
+    Renderer character;
+    Renderer Deon;
+    Renderer Claire;
+    Renderer Remington;
 
     static SceneManagement sceneManager;
     static GameManager gameManager;
@@ -19,41 +21,45 @@ public class DialogueHelper : MonoBehaviour
     public int dayEdit = 1;
     private static int day;
 
-    public void activeChar(string charName) {
-        character = GameObject.Find(charName);
-        animator = character.GetComponent<Animator>();
-        activeCharacter = charName;
-    }
+    // public void activeChar(string charName) {
+    //     character = GameObject.Find(charName);
+    //     animator = character.GetComponent<Animator>();
+    //     activeCharacter = charName;
+    // }
 
 
     void Awake()
     {
         day = dayEdit;
+        Deon = GameObject.Find("Deon").GetComponent<Renderer>();
+        Deon.enabled = false;
+        Remington = GameObject.Find("Remington").GetComponent<Renderer>();
+        Remington.enabled = false;
+        Claire = GameObject.Find("Claire").GetComponent<Renderer>();
+        Claire.enabled = false;
+
 
         dialogueManager = Managers.dialogueManager;
         activeCharacter = dialogueManager.activeCharacter;
+        Debug.Log(activeCharacter);
         sceneManager = Managers.sceneManager;
         gameManager = Managers.gameManager; 
-        diaSceneObj = SceneManager.GetSceneByName("Dialogue").GetRootGameObjects();
 
         if(activeCharacter == "Deon") {
-            character = diaSceneObj[0];
-            Debug.Log("Deon active");
+            character = Deon;
             dialogueManager.activeDialogue = dialogueManager.Deon;
             dialogueManager.currentSwitch = "PuzzleLevel1";
-            character.SetActive(true);
+            character.enabled = true;
         } if (activeCharacter == "Remington") {
-            character = diaSceneObj[1];
-            Debug.Log("Remington active");
+            character = Remington;
             dialogueManager.activeDialogue = dialogueManager.Remington;
             dialogueManager.currentSwitch = "RhythmLevelOne";
-            character.SetActive(true);
+            character.enabled = true;
         } else if (activeCharacter == "Claire") {
-            character = diaSceneObj[2];
-            Debug.Log("Claire active");
+            character = Claire;
             dialogueManager.activeDialogue = dialogueManager.Claire;
-            character.SetActive(true);
             dialogueManager.currentSwitch = "Shooter";
+            character.enabled = true;
         }
 
         if(dialogueManager.activeDialogue.relationshipProgress != 0) {
