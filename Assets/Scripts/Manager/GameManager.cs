@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
 	{"Claire", 0},
 	{"Remington", 0}};
 
+    bool pasued;
+
     void Start()
     {
         started = false;
@@ -52,7 +54,12 @@ public class GameManager : MonoBehaviour
             scoreBoard.gameObject.SetActive(Input.GetKey(KeyCode.Tab));
             if(Input.GetKeyDown(KeyCode.Escape))
             {
-                Pausedgame();
+                if(!pasued){
+                    Pausedgame();
+                }
+                else{
+                    ContinueGame();
+                }
             }
         }
     }
@@ -128,10 +135,12 @@ public class GameManager : MonoBehaviour
     {
         escMenu.gameObject.SetActive(true);
         Time.timeScale = 0.0f;
+        pasued = true;
 
     }
     void ContinueGame()
     {
+        pasued = false;
         escMenu.gameObject.SetActive(false);
         Time.timeScale = 1.0f;
     }
