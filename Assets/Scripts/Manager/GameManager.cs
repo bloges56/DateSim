@@ -36,6 +36,14 @@ public class GameManager : MonoBehaviour
     {
         if(started){
             scoreBoard.gameObject.SetActive(Input.GetKey(KeyCode.Tab));
+            if(Input.GetKey(KeyCode.K))
+            {
+                addRelVal("Deon");
+            }
+            if(Input.GetKey(KeyCode.L))
+            {
+                removeRelVal("Deon");
+            }
         }
     }
 
@@ -66,7 +74,7 @@ public class GameManager : MonoBehaviour
 
     public void addRelVal(string name)
     {
-        relationshipVals[name] +=1;
+        relationshipVals[name] = 1;
 
         switch(name) 
         {
@@ -86,21 +94,23 @@ public class GameManager : MonoBehaviour
 
     public void removeRelVal(string name)
     {
-        relationshipVals[name] -=1;
+        if(relationshipVals[name] == 0){
+            relationshipVals[name] = -1;
 
-        switch(name) 
-        {
-        case "Deon":
-            scoreboard.updateHearts("Deon",false, relationshipVals[name]);
-            break;
-        case "Claire":
-            scoreboard.updateHearts("Claire",false, relationshipVals[name]);
-            break;
-        case "Remington":
-            scoreboard.updateHearts("Remington",false, relationshipVals[name]);
-            break;
-        default:
-            break;
+            switch(name) 
+            {
+            case "Deon":
+                scoreboard.updateHearts("Deon",false, relationshipVals[name]);
+                break;
+            case "Claire":
+                scoreboard.updateHearts("Claire",false, relationshipVals[name]);
+                break;
+            case "Remington":
+                scoreboard.updateHearts("Remington",false, relationshipVals[name]);
+                break;
+            default:
+                break;
+            }
         }
     }
 
