@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Button restartButton;
     [SerializeField] Button exitButton;
 
+    DialogueManager dialogueManager;
+
     //Relationships
     Dictionary<string, int> relationshipVals = new Dictionary<string, int>(){
 	{"Deon", 0},
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
         continueButton.onClick.AddListener(ContinueGame);
         restartButton.onClick.AddListener(RestartGame);
         exitButton.onClick.AddListener(EndGame);
+
+        dialogueManager = GameObject.FindWithTag("DialogueManager").GetComponent<DialogueManager>();
 
         if(!started)
         {
@@ -131,6 +135,15 @@ public class GameManager : MonoBehaviour
     }
    void RestartGame()
    {
+        Time.timeScale = 1.0f;
+
+        // dialogueManager.relationshipProgress = 0;
+        dialogueManager.Remington.relationshipProgress = 0;
+        dialogueManager.Claire.relationshipProgress = 0;
+        dialogueManager.Deon.relationshipProgress = 0;
+        dialogueManager.activeCharacter = "";
+        // nameManager.setName = true;
+
         int countLoaded = SceneManager.sceneCount;
         Scene[] loadedScenes = new Scene[countLoaded];
  
