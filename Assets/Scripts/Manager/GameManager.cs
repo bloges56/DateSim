@@ -84,9 +84,9 @@ public class GameManager : MonoBehaviour
 
     public void addRelVal(string name)
     {
-        relationshipVals[name] +=1;
+        relationshipVals[name] = 1;
 
-        switch(name) 
+        switch(name)
         {
         case "Deon":
             scoreboard.updateHearts("Deon",true, relationshipVals[name]);
@@ -104,21 +104,23 @@ public class GameManager : MonoBehaviour
 
     public void removeRelVal(string name)
     {
-        relationshipVals[name] -=1;
+        if(relationshipVals[name] == 0){
+            relationshipVals[name] = -1;
 
-        switch(name) 
-        {
-        case "Deon":
-            scoreboard.updateHearts("Deon",false, relationshipVals[name]);
-            break;
-        case "Claire":
-            scoreboard.updateHearts("Claire",false, relationshipVals[name]);
-            break;
-        case "Remington":
-            scoreboard.updateHearts("Remington",false, relationshipVals[name]);
-            break;
-        default:
-            break;
+            switch(name)
+            {
+            case "Deon":
+                scoreboard.updateHearts("Deon",false, relationshipVals[name]);
+                break;
+            case "Claire":
+                scoreboard.updateHearts("Claire",false, relationshipVals[name]);
+                break;
+            case "Remington":
+                scoreboard.updateHearts("Remington",false, relationshipVals[name]);
+                break;
+            default:
+                break;
+            }
         }
     }
 
@@ -146,7 +148,7 @@ public class GameManager : MonoBehaviour
 
         int countLoaded = SceneManager.sceneCount;
         Scene[] loadedScenes = new Scene[countLoaded];
- 
+
         for (int i = 0; i < countLoaded; i++)
         {
             loadedScenes[i] = SceneManager.GetSceneAt(i);
@@ -157,7 +159,7 @@ public class GameManager : MonoBehaviour
 
         }
 
-        SceneManager.LoadSceneAsync("SceneManagerScene");   
+        SceneManager.LoadSceneAsync("SceneManagerScene");
     }
     void EndGame()
     {
@@ -166,5 +168,5 @@ public class GameManager : MonoBehaviour
     }
 
 
-    
-}                       
+
+}
