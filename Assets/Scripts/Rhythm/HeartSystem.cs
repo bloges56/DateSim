@@ -17,7 +17,9 @@ public class HeartSystem : MonoBehaviour
     [SerializeField]GameObject heartParent;
 
     List<GameObject> hearts = new List<GameObject>();
-    Vector3 heartLeft = new Vector3(-654.5f,635.91f,0f);
+    Vector3 heartLeft = new Vector3(-654.5f,610.8f,0f);
+    // Vector3 heartLeft = new Vector3(-654.5f,635.91f,0f);
+    // Vector3 heartLeft = new Vector3(-654.5f,901.0f,0f);
     int heartsToShow;
     // Start is called before the first frame update
     void Start()
@@ -35,7 +37,9 @@ public class HeartSystem : MonoBehaviour
         //setup all hearts
         for (int i = 1; i < heartsToShow+1; i++)
         {
-            newPos = new Vector3(-654.5f + (i*distanceBetween),635.91f,0f);
+            newPos = new Vector3(-654.5f + (i*distanceBetween),610.8f,0f);
+            // newPos = new Vector3(-654.5f + (i*distanceBetween),635.91f,0f);
+            // newPos = new Vector3(-654.5f + (i*distanceBetween),901.0f,0f);
             newHeart = Instantiate(heartObject);
             newHeart.transform.position = newPos;
             newHeart.transform.SetParent(heartParent.transform, false);
@@ -65,7 +69,7 @@ public class HeartSystem : MonoBehaviour
         
         for (int i = 1; i < heartsToShow+1; i++)
         {
-            Vector3 newPos = new Vector3(-654.5f + (i*newdistanceBetween),635.91f,0f);
+            Vector3 newPos = new Vector3(-654.5f + (i*newdistanceBetween),610.8f,0f);
             GameObject newHeart = Instantiate(heartObject);
             newHeart.transform.position = newPos;
             newHeart.transform.SetParent(heartParent.transform, false);
