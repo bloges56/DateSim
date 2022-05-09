@@ -13,9 +13,16 @@ public class GameManager : MonoBehaviour
     public string playerName = " ";
 
     //Scoreboard stuff
-    [SerializeField]Canvas scoreBoard;
+    [SerializeField] Canvas scoreBoard;
     [SerializeField] TextMeshProUGUI playerNameText;
     [SerializeField] ScoreboardManager scoreboard;
+
+    [SerializeField] Canvas escMenu;
+    [SerializeField] Button continueButton;
+    [SerializeField] Button restartButton;
+    [SerializeField] Button exitButton;
+
+    DialogueManager dialogueManager;
 
     //Relationships
     Dictionary<string, int> relationshipVals = new Dictionary<string, int>(){
@@ -23,8 +30,17 @@ public class GameManager : MonoBehaviour
 	{"Claire", 0},
 	{"Remington", 0}};
 
+    bool pasued;
+
     void Start()
     {
+        started = false;
+        continueButton.onClick.AddListener(ContinueGame);
+        restartButton.onClick.AddListener(RestartGame);
+        exitButton.onClick.AddListener(EndGame);
+
+        dialogueManager = GameObject.FindWithTag("DialogueManager").GetComponent<DialogueManager>();
+
         if(!started)
         {
             started = true;
@@ -36,13 +52,14 @@ public class GameManager : MonoBehaviour
     {
         if(started){
             scoreBoard.gameObject.SetActive(Input.GetKey(KeyCode.Tab));
-            if(Input.GetKey(KeyCode.K))
+            if(Input.GetKeyDown(KeyCode.Escape))
             {
-                addRelVal("Deon");
-            }
-            if(Input.GetKey(KeyCode.L))
-            {
-                removeRelVal("Deon");
+                if(!pasued){
+                    Pausedgame();
+                }
+                else{
+                    ContinueGame();
+                }
             }
         }
     }
@@ -76,7 +93,7 @@ public class GameManager : MonoBehaviour
     {
         relationshipVals[name] = 1;
 
-        switch(name) 
+        switch(name)
         {
         case "Deon":
             scoreboard.updateHearts("Deon",true, relationshipVals[name]);
@@ -97,7 +114,7 @@ public class GameManager : MonoBehaviour
         if(relationshipVals[name] == 0){
             relationshipVals[name] = -1;
 
-            switch(name) 
+            switch(name)
             {
             case "Deon":
                 scoreboard.updateHearts("Deon",false, relationshipVals[name]);
@@ -114,5 +131,51 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
-}                       
+    void Pausedgame()
+    {
+        escMenu.gameObject.SetActive(true);
+        Time.timeScale = 0.0f;
+        pasued = true;
+
+    }
+    void ContinueGame()
+    {
+        pasued = false;
+        escMenu.gameObject.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+   void RestartGame()
+   {
+        Time.timeScale = 1.0f;
+
+        // dialogueManager.relationshipProgress = 0;
+        dialogueManager.Remington.relationshipProgress = 0;
+        dialogueManager.Claire.relationshipProgress = 0;
+        dialogueManager.Deon.relationshipProgress = 0;
+        dialogueManager.activeCharacter = "";
+        // nameManager.setName = true;
+
+        int countLoaded = SceneManager.sceneCount;
+        Scene[] loadedScenes = new Scene[countLoaded];
+
+        for (int i = 0; i < countLoaded; i++)
+        {
+            loadedScenes[i] = SceneManager.GetSceneAt(i);
+        }
+        foreach (Scene item in loadedScenes)
+        {
+            SceneManager.UnloadSceneAsync(item);
+
+        }
+
+        SceneManager.LoadSceneAsync("SceneManagerScene");
+    }
+    void EndGame()
+    {
+        Application.Quit();
+
+    }
+
+
+
+}

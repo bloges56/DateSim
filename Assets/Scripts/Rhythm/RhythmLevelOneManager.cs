@@ -36,7 +36,7 @@ public class RhythmLevelOneManager : MonoBehaviour
     //Displayed Text
     [SerializeField] TextMeshProUGUI curr_score_text;
     [SerializeField] TextMeshProUGUI high_score_text;
-    [SerializeField] TextMeshProUGUI err_text;
+    // [SerializeField] TextMeshProUGUI err_text;
     [SerializeField] TextMeshProUGUI time_left_text;
     private string highScoreText = "High Score: ";
     private string currScoreText = "Current Score: ";
@@ -81,7 +81,7 @@ public class RhythmLevelOneManager : MonoBehaviour
         audioSource = this.gameObject.GetComponent<AudioSource>();
         heartSystem = this.gameObject.GetComponent<HeartSystem>();
         
-        err_text.gameObject.SetActive(false);
+        // err_text.gameObject.SetActive(false);
 
         if(!startGame)
         {
@@ -108,7 +108,7 @@ public class RhythmLevelOneManager : MonoBehaviour
         rhy_text.color = UnityEngine.Color.black;
         curr_score_text.text = currScoreText + currScore.ToString();
         high_score_text.text = highScoreText + HIGHSCORE.ToString();
-        err_text.text = errLeftText + errLeft.ToString();
+        // err_text.text = errLeftText + errLeft.ToString();
         time_left_text.text = timeLeftText + timeLeft.ToString();
 
         // err_text.gameObject.SetActive(false);
@@ -134,7 +134,7 @@ public class RhythmLevelOneManager : MonoBehaviour
                 HIGHSCORE=currScore;
             }
             high_score_text.text = highScoreText + HIGHSCORE.ToString();
-            err_text.text = errLeftText + errLeft.ToString();
+            // err_text.text = errLeftText + errLeft.ToString();
             time_left_text.text = timeLeftText + timeLeft.ToString();
         }
         else
