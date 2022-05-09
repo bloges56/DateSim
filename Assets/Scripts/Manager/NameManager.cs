@@ -25,8 +25,10 @@ public class NameManager : MonoBehaviour
     public bool setName = false;
     private static GameObject[] sceneMangeSceneObj; 
 
-    void Awake()
+    void Start()
     {  
+        askForName = true;
+        setName = false;
         nameManager = GameObject.Find("NameInputManager").GetComponent<NameManager>();
         doneButton = GameObject.Find("DoneButton").GetComponent<Button>();
         inputCanvas = GameObject.Find("NameEnter").GetComponent<Canvas>();
